@@ -1,0 +1,8 @@
+{
+  "name": "dts-google-apps-script-libraries",
+  "description": "d.ts files generator for Google Apps Script third party libraries",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "maelcaldas <maelcaldas@gmail.com>",
+  "license": "MIT"
+}
