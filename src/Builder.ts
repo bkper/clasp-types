@@ -5,7 +5,7 @@ export class Builder {
   rootNamespace: Namespace;
   constructor(rootNode: any) {
     this.text = '';
-    this.rootNamespace = new Namespace("GoogleAppsScript", rootNode);
+    this.rootNamespace = new Namespace("GoogleAppsScript", 0, rootNode);
   }
 
   append(text: string):void {

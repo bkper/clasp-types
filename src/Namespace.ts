@@ -1,21 +1,26 @@
 import { Builder } from "./Builder";
 import { Interface } from "./Interface";
+import { Method } from "./Method";
+import { Enum } from "./Enum";
+import { Definition } from "./Definition";
 
-export class Namespace {
+export class Namespace extends Definition {
 
-  name: string;
-  children: Namespace[];
+  namespaces: Namespace[];
   interfaces: Interface[];
+  methods: Method[];
+  enums: Enum[];
 
-  constructor(name: string, node: any) {
-    this.name = name;
+  constructor(name: string, depth: number, node: any) {
+    super(name, depth);
+    this.namespaces = [];
     this.interfaces = [];
-    this.children = [];
+    this.methods = [];
+    this.enums = [];
     this.parse(node)
   }
 
   parse(node: any) {
-    this.interfaces.push(new Interface())
   }
 
   build(builder: Builder, depth: number): void {
