@@ -1,2 +1,2 @@
-# google-apps-script-dts-lib-gen
+# gsdts-gen
 d.ts files generator for Google Apps Script third party libraries

@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "read": "typedoc ../../bkper/bkper-app/src --ignoreCompilerErrors --excludeExternals --includeDeclarations --logger none --mode file --name 'BkperApp' --json ./data/library.json ",
-    "write": "ts-node index.ts"
+    "write": "ts-node src/index.ts"
   },
   "devDependencies": {
     "@types/fs-extra": "^8.0.0",
