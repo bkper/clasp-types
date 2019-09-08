@@ -12,7 +12,7 @@ export class Namespace extends Definition {
   enums: Enum[];
 
   constructor(name: string, depth: number, node: any) {
-    super(name, depth);
+    super(name, depth, node);
     this.namespaces = [];
     this.interfaces = [];
     this.methods = [];
@@ -20,7 +20,10 @@ export class Namespace extends Definition {
     this.parse(node)
   }
 
-  parse(node: any) {
+  parse(node: any): void {
+    for (let child of node.children) {
+      //TODO
+    }
   }
 
   build(builder: Builder, depth: number): void {

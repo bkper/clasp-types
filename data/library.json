@@ -171,8 +171,17 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
 									}
 								}
 							],
@@ -386,8 +395,17 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
 									}
 								}
 							],
@@ -475,8 +493,17 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
 									}
 								}
 							],
@@ -553,8 +580,17 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
 									}
 								}
 							],
@@ -980,8 +1016,21 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "boolean"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "false"
+											},
+											{
+												"type": "intrinsic",
+												"name": "true"
+											}
+										]
 									}
 								}
 							],
@@ -1032,8 +1081,21 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "boolean"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "false"
+											},
+											{
+												"type": "intrinsic",
+												"name": "true"
+											}
+										]
 									}
 								}
 							],
@@ -3423,7 +3485,7 @@
 			"comment": {
 				"tags": [
 					{
-						"tag": "library",
+						"tag": "external",
 						"text": "\n"
 					}
 				]
@@ -3448,7 +3510,8 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"name": "Account"
+							"name": "Account",
+							"id": 20
 						}
 					}
 				},
@@ -3674,7 +3737,8 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"name": "Account"
+											"name": "Account",
+											"id": 20
 										}
 									}
 								}
@@ -3892,8 +3956,17 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
 									}
 								},
 								{
@@ -3905,14 +3978,24 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"name": "Account"
+								"name": "Account",
+								"id": 20
 							}
 						}
 					],
@@ -4008,8 +4091,17 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
 									}
 								}
 							],
@@ -4072,8 +4164,17 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
 									}
 								}
 							],
@@ -4179,7 +4280,8 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "Account"
+								"name": "Account",
+								"id": 20
 							}
 						}
 					],
@@ -4218,7 +4320,8 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"name": "Account"
+									"name": "Account",
+									"id": 20
 								}
 							}
 						}
@@ -4942,8 +5045,17 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
 									}
 								}
 							],
@@ -5028,8 +5140,17 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
 									}
 								}
 							],
@@ -5080,8 +5201,17 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "string"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
 									}
 								}
 							],
@@ -5194,7 +5324,8 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"name": "Account"
+									"name": "Account",
+									"id": 20
 								}
 							}
 						}
@@ -6644,7 +6775,8 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "Account"
+						"name": "Account",
+						"id": 20
 					}
 				},
 				{
@@ -6664,7 +6796,8 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "Account"
+						"name": "Account",
+						"id": 20
 					}
 				},
 				{
@@ -6780,8 +6913,21 @@
 										"isOptional": true
 									},
 									"type": {
-										"type": "intrinsic",
-										"name": "boolean"
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "false"
+											},
+											{
+												"type": "intrinsic",
+												"name": "true"
+											}
+										]
 									}
 								}
 							],
@@ -6826,7 +6972,8 @@
 										"types": [
 											{
 												"type": "reference",
-												"name": "Account"
+												"name": "Account",
+												"id": 20
 											},
 											{
 												"type": "intrinsic",
@@ -6838,7 +6985,8 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "Account"
+								"name": "Account",
+								"id": 20
 							}
 						}
 					],
@@ -6944,7 +7092,8 @@
 							},
 							"type": {
 								"type": "reference",
-								"name": "Account"
+								"name": "Account",
+								"id": 20
 							}
 						}
 					],
@@ -7028,7 +7177,8 @@
 										"types": [
 											{
 												"type": "reference",
-												"name": "Account"
+												"name": "Account",
+												"id": 20
 											},
 											{
 												"type": "intrinsic",
@@ -7109,7 +7259,8 @@
 							},
 							"type": {
 								"type": "reference",
-								"name": "Account"
+								"name": "Account",
+								"id": 20
 							}
 						}
 					],
@@ -7193,7 +7344,8 @@
 										"types": [
 											{
 												"type": "reference",
-												"name": "Account"
+												"name": "Account",
+												"id": 20
 											},
 											{
 												"type": "intrinsic",
@@ -7437,7 +7589,8 @@
 										"types": [
 											{
 												"type": "reference",
-												"name": "Account"
+												"name": "Account",
+												"id": 20
 											},
 											{
 												"type": "intrinsic",
@@ -7449,7 +7602,8 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "Account"
+								"name": "Account",
+								"id": 20
 							}
 						}
 					],
@@ -7500,7 +7654,8 @@
 											},
 											{
 												"type": "reference",
-												"name": "Account"
+												"name": "Account",
+												"id": 20
 											}
 										]
 									}
@@ -7748,7 +7903,8 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "Account"
+										"name": "Account",
+										"id": 20
 									}
 								}
 							],
@@ -7790,7 +7946,8 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "Account"
+										"name": "Account",
+										"id": 20
 									}
 								}
 							],
@@ -7986,7 +8143,8 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "Account"
+						"name": "Account",
+						"id": 20
 					}
 				},
 				{
@@ -8149,7 +8307,8 @@
 							},
 							"type": {
 								"type": "reference",
-								"name": "Account"
+								"name": "Account",
+								"id": 20
 							}
 						}
 					],
@@ -8677,7 +8836,8 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "Account"
+										"name": "Account",
+										"id": 20
 									}
 								}
 							],
@@ -8718,7 +8878,8 @@
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"name": "Account"
+								"name": "Account",
+								"id": 20
 							}
 						}
 					],
@@ -8766,7 +8927,8 @@
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "Account"
+										"name": "Account",
+										"id": 20
 									}
 								}
 							],
@@ -9251,8 +9413,17 @@
 								"isOptional": true
 							},
 							"type": {
-								"type": "intrinsic",
-								"name": "string"
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
 							}
 						},
 						{
@@ -9264,8 +9435,17 @@
 								"isOptional": true
 							},
 							"type": {
-								"type": "intrinsic",
-								"name": "string"
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
 							}
 						}
 					],
@@ -9399,7 +9579,7 @@
 					"comment": {
 						"tags": [
 							{
-								"tag": "library",
+								"tag": "external",
 								"text": "\n"
 							}
 						]
@@ -9437,7 +9617,7 @@
 					"comment": {
 						"tags": [
 							{
-								"tag": "library",
+								"tag": "external",
 								"text": "\n"
 							}
 						]
@@ -9486,7 +9666,7 @@
 					"comment": {
 						"tags": [
 							{
-								"tag": "library",
+								"tag": "external",
 								"text": "\n"
 							}
 						]
