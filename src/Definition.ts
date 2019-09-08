@@ -1,16 +1,16 @@
 import { Builder } from "./Builder";
+import { TypedocJsonNode } from "./TypedocJsonNode";
+
 export abstract class Definition {
 
-  public name: string;
+  public node: TypedocJsonNode;
   public depth: number;
 
-  constructor(name: string, depth: number, node: any) {
-    this.name = name;
+  constructor(node: TypedocJsonNode, depth: number) {
+    this.node = node;
     this.depth = depth;
   }
 
-  abstract parse(node: any): void;
   abstract build(builder: Builder, depth: number): void;
-
   
 }

@@ -1,11 +1,12 @@
 import { Namespace } from "./Namespace";
+import { TypedocJsonNode } from "./TypedocJsonNode";
 
 export class Builder {
   text: string;
   rootNamespace: Namespace;
-  constructor(rootNode: any) {
+  constructor(rootNode: TypedocJsonNode) {
     this.text = '';
-    this.rootNamespace = new Namespace("GoogleAppsScript", 0, rootNode);
+    this.rootNamespace = new Namespace(rootNode, 0,  "GoogleAppsScript");
   }
 
   append(text: string):void {

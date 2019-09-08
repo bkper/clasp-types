@@ -1,14 +1,13 @@
 import { Definition } from "./Definition";
 import { Builder } from "./Builder";
+import { TypedocJsonNode } from "./TypedocJsonNode";
 
 export class Interface extends Definition {
 
-  constructor(name: string, depth: number, node: any) {
-    super(name, depth, node);
+  constructor(node: TypedocJsonNode, depth: number) {
+    super(node, depth);
   }
   
-  parse(node: any): void {
-  }
   build(builder: Builder, depth: number): void {
   }
 }

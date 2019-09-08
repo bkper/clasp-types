@@ -3,30 +3,32 @@ import { Interface } from "./Interface";
 import { Method } from "./Method";
 import { Enum } from "./Enum";
 import { Definition } from "./Definition";
+import { TypedocJsonNode } from "./TypedocJsonNode";
 
 export class Namespace extends Definition {
 
+  name: string;
   namespaces: Namespace[];
   interfaces: Interface[];
   methods: Method[];
   enums: Enum[];
 
-  constructor(name: string, depth: number, node: any) {
-    super(name, depth, node);
+  constructor(node: TypedocJsonNode, depth: number, name: string) {
+    super(node, depth);
+    this.name = name;
     this.namespaces = [];
     this.interfaces = [];
     this.methods = [];
     this.enums = [];
-    this.parse(node)
   }
 
-  parse(node: any): void {
-    for (let child of node.children) {
-      //TODO
-    }
-  }
+
 
   build(builder: Builder, depth: number): void {
+    for (let child of this.node.children) {
+      //console.log(child)
+      console.log("bruna")
+    }
     builder.append(`${depth === 0 ? "declare " : ""}${" ".repeat(depth * 2)}namespace ${this.name} {`)
     builder.append('}');
   }
