@@ -12,5 +12,20 @@ export abstract class Definition {
   }
 
   abstract build(builder: Builder, depth: number): void;
-  
+
+  willGen(node: TypedocJsonNode): boolean {
+    if (!node.comment) {
+      return true;
+    }
+    if (!node.comment.tags) {
+      return true;
+    }
+    for (let tag of node.comment.tags) {
+      if (tag.tag === 'ignore' || tag.tag === 'hidden') {
+        return false;
+      }
+    }
+    return true;
+  }
+
 }
