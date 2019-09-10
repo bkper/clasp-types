@@ -27,15 +27,15 @@ export class Method extends Definition {
 
   buildType(type: TypedocType): string {
     if (type.type === 'union') {
-      for(type of type.types) {
-        return `${this.buildType(type)} | `
+      for(const t of type.types) {
+        if (t.name !== 'undefined') {
+          return `${this.buildType(type)} | `
+        }
       }
     } else if (type.type ==='array') {
       return `${this.buildType(type.elementType)}[]`
-    } else if (type.name != 'undefined'){
-      return type.name;
     }
-    return 'boolean';
+    return type.name;
   }
 
 }
