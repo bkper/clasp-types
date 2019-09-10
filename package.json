@@ -1,12 +1,16 @@
 {
-  "name": "dts-google-apps-script-libraries",
+  "name": "gas-dts-gen",
   "description": "d.ts files generator for Google Apps Script third party libraries",
   "version": "1.0.0",
   "main": "index.js",
   "author": "maelcaldas <maelcaldas@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maelcaldas/gas-dts-gen.git"
+  },
   "license": "MIT",
   "scripts": {
-    "read": "typedoc ../../bkper/bkper-app/src --ignoreCompilerErrors --excludeExternals --includeDeclarations --logger none --mode file --name 'BkperApp' --json ./data/library.json ",
+    "read": "typedoc ../../bkper/bkper-app/src --ignoreCompilerErrors --excludeExternals --includeDeclarations --logger none --mode file --name 'Bkper' --json ./data/library.json ",
     "write": "ts-node src/index.ts"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 {
 	"id": 0,
-	"name": "BkperApp",
+	"name": "Bkper",
 	"kind": 0,
 	"flags": {},
 	"children": [
@@ -9403,14 +9403,6 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
-					"comment": {
-						"tags": [
-							{
-								"tag": "external",
-								"text": "\n"
-							}
-						]
-					},
 					"parameters": [
 						{
 							"id": 338,
@@ -9466,7 +9458,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 39,
+					"line": 35,
 					"character": 29
 				}
 			]
@@ -9484,14 +9476,7 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
-					"comment": {
-						"tags": [
-							{
-								"tag": "external",
-								"text": "\n"
-							}
-						]
-					},
+					"comment": {},
 					"parameters": [
 						{
 							"id": 342,
@@ -9515,7 +9500,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 46,
+					"line": 41,
 					"character": 16
 				}
 			]
@@ -9546,7 +9531,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 50,
+					"line": 45,
 					"character": 17
 				}
 			]
@@ -9564,14 +9549,6 @@
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
-					"comment": {
-						"tags": [
-							{
-								"tag": "external",
-								"text": "\n"
-							}
-						]
-					},
 					"type": {
 						"type": "intrinsic",
 						"name": "boolean"
@@ -9581,7 +9558,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 32,
+					"line": 30,
 					"character": 25
 				}
 			]
@@ -9602,7 +9579,7 @@
 					"comment": {
 						"tags": [
 							{
-								"tag": "deprecated",
+								"tag": "external",
 								"text": "\n"
 							}
 						]
@@ -9619,7 +9596,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 82,
+					"line": 77,
 					"character": 18
 				}
 			]
@@ -9640,7 +9617,7 @@
 					"comment": {
 						"tags": [
 							{
-								"tag": "deprecated",
+								"tag": "external",
 								"text": "\n"
 							}
 						]
@@ -9668,7 +9645,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 75,
+					"line": 70,
 					"character": 17
 				}
 			]
@@ -9689,7 +9666,7 @@
 					"comment": {
 						"tags": [
 							{
-								"tag": "deprecated",
+								"tag": "external",
 								"text": "\n"
 							}
 						]
@@ -9717,7 +9694,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 89,
+					"line": 84,
 					"character": 23
 				}
 			]

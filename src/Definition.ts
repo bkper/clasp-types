@@ -13,19 +13,19 @@ export abstract class Definition {
 
   abstract build(builder: Builder, depth: number): void;
 
-  willGen(node: TypedocJsonNode): boolean {
+  isPublic(node: TypedocJsonNode): boolean {
     if (!node.comment) {
-      return true;
+      return false;
     }
     if (!node.comment.tags) {
-      return true;
+      return false;
     }
     for (let tag of node.comment.tags) {
-      if (tag.tag === 'ignore' || tag.tag === 'hidden') {
-        return false;
+      if (tag.tag === 'public') {
+        return true;
       }
     }
-    return true;
+    return false;
   }
 
 }

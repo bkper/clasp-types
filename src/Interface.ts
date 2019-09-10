@@ -9,5 +9,8 @@ export class Interface extends Definition {
   }
   
   build(builder: Builder, depth: number): void {
+    let ident = " ".repeat(depth * 2);
+    builder.append(`${ident}export interface ${this.node.name} {`).line()
+    builder.append(`${ident}}`).line();
   }
 }
