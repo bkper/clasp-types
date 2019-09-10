@@ -3,7 +3,7 @@ import { TypedocKind } from "./TypedocSchema";
 
 export abstract class Definition {
 
-  protected kind: TypedocKind;
+   kind: TypedocKind;
   protected depth: number;
 
   constructor(kind: TypedocKind, depth: number) {

@@ -10,7 +10,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "read": "typedoc ../../bkper/bkper-app/src --ignoreCompilerErrors --excludeExternals --includeDeclarations --logger none --mode file --name 'Bkper' --json ./data/library.json ",
+    "read": "typedoc ../../bkper/bkper-app/src --ignoreCompilerErrors --excludeExternals --includeDeclarations --mode file --name 'Bkper' --json ./data/library.json ",
     "write": "ts-node src/index.ts"
   },
   "devDependencies": {
