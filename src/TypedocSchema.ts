@@ -1,20 +1,24 @@
 export interface TypedocKind {
 
   name: string
-  comment?: {
-    tags?: {
-      tag: string
-    }[]
-  };
+  comment?: Comment
   kindString: string
   children: TypedocKind[]
-  signatures: {
-    type: TypedocType;
-    parameters: TypedocParameter[]
-  }[]
+  signatures: TypedocSignature[]
   flags: {
     isPublic?: boolean
   }
+}
+
+export interface Comment {
+  tags?: {
+    tag: string
+  }[]
+}
+
+export interface TypedocSignature {
+  type: TypedocType;
+  parameters: TypedocParameter[]
 }
 
 export interface TypedocType {
