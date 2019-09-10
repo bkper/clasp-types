@@ -6,4 +6,4 @@ let rootNode = JSON.parse(rawdata.toString());
 
 let builder = new Builder(rootNode, "Bkper", "BkperApp");
 
-fs.outputFileSync('build/google-apps-script.bkper/index.d.ts', builder.build());
+fs.outputFileSync('build/google-apps-script.bkper/index.d.ts', builder.buildLibrary());

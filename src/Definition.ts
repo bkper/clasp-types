@@ -12,20 +12,4 @@ export abstract class Definition {
   }
 
   abstract build(builder: Builder, depth: number): void;
-
-  isPublic(node: TypedocJsonNode): boolean {
-    if (!node.comment) {
-      return false;
-    }
-    if (!node.comment.tags) {
-      return false;
-    }
-    for (let tag of node.comment.tags) {
-      if (tag.tag === 'public') {
-        return true;
-      }
-    }
-    return false;
-  }
-
 }

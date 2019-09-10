@@ -13,4 +13,5 @@ export class Interface extends Definition {
     builder.append(`${ident}export interface ${this.node.name} {`).line()
     builder.append(`${ident}}`).line();
   }
+
 }

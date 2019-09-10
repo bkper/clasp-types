@@ -10,9 +10,15 @@ export class Builder {
 
   constructor(node: TypedocJsonNode, libraryNamespace: string, libraryName: string) {
     this.text = '';
-    this.rootNode = {name: "GoogleAppsScript", kindString: "Module", children: [node]};
+    this.rootNode = this.prepare(node);
     this.libraryNamespace = libraryNamespace;
     this.libraryName = libraryName;
+  }
+
+  private prepare(node: TypedocJsonNode): TypedocJsonNode {
+    node.kindString = 'Module'
+    node.flags.isPublic = true;
+    return {name: "GoogleAppsScript", kindString: "Module", children: [node], flags: {isPublic: true}}
   }
 
   append(text: string): Builder {
@@ -25,7 +31,7 @@ export class Builder {
     return this;
   }
 
-  build() {
+  buildLibrary() {
     let rootNamespace = new Namespace(this.rootNode, 0);
     this.append('/// <reference types="google-apps-script" />').line();
     rootNamespace.build(this, 0);

@@ -5,6 +5,1748 @@
 	"flags": {},
 	"children": [
 		{
+			"id": 1,
+			"name": "API",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 2,
+					"name": "Headers",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"children": [
+						{
+							"id": 3,
+							"name": "Authorization",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "API.ts",
+									"line": 108,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 4,
+							"name": "x-bkper-app-id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "API.ts",
+									"line": 109,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								3,
+								4
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "API.ts",
+							"line": 107,
+							"character": 15
+						}
+					]
+				},
+				{
+					"id": 5,
+					"name": "call_",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 6,
+							"name": "call_",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 7,
+									"name": "httpMethod",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "stringLiteral",
+												"value": "get"
+											},
+											{
+												"type": "stringLiteral",
+												"value": "delete"
+											},
+											{
+												"type": "stringLiteral",
+												"value": "patch"
+											},
+											{
+												"type": "stringLiteral",
+												"value": "post"
+											},
+											{
+												"type": "stringLiteral",
+												"value": "put"
+											}
+										]
+									}
+								},
+								{
+									"id": 8,
+									"name": "service",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								},
+								{
+									"id": 9,
+									"name": "Id",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "number"
+											}
+										]
+									}
+								},
+								{
+									"id": 10,
+									"name": "params",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "object"
+											}
+										]
+									}
+								},
+								{
+									"id": 11,
+									"name": "requestBody",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								},
+								{
+									"id": 12,
+									"name": "contentType",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								},
+								{
+									"id": 13,
+									"name": "headers",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "object"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "API.ts",
+							"line": 4,
+							"character": 23
+						}
+					]
+				},
+				{
+					"id": 14,
+					"name": "fetch",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 15,
+							"name": "fetch",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 16,
+									"name": "apiName",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 17,
+									"name": "version",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 18,
+									"name": "path",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 19,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reference",
+										"name": "GoogleAppsScript.URL_Fetch.URLFetchRequestOptions"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "GoogleAppsScript.URL_Fetch.HTTPResponse"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "API.ts",
+							"line": 58,
+							"character": 23
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						5,
+						14
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "API.ts",
+					"line": 2,
+					"character": 13
+				}
+			]
+		},
+		{
+			"id": 50,
+			"name": "AccountService_",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 54,
+					"name": "createAccount",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 55,
+							"name": "createAccount",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 56,
+									"name": "bookId",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 57,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 58,
+									"name": "group",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								},
+								{
+									"id": 59,
+									"name": "description",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Account",
+								"id": 20
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "AccountService_.ts",
+							"line": 16,
+							"character": 31
+						}
+					]
+				},
+				{
+					"id": 51,
+					"name": "getAccounts",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 52,
+							"name": "getAccounts",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 53,
+									"name": "bookId",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "Account",
+									"id": 20
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "AccountService_.ts",
+							"line": 3,
+							"character": 29
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						54,
+						51
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "AccountService_.ts",
+					"line": 1,
+					"character": 25
+				}
+			]
+		},
+		{
+			"id": 60,
+			"name": "AuthorizerDAO_",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 61,
+					"name": "TokenData",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 63,
+							"name": "access_token",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "AuthorizerDAO_.ts",
+									"line": 36,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 64,
+							"name": "expires_in",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "AuthorizerDAO_.ts",
+									"line": 37,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 62,
+							"name": "refresh_token",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "AuthorizerDAO_.ts",
+									"line": 35,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								63,
+								64,
+								62
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "AuthorizerDAO_.ts",
+							"line": 34,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 65,
+					"name": "UserData",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"children": [
+						{
+							"id": 67,
+							"name": "accessToken",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "AuthorizerDAO_.ts",
+									"line": 42,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 68,
+							"name": "expiresOn",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "AuthorizerDAO_.ts",
+									"line": 43,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 66,
+							"name": "refreshToken",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "AuthorizerDAO_.ts",
+									"line": 41,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								67,
+								68,
+								66
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "AuthorizerDAO_.ts",
+							"line": 40,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 72,
+					"name": "getAuthorizedUserData",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 73,
+							"name": "getAuthorizedUserData",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "UserData",
+								"id": 65
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "AuthorizerDAO_.ts",
+							"line": 16,
+							"character": 39
+						}
+					]
+				},
+				{
+					"id": 74,
+					"name": "isTokenExpired",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 75,
+							"name": "isTokenExpired",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 76,
+									"name": "userData",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "UserData",
+										"id": 65
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "AuthorizerDAO_.ts",
+							"line": 25,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 69,
+					"name": "storeTokenData",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 70,
+							"name": "storeTokenData",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 71,
+									"name": "tokenData",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "TokenData",
+										"id": 61
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "UserData",
+								"id": 65
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "AuthorizerDAO_.ts",
+							"line": 3,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 77,
+					"name": "unauthorize",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 78,
+							"name": "unauthorize",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "AuthorizerDAO_.ts",
+							"line": 30,
+							"character": 29
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						61,
+						65
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						72,
+						74,
+						69,
+						77
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "AuthorizerDAO_.ts",
+					"line": 1,
+					"character": 24
+				}
+			]
+		},
+		{
+			"id": 79,
+			"name": "Authorizer_",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 80,
+					"name": "API_UNAUTHORIZED",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 3,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "bkper_api_unauthorized"
+					},
+					"defaultValue": "\"bkper_api_unauthorized\""
+				},
+				{
+					"id": 84,
+					"name": "clientIdKey",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 12,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "CLIENT_ID"
+					},
+					"defaultValue": "\"CLIENT_ID\""
+				},
+				{
+					"id": 85,
+					"name": "clientSecretKey",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 13,
+							"character": 23
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "CLIENT_SECRET"
+					},
+					"defaultValue": "\"CLIENT_SECRET\""
+				},
+				{
+					"id": 83,
+					"name": "scope",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 10,
+							"character": 13
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "https://www.googleapis.com/auth/userinfo.email"
+					},
+					"defaultValue": "\"https://www.googleapis.com/auth/userinfo.email\""
+				},
+				{
+					"id": 81,
+					"name": "scriptUri",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 6,
+							"character": 17
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "https://script.google.com/macros/s/AKfycbz8F5FGTTW72pQBfDvGjEB4eglVmOfhG_a9Qb3EXYjVo5IICg/exec"
+					},
+					"defaultValue": "\"https://script.google.com/macros/s/AKfycbz8F5FGTTW72pQBfDvGjEB4eglVmOfhG_a9Qb3EXYjVo5IICg/exec\""
+				},
+				{
+					"id": 82,
+					"name": "tokenEndpoint",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 8,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "https://accounts.google.com/o/oauth2/token"
+					},
+					"defaultValue": "\"https://accounts.google.com/o/oauth2/token\""
+				},
+				{
+					"id": 102,
+					"name": "createAuthorizationURL",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 103,
+							"name": "createAuthorizationURL",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 104,
+									"name": "redirectUri",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 105,
+									"name": "state",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 131,
+							"character": 40
+						}
+					]
+				},
+				{
+					"id": 112,
+					"name": "createAuthorizeTemplate",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 113,
+							"name": "createAuthorizeTemplate",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 114,
+									"name": "continueUrl",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								},
+								{
+									"id": 115,
+									"name": "continueText",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "GoogleAppsScript.HTML.HtmlOutput"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 166,
+							"character": 41
+						}
+					]
+				},
+				{
+					"id": 108,
+					"name": "createAuthorizedTemplate",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 109,
+							"name": "createAuthorizedTemplate",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 110,
+									"name": "continueUrl",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 111,
+									"name": "continueText",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "GoogleAppsScript.HTML.HtmlOutput"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 149,
+							"character": 42
+						}
+					]
+				},
+				{
+					"id": 97,
+					"name": "fetchTokenEndpoint",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 98,
+							"name": "fetchTokenEndpoint",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 99,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "GoogleAppsScript.URL_Fetch.HTTPResponse"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 104,
+							"character": 29
+						}
+					]
+				},
+				{
+					"id": 91,
+					"name": "getAccessToken",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 92,
+							"name": "getAccessToken",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 59,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 106,
+					"name": "getAuthorizedCloseWindow",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 107,
+							"name": "getAuthorizedCloseWindow",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "GoogleAppsScript.HTML.HtmlOutput"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 145,
+							"character": 42
+						}
+					]
+				},
+				{
+					"id": 89,
+					"name": "isUserAuthorized",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 90,
+							"name": "isUserAuthorized",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 49,
+							"character": 34
+						}
+					]
+				},
+				{
+					"id": 86,
+					"name": "processGetRequest",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 87,
+							"name": "processGetRequest",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 88,
+									"name": "e",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "GoogleAppsScript.HTML.HtmlOutput"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 15,
+							"character": 35
+						}
+					]
+				},
+				{
+					"id": 93,
+					"name": "storeTokenData",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 94,
+							"name": "storeTokenData",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 95,
+									"name": "code",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 96,
+									"name": "redirectUri",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 83,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 100,
+					"name": "validateAccessToken",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 101,
+							"name": "validateAccessToken",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Authorizer_.ts",
+							"line": 116,
+							"character": 37
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						80,
+						84,
+						85,
+						83,
+						81,
+						82
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						102,
+						112,
+						108,
+						97,
+						91,
+						106,
+						89,
+						86,
+						93,
+						100
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "Authorizer_.ts",
+					"line": 1,
+					"character": 21
+				}
+			]
+		},
+		{
+			"id": 316,
+			"name": "BalancesService_",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 317,
+					"name": "getBalances",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 318,
+							"name": "getBalances",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 319,
+									"name": "bookId",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 320,
+									"name": "query",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "BalancesService_.ts",
+							"line": 3,
+							"character": 29
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						317
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "BalancesService_.ts",
+					"line": 1,
+					"character": 26
+				}
+			]
+		},
+		{
+			"id": 464,
+			"name": "BookService_",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 465,
+					"name": "listBooks",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 466,
+							"name": "listBooks",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "bkper.BookV2Payload"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "BookService_.ts",
+							"line": 3,
+							"character": 27
+						}
+					]
+				},
+				{
+					"id": 467,
+					"name": "loadBookWrapped",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 468,
+							"name": "loadBookWrapped",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 469,
+									"name": "bookId",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "bkper.BookV2Payload"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "BookService_.ts",
+							"line": 35,
+							"character": 33
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						465,
+						467
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "BookService_.ts",
+					"line": 1,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 499,
+			"name": "GroupService_",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 500,
+					"name": "getGroups",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 501,
+							"name": "getGroups",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 502,
+									"name": "bookId",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "Group",
+									"id": 488
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "GroupService_.ts",
+							"line": 2,
+							"character": 27
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						500
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "GroupService_.ts",
+					"line": 1,
+					"character": 23
+				}
+			]
+		},
+		{
 			"id": 503,
 			"name": "Normalizer_",
 			"kind": 2,
@@ -20,7 +1762,7 @@
 					"sources": [
 						{
 							"fileName": "Normalizer_.ts",
-							"line": 44,
+							"line": 43,
 							"character": 33
 						}
 					],
@@ -44,7 +1786,7 @@
 										"sources": [
 											{
 												"fileName": "Normalizer_.ts",
-												"line": 45,
+												"line": 44,
 												"character": 11
 											}
 										],
@@ -63,7 +1805,7 @@
 										"sources": [
 											{
 												"fileName": "Normalizer_.ts",
-												"line": 45,
+												"line": 44,
 												"character": 26
 											}
 										],
@@ -98,7 +1840,7 @@
 					"sources": [
 						{
 							"fileName": "Normalizer_.ts",
-							"line": 4,
+							"line": 3,
 							"character": 20
 						}
 					],
@@ -130,7 +1872,7 @@
 					"sources": [
 						{
 							"fileName": "Normalizer_.ts",
-							"line": 31,
+							"line": 30,
 							"character": 28
 						}
 					]
@@ -194,7 +1936,7 @@
 					"sources": [
 						{
 							"fileName": "Normalizer_.ts",
-							"line": 6,
+							"line": 5,
 							"character": 31
 						}
 					]
@@ -234,7 +1976,7 @@
 					"sources": [
 						{
 							"fileName": "Normalizer_.ts",
-							"line": 22,
+							"line": 21,
 							"character": 27
 						}
 					]
@@ -262,8 +2004,78 @@
 			"sources": [
 				{
 					"fileName": "Normalizer_.ts",
-					"line": 2,
+					"line": 1,
 					"character": 21
+				}
+			]
+		},
+		{
+			"id": 518,
+			"name": "SavedQueryService_",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 519,
+					"name": "getSavedQueries",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 520,
+							"name": "getSavedQueries",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 521,
+									"name": "bookId",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "bkper.SavedQueryV2Payload"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "SavedQueryService_.ts",
+							"line": 3,
+							"character": 33
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						519
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "SavedQueryService_.ts",
+					"line": 1,
+					"character": 28
 				}
 			]
 		},
@@ -294,7 +2106,7 @@
 							"sources": [
 								{
 									"fileName": "TransactionService_.ts",
-									"line": 6,
+									"line": 5,
 									"character": 10
 								}
 							],
@@ -314,7 +2126,7 @@
 							"sources": [
 								{
 									"fileName": "TransactionService_.ts",
-									"line": 5,
+									"line": 4,
 									"character": 9
 								}
 							],
@@ -341,7 +2153,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionService_.ts",
-							"line": 4,
+							"line": 3,
 							"character": 38
 						}
 					]
@@ -418,7 +2230,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionService_.ts",
-							"line": 71,
+							"line": 70,
 							"character": 30
 						}
 					]
@@ -516,7 +2328,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionService_.ts",
-							"line": 46,
+							"line": 45,
 							"character": 24
 						}
 					]
@@ -604,7 +2416,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionService_.ts",
-							"line": 9,
+							"line": 8,
 							"character": 36
 						}
 					]
@@ -631,8 +2443,838 @@
 			"sources": [
 				{
 					"fileName": "TransactionService_.ts",
-					"line": 2,
+					"line": 1,
 					"character": 29
+				}
+			]
+		},
+		{
+			"id": 697,
+			"name": "UserService_",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 698,
+					"name": "getUserDetails",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 699,
+							"name": "getUserDetails",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "bkper.UserDetailsV2Payload"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "UserService_.ts",
+							"line": 3,
+							"character": 32
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						698
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "UserService_.ts",
+					"line": 1,
+					"character": 22
+				}
+			]
+		},
+		{
+			"id": 700,
+			"name": "Utils_",
+			"kind": 2,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 746,
+					"name": "buildURLParams",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 747,
+							"name": "buildURLParams",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 748,
+									"name": "params",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 133,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 749,
+					"name": "convertInMatrix",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 750,
+							"name": "convertInMatrix",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 751,
+									"name": "array",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "array",
+									"elementType": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 152,
+							"character": 33
+						}
+					]
+				},
+				{
+					"id": 710,
+					"name": "convertValueToDate",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 711,
+							"name": "convertValueToDate",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 712,
+									"name": "dateValue",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 713,
+									"name": "offsetInMinutes",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Date"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 48,
+							"character": 36
+						}
+					]
+				},
+				{
+					"id": 717,
+					"name": "createDate",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 718,
+							"name": "createDate",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 719,
+									"name": "year",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 720,
+									"name": "month",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 721,
+									"name": "day",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 722,
+									"name": "offsetInMinutes",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Date"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 70,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 723,
+					"name": "formatDate",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 724,
+							"name": "formatDate",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 725,
+									"name": "date",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Date"
+									}
+								},
+								{
+									"id": 726,
+									"name": "pattern",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 727,
+									"name": "timeZone",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 76,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 705,
+					"name": "formatValue_",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 706,
+							"name": "formatValue_",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 707,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "number"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								},
+								{
+									"id": 708,
+									"name": "decimalSeparator",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "DecimalSeparator",
+										"id": 474
+									}
+								},
+								{
+									"id": 709,
+									"name": "fractionDigits",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 19,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 728,
+					"name": "getDateFormatterPattern",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 729,
+							"name": "getDateFormatterPattern",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 730,
+									"name": "datePattern",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 731,
+									"name": "periodicity",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Periodicity",
+										"id": 470
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 89,
+							"character": 41
+						}
+					]
+				},
+				{
+					"id": 732,
+					"name": "getRepresentativeValue",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 733,
+							"name": "getRepresentativeValue",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 734,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 735,
+									"name": "credit",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 101,
+							"character": 40
+						}
+					]
+				},
+				{
+					"id": 714,
+					"name": "isString",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 715,
+							"name": "isString",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 716,
+									"name": "obj",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 59,
+							"character": 26
+						}
+					]
+				},
+				{
+					"id": 701,
+					"name": "round",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 702,
+							"name": "round",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 703,
+									"name": "num",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 704,
+									"name": "fractionDigits",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "number"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 3,
+							"character": 23
+						}
+					]
+				},
+				{
+					"id": 741,
+					"name": "wrapObject",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 742,
+							"name": "wrapObject",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"typeParameter": [
+								{
+									"id": 743,
+									"name": "E",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Object"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 744,
+									"name": "wrapper",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E",
+										"constraint": {
+											"type": "reference",
+											"name": "Object"
+										}
+									}
+								},
+								{
+									"id": 745,
+									"name": "wrapped",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E",
+										"constraint": {
+											"type": "reference",
+											"name": "Object"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "E",
+								"constraint": {
+									"type": "reference",
+									"name": "Object"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 124,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 736,
+					"name": "wrapObjects",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 737,
+							"name": "wrapObjects",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"typeParameter": [
+								{
+									"id": 738,
+									"name": "E",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Object"
+									}
+								}
+							],
+							"parameters": [
+								{
+									"id": 739,
+									"name": "wrapper",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "typeParameter",
+										"name": "E",
+										"constraint": {
+											"type": "reference",
+											"name": "Object"
+										}
+									}
+								},
+								{
+									"id": 740,
+									"name": "wrappeds",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Array",
+										"typeArguments": [
+											{
+												"type": "typeParameter",
+												"name": "E",
+												"constraint": {
+													"type": "reference",
+													"name": "Object"
+												}
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Array",
+								"typeArguments": [
+									{
+										"type": "typeParameter",
+										"name": "E",
+										"constraint": {
+											"type": "reference",
+											"name": "Object"
+										}
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Utils_.ts",
+							"line": 113,
+							"character": 29
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						746,
+						749,
+						710,
+						717,
+						723,
+						705,
+						728,
+						732,
+						714,
+						701,
+						741,
+						736
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "Utils_.ts",
+					"line": 1,
+					"character": 16
 				}
 			]
 		},
@@ -641,19 +3283,29 @@
 			"name": "BalanceType",
 			"kind": 4,
 			"kindString": "Enumeration",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "Enum that represents balance types."
+			},
 			"children": [
 				{
 					"id": 487,
 					"name": "CUMULATIVE",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Cumulative balance"
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 27,
-							"character": 14
+							"line": 131,
+							"character": 12
 						}
 					],
 					"defaultValue": "\"CUMULATIVE\""
@@ -663,12 +3315,17 @@
 					"name": "PERIOD",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Period balance"
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 26,
-							"character": 10
+							"line": 124,
+							"character": 8
 						}
 					],
 					"defaultValue": "\"PERIOD\""
@@ -678,12 +3335,17 @@
 					"name": "TOTAL",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Total balance"
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 25,
-							"character": 9
+							"line": 117,
+							"character": 7
 						}
 					],
 					"defaultValue": "\"TOTAL\""
@@ -703,8 +3365,8 @@
 			"sources": [
 				{
 					"fileName": "Enums.ts",
-					"line": 24,
-					"character": 18
+					"line": 110,
+					"character": 16
 				}
 			]
 		},
@@ -713,19 +3375,29 @@
 			"name": "DecimalSeparator",
 			"kind": 4,
 			"kindString": "Enumeration",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "Decimal separator of numbers on book"
+			},
 			"children": [
 				{
 					"id": 475,
 					"name": "COMMA",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": ","
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 11,
-							"character": 9
+							"line": 42,
+							"character": 7
 						}
 					],
 					"defaultValue": "\"COMMA\""
@@ -735,12 +3407,17 @@
 					"name": "DOT",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "."
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 12,
-							"character": 7
+							"line": 49,
+							"character": 5
 						}
 					],
 					"defaultValue": "\"DOT\""
@@ -759,8 +3436,8 @@
 			"sources": [
 				{
 					"fileName": "Enums.ts",
-					"line": 10,
-					"character": 23
+					"line": 35,
+					"character": 21
 				}
 			]
 		},
@@ -769,19 +3446,29 @@
 			"name": "Periodicity",
 			"kind": 4,
 			"kindString": "Enumeration",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "The Periodicity of the query. It may depend on the level of granularity you write the range params."
+			},
 			"children": [
 				{
 					"id": 471,
 					"name": "DAILY",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Example: after:25/01/1983, before:04/03/2013, after:$d-30, before:$d, after:$d-15/$m"
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 5,
-							"character": 9
+							"line": 13,
+							"character": 7
 						}
 					],
 					"defaultValue": "\"DAILY\""
@@ -791,12 +3478,17 @@
 					"name": "MONTHLY",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Example: after:jan/2013, before:mar/2013, after:$m-1, before:$m"
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 6,
-							"character": 11
+							"line": 20,
+							"character": 9
 						}
 					],
 					"defaultValue": "\"MONTHLY\""
@@ -806,12 +3498,17 @@
 					"name": "YEARLY",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Example: on:2013, after:2013, $y"
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 7,
-							"character": 10
+							"line": 27,
+							"character": 8
 						}
 					],
 					"defaultValue": "\"YEARLY\""
@@ -831,8 +3528,8 @@
 			"sources": [
 				{
 					"fileName": "Enums.ts",
-					"line": 3,
-					"character": 18
+					"line": 6,
+					"character": 16
 				}
 			]
 		},
@@ -841,19 +3538,30 @@
 			"name": "Permission",
 			"kind": 4,
 			"kindString": "Enumeration",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "Enum representing permissions of user in the Book",
+				"text": "Learn more at [share article](https://help.bkper.com/en/articles/2569153-share-your-book-with-your-peers).\n"
+			},
 			"children": [
 				{
 					"id": 482,
 					"name": "EDITOR",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Manage accounts, transactions, book configuration and sharing"
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 20,
-							"character": 10
+							"line": 95,
+							"character": 8
 						}
 					],
 					"defaultValue": "\"EDITOR\""
@@ -863,12 +3571,17 @@
 					"name": "NONE",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "No permission"
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 16,
-							"character": 8
+							"line": 67,
+							"character": 6
 						}
 					],
 					"defaultValue": "\"NONE\""
@@ -878,12 +3591,17 @@
 					"name": "OWNER",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Manage everything, including book visibility and deletion. Only one owner per book."
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 21,
-							"character": 9
+							"line": 102,
+							"character": 7
 						}
 					],
 					"defaultValue": "\"OWNER\""
@@ -893,12 +3611,17 @@
 					"name": "POST",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "View transactions, accounts, record and delete drafts"
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 19,
-							"character": 8
+							"line": 88,
+							"character": 6
 						}
 					],
 					"defaultValue": "\"POST\""
@@ -908,12 +3631,17 @@
 					"name": "RECORD_ONLY",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Record and delete drafts only. Useful to collect data only"
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 18,
-							"character": 15
+							"line": 81,
+							"character": 13
 						}
 					],
 					"defaultValue": "\"RECORD_ONLY\""
@@ -923,12 +3651,17 @@
 					"name": "VIEWER",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "View transactions, accounts and balances."
+					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 17,
-							"character": 10
+							"line": 74,
+							"character": 8
 						}
 					],
 					"defaultValue": "\"VIEWER\""
@@ -951,8 +3684,8 @@
 			"sources": [
 				{
 					"fileName": "Enums.ts",
-					"line": 15,
-					"character": 17
+					"line": 60,
+					"character": 15
 				}
 			]
 		},
@@ -961,8 +3694,33 @@
 			"name": "Account",
 			"kind": 128,
 			"kindString": "Class",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "This class defines an [Account](https://en.wikipedia.org/wiki/Account_(bookkeeping)) of a [[Book]].",
+				"text": "It mantains a balance of all amount [credited and debited](http://en.wikipedia.org/wiki/Debits_and_credits) in it by [[Transactions]].\n\nAn Account can be grouped by [[Groups]].\n"
+			},
 			"children": [
+				{
+					"id": 22,
+					"name": "book",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Account.ts",
+							"line": 16,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Book",
+						"id": 360
+					}
+				},
 				{
 					"id": 23,
 					"name": "normalizedName",
@@ -974,13 +3732,31 @@
 					"sources": [
 						{
 							"fileName": "Account.ts",
-							"line": 14,
+							"line": 18,
 							"character": 24
 						}
 					],
 					"type": {
 						"type": "intrinsic",
 						"name": "string"
+					}
+				},
+				{
+					"id": 21,
+					"name": "wrapped",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Account.ts",
+							"line": 14,
+							"character": 9
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "bkper.AccountV2Payload"
 					}
 				},
 				{
@@ -999,12 +3775,8 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Gets the balance based on credit nature of this Account",
+								"returns": "The balance of this account\n"
 							},
 							"parameters": [
 								{
@@ -1015,70 +3787,8 @@
 									"flags": {
 										"isOptional": true
 									},
-									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "intrinsic",
-												"name": "undefined"
-											},
-											{
-												"type": "intrinsic",
-												"name": "false"
-											},
-											{
-												"type": "intrinsic",
-												"name": "true"
-											}
-										]
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "number"
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "Account.ts",
-							"line": 41,
-							"character": 19
-						}
-					]
-				},
-				{
-					"id": 35,
-					"name": "getCheckedBalance",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isPublic": true
-					},
-					"signatures": [
-						{
-							"id": 36,
-							"name": "getCheckedBalance",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 37,
-									"name": "raw",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isOptional": true
+									"comment": {
+										"text": "True to get the raw balance, no matter the credit nature of this Account.\n"
 									},
 									"type": {
 										"type": "union",
@@ -1109,6 +3819,70 @@
 						{
 							"fileName": "Account.ts",
 							"line": 57,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 35,
+					"name": "getCheckedBalance",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 36,
+							"name": "getCheckedBalance",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Gets the checked balance based on credit nature of this Account",
+								"returns": "The checked balance of this Account\n"
+							},
+							"parameters": [
+								{
+									"id": 37,
+									"name": "raw",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"text": "True to get the raw balance, no matter the credit nature of this Account.\n"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "false"
+											},
+											{
+												"type": "intrinsic",
+												"name": "true"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Account.ts",
+							"line": 77,
 							"character": 26
 						}
 					]
@@ -1128,6 +3902,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Gets the account description"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "string"
@@ -1137,7 +3914,7 @@
 					"sources": [
 						{
 							"fileName": "Account.ts",
-							"line": 24,
+							"line": 37,
 							"character": 23
 						}
 					]
@@ -1157,6 +3934,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Gets the account internal id"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "string"
@@ -1166,7 +3946,7 @@
 					"sources": [
 						{
 							"fileName": "Account.ts",
-							"line": 16,
+							"line": 23,
 							"character": 14
 						}
 					]
@@ -1186,6 +3966,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Gets the account name"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "string"
@@ -1195,7 +3978,7 @@
 					"sources": [
 						{
 							"fileName": "Account.ts",
-							"line": 20,
+							"line": 30,
 							"character": 16
 						}
 					]
@@ -1216,12 +3999,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The name of this account without spaces and special characters\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -1232,7 +4010,7 @@
 					"sources": [
 						{
 							"fileName": "Account.ts",
-							"line": 31,
+							"line": 43,
 							"character": 26
 						}
 					]
@@ -1252,6 +4030,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Tell if this account is Active or otherwise Archived"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "boolean"
@@ -1261,7 +4042,7 @@
 					"sources": [
 						{
 							"fileName": "Account.ts",
-							"line": 70,
+							"line": 93,
 							"character": 17
 						}
 					]
@@ -1282,12 +4063,8 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Tell if the account has a Credit nature or Debit otherwise",
+								"text": "Credit accounts are just for representation purposes. It increase or decrease the absolute balance. It doesn't affect the overall balance or the behavior of the system.\n\nThe absolute balance of credit accounts increase when it participate as a credit/origin in a transaction. Its usually for Accounts that increase the balance of the assets, like revenue accounts.\n\n```\n        Crediting a credit\n  Thus ---------------------> account increases its absolute balance\n        Debiting a debit\n\n\n        Debiting a credit\n  Thus ---------------------> account decreases its absolute balance\n        Crediting a debit\n```\n\nAs a rule of thumb, and for simple understanding, almost all accounts are Debit nature (NOT credit), except the ones that \"offers\" amount for the books, like revenue accounts.\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -1298,7 +4075,7 @@
 					"sources": [
 						{
 							"fileName": "Account.ts",
-							"line": 84,
+							"line": 133,
 							"character": 17
 						}
 					]
@@ -1319,12 +4096,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Tell if this account is in the [[Group]]"
 							},
 							"parameters": [
 								{
@@ -1333,6 +4105,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The Group name, id or object\n"
+									},
 									"type": {
 										"type": "union",
 										"types": [
@@ -1358,7 +4133,7 @@
 					"sources": [
 						{
 							"fileName": "Account.ts",
-							"line": 91,
+							"line": 142,
 							"character": 18
 						}
 					]
@@ -1401,7 +4176,7 @@
 					"sources": [
 						{
 							"fileName": "Account.ts",
-							"line": 109,
+							"line": 160,
 							"character": 26
 						}
 					]
@@ -1422,12 +4197,9 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Tell if the account is permanent.",
+								"text": "Permanent Accounts are the ones which final balance is relevant and keep its balances over time.\n\nThey are also called [Real Accounts](http://en.wikipedia.org/wiki/Account_(accountancy)#Based_on_periodicity_of_flow)\n\nUsually represents assets or tangibles, capable of being perceived by the senses or the mind, like bank accounts, money, debts and so on.\n",
+								"returns": "True if its a permanent Account\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -1438,7 +4210,7 @@
 					"sources": [
 						{
 							"fileName": "Account.ts",
-							"line": 77,
+							"line": 109,
 							"character": 20
 						}
 					]
@@ -1449,7 +4221,9 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						23
+						22,
+						23,
+						21
 					]
 				},
 				{
@@ -1473,7 +4247,7 @@
 			"sources": [
 				{
 					"fileName": "Account.ts",
-					"line": 2,
+					"line": 12,
 					"character": 13
 				}
 			]
@@ -1533,7 +4307,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 72,
+							"line": 78,
 							"character": 41
 						}
 					]
@@ -1549,7 +4323,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 72,
+							"line": 78,
 							"character": 24
 						}
 					],
@@ -1570,7 +4344,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 71,
+							"line": 77,
 							"character": 17
 						}
 					],
@@ -1609,7 +4383,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 115,
+							"line": 121,
 							"character": 24
 						}
 					],
@@ -1652,7 +4426,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 111,
+							"line": 117,
 							"character": 20
 						}
 					],
@@ -1705,7 +4479,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 122,
+							"line": 128,
 							"character": 29
 						}
 					],
@@ -1748,7 +4522,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 119,
+							"line": 125,
 							"character": 30
 						}
 					],
@@ -1788,7 +4562,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 80,
+							"line": 86,
 							"character": 26
 						}
 					],
@@ -1827,7 +4601,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 101,
+							"line": 107,
 							"character": 29
 						}
 					],
@@ -1866,7 +4640,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 107,
+							"line": 113,
 							"character": 33
 						}
 					],
@@ -1905,7 +4679,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 84,
+							"line": 90,
 							"character": 16
 						}
 					],
@@ -1944,7 +4718,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 92,
+							"line": 98,
 							"character": 25
 						}
 					],
@@ -1983,7 +4757,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 97,
+							"line": 103,
 							"character": 29
 						}
 					],
@@ -2022,7 +4796,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 88,
+							"line": 94,
 							"character": 17
 						}
 					],
@@ -2070,8 +4844,8 @@
 			"sources": [
 				{
 					"fileName": "BalancesContainer.ts",
-					"line": 70,
-					"character": 31
+					"line": 76,
+					"character": 30
 				}
 			],
 			"implementedTypes": [
@@ -2087,7 +4861,12 @@
 			"name": "Balance",
 			"kind": 128,
 			"kindString": "Class",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "Class that represents an [[Account]], [[Group]] or #hashtag balance on a window of time (Day / Month / Year)."
+			},
 			"children": [
 				{
 					"id": 119,
@@ -2137,7 +4916,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 5,
+							"line": 10,
 							"character": 39
 						}
 					]
@@ -2153,7 +4932,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 5,
+							"line": 10,
 							"character": 19
 						}
 					],
@@ -2174,7 +4953,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 3,
+							"line": 8,
 							"character": 17
 						}
 					],
@@ -2184,7 +4963,7 @@
 					}
 				},
 				{
-					"id": 137,
+					"id": 135,
 					"name": "getCheckedCumulativeBalance",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2193,11 +4972,14 @@
 					},
 					"signatures": [
 						{
-							"id": 138,
+							"id": 136,
 							"name": "getCheckedCumulativeBalance",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The cumulative checked balance to the date, since the first transaction posted."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2207,7 +4989,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 51,
+							"line": 91,
 							"character": 36
 						}
 					]
@@ -2227,6 +5009,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The checked balance on the date period."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2236,7 +5021,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 55,
+							"line": 105,
 							"character": 32
 						}
 					]
@@ -2256,6 +5041,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The cumulative balance to the date, since the first transaction posted."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2265,7 +5053,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 43,
+							"line": 84,
 							"character": 29
 						}
 					]
@@ -2285,6 +5073,10 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Date object constructed based on [[Book]] time zone offset. Usefull for",
+								"text": "If Month or Day is zero, the date will be constructed with first Month (January) or Day (1).\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "Date"
@@ -2294,7 +5086,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 24,
+							"line": 47,
 							"character": 16
 						}
 					]
@@ -2314,6 +5106,10 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The day of the balance. Days starts on 1 to 31.",
+								"text": "Day can be 0 (zero) in case of Monthly or Early [[Periodicity]] of the [[BalancesReport]]\n"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2323,7 +5119,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 12,
+							"line": 22,
 							"character": 15
 						}
 					]
@@ -2343,6 +5139,10 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The Fuzzy Date of the balance, based on [[Periodicity]] of the [[BalancesReport]] query, composed by Year, Month and Day.",
+								"text": "The format is **YYYYMMDD**. Very usefull for ordering and indexing\n\nMonth and Day can be 0 (zero), depending on the granularity of the [[Periodicity]].\n\n*Example:*\n\n**20180125** - 25, January, 2018 - DAILY Periodicity\n\n**20180100** - January, 2018 - MONTHLY Periodicity\n\n**20180000** - 2018 - YEARLY Periodicity\n"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2352,7 +5152,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 39,
+							"line": 77,
 							"character": 21
 						}
 					]
@@ -2372,6 +5172,10 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The month of the balance. Months starts on 1 (January) to 12 (December)",
+								"text": "Month can be 0 (zero) in case of Early [[Periodicity]] of the [[BalancesReport]]\n"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2381,13 +5185,13 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 16,
+							"line": 31,
 							"character": 17
 						}
 					]
 				},
 				{
-					"id": 135,
+					"id": 137,
 					"name": "getPeriodBalance",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2396,11 +5200,14 @@
 					},
 					"signatures": [
 						{
-							"id": 136,
+							"id": 138,
 							"name": "getPeriodBalance",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The balance on the date period."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2410,7 +5217,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 47,
+							"line": 98,
 							"character": 25
 						}
 					]
@@ -2430,6 +5237,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The unchecked cumulative balance to the date, since the first transaction posted."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2439,7 +5249,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 59,
+							"line": 112,
 							"character": 38
 						}
 					]
@@ -2459,6 +5269,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The unchecked balance on the date period."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2468,7 +5281,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 63,
+							"line": 119,
 							"character": 34
 						}
 					]
@@ -2488,6 +5301,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The year of the balance"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -2497,7 +5313,7 @@
 					"sources": [
 						{
 							"fileName": "Balance.ts",
-							"line": 20,
+							"line": 38,
 							"character": 16
 						}
 					]
@@ -2523,14 +5339,14 @@
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
-						137,
+						135,
 						139,
 						133,
 						129,
 						123,
 						131,
 						125,
-						135,
+						137,
 						141,
 						143,
 						127
@@ -2540,7 +5356,7 @@
 			"sources": [
 				{
 					"fileName": "Balance.ts",
-					"line": 1,
+					"line": 6,
 					"character": 13
 				}
 			]
@@ -2550,11 +5366,82 @@
 			"name": "BalancesDataTableBuilder",
 			"kind": 128,
 			"kindString": "Class",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
 			"comment": {
 				"shortText": "A BalancesDataTableBuilder is used to setup and build two-dimensional arrays containing balance information."
 			},
 			"children": [
+				{
+					"id": 269,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 270,
+							"name": "new BalancesDataTableBuilder",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 271,
+									"name": "book",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Book",
+										"id": 360
+									}
+								},
+								{
+									"id": 272,
+									"name": "balancesContainers",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "BalancesContainer",
+											"id": 145
+										}
+									}
+								},
+								{
+									"id": 273,
+									"name": "periodicity",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Periodicity",
+										"id": 470
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "BalancesDataTableBuilder",
+								"id": 262
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "BalancesDataTableBuilder.ts",
+							"line": 15,
+							"character": 21
+						}
+					]
+				},
 				{
 					"id": 263,
 					"name": "balanceType",
@@ -2566,7 +5453,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 8,
+							"line": 10,
 							"character": 21
 						}
 					],
@@ -2587,7 +5474,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 9,
+							"line": 11,
 							"character": 28
 						}
 					],
@@ -2611,7 +5498,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 13,
+							"line": 15,
 							"character": 14
 						}
 					],
@@ -2632,7 +5519,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 10,
+							"line": 12,
 							"character": 21
 						}
 					],
@@ -2653,7 +5540,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 11,
+							"line": 13,
 							"character": 26
 						}
 					],
@@ -2673,7 +5560,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 12,
+							"line": 14,
 							"character": 27
 						}
 					],
@@ -2699,7 +5586,7 @@
 							"flags": {},
 							"comment": {
 								"shortText": "Gets an two-dimensional array with the balances.",
-								"text": " @returns\n"
+								"text": "For **TOTAL** [[BalanceType]], the table format looks like:\n\n```\n  _____________________\n |    NAME   | AMOUNT  |\n | Expenses  | 4568.23 |\n | Incomes   | 5678.93 |\n |    ...    |   ...   |\n |___________|_________|\n\n```\nTwo columns, and each [[Group]] | [[Account]] | #hashtag per line.\n\nFor **PERIOD** or **CUMULATIVE** [[BalanceType]], the table will be a time table, and the format looks like:\n\n```\n _____________________________________________\n |    DATE    | Expenses | Incomes |    ...   |\n | 15/01/2014 | 2345.23  | 3452.93 |    ...   |\n | 15/02/2014 | 2345.93  | 3456.46 |    ...   |\n | 15/03/2014 | 2456.45  | 3567.87 |    ...   |\n |    ...     |   ...    |   ...   |    ...   |\n |___________ |__________|_________|__________|\n\n```\n\nFirst column will be the Date column, and one column for each [[Group]], [[Account]] or #hashtag.\n"
 							},
 							"type": {
 								"type": "array",
@@ -2716,7 +5603,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 59,
+							"line": 91,
 							"character": 14
 						}
 					]
@@ -2751,7 +5638,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 100,
+							"line": 132,
 							"character": 29
 						}
 					]
@@ -2783,7 +5670,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 71,
+							"line": 103,
 							"character": 30
 						}
 					]
@@ -2804,12 +5691,8 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Defines whether the dates should be formatted based on date pattern and periodicity of the [[Book]].",
+								"returns": "This builder with respective formatting option.\n"
 							},
 							"type": {
 								"type": "reference",
@@ -2821,7 +5704,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 31,
+							"line": 32,
 							"character": 19
 						}
 					]
@@ -2842,12 +5725,8 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Defines whether the value should be formatted based on decimal separator of the [[Book]].",
+								"returns": "This builder with respective formatting option.\n"
 							},
 							"type": {
 								"type": "reference",
@@ -2859,7 +5738,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 39,
+							"line": 42,
 							"character": 20
 						}
 					]
@@ -2880,12 +5759,8 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Fluent method to set the [[BalanceType]] for the builder.",
+								"returns": "This builder with respective balance type.\n"
 							},
 							"parameters": [
 								{
@@ -2894,6 +5769,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The type of balance for this data table\n"
+									},
 									"type": {
 										"type": "reference",
 										"name": "BalanceType",
@@ -2911,13 +5789,20 @@
 					"sources": [
 						{
 							"fileName": "BalancesDataTableBuilder.ts",
-							"line": 47,
+							"line": 54,
 							"character": 23
 						}
 					]
 				}
 			],
 			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						269
+					]
+				},
 				{
 					"title": "Properties",
 					"kind": 1024,
@@ -2946,7 +5831,7 @@
 			"sources": [
 				{
 					"fileName": "BalancesDataTableBuilder.ts",
-					"line": 6,
+					"line": 8,
 					"character": 30
 				}
 			],
@@ -2970,7 +5855,12 @@
 			"name": "BalancesReport",
 			"kind": 128,
 			"kindString": "Class",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "Class representing a Balance Report, generated when calling [Book.getBalanceReport](#book_getbalancesreport)"
+			},
 			"children": [
 				{
 					"id": 293,
@@ -3020,8 +5910,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 10,
-							"character": 58
+							"line": 14,
+							"character": 56
 						}
 					]
 				},
@@ -3036,8 +5926,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 9,
-							"character": 37
+							"line": 13,
+							"character": 35
 						}
 					],
 					"type": {
@@ -3060,8 +5950,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 7,
-							"character": 16
+							"line": 11,
+							"character": 14
 						}
 					],
 					"type": {
@@ -3081,8 +5971,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 8,
-							"character": 35
+							"line": 12,
+							"character": 33
 						}
 					],
 					"type": {
@@ -3105,8 +5995,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 10,
-							"character": 33
+							"line": 14,
+							"character": 31
 						}
 					],
 					"type": {
@@ -3129,8 +6019,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 5,
-							"character": 19
+							"line": 9,
+							"character": 17
 						}
 					],
 					"type": {
@@ -3153,6 +6043,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Creates a BalancesDataTableBuilder to generate a two-dimensional array with all [[BalancesContainers]]."
+							},
 							"type": {
 								"type": "reference",
 								"name": "BalancesDataTableBuilder",
@@ -3163,8 +6056,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 25,
-							"character": 26
+							"line": 35,
+							"character": 24
 						}
 					]
 				},
@@ -3196,8 +6089,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 53,
-							"character": 40
+							"line": 71,
+							"character": 38
 						}
 					]
 				},
@@ -3216,6 +6109,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Gets a specific [[BalancesContainers]]."
+							},
 							"parameters": [
 								{
 									"id": 315,
@@ -3239,8 +6135,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 90,
-							"character": 31
+							"line": 113,
+							"character": 29
 						}
 					]
 				},
@@ -3259,6 +6155,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Gets all [[BalancesContainers]] of the report."
+							},
 							"type": {
 								"type": "array",
 								"elementType": {
@@ -3272,8 +6171,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 30,
-							"character": 32
+							"line": 42,
+							"character": 30
 						}
 					]
 				},
@@ -3292,6 +6191,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The [[Book]] that generated the report."
+							},
 							"type": {
 								"type": "reference",
 								"name": "Book",
@@ -3302,8 +6204,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 21,
-							"character": 18
+							"line": 28,
+							"character": 16
 						}
 					]
 				},
@@ -3335,8 +6237,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 78,
-							"character": 38
+							"line": 96,
+							"character": 36
 						}
 					]
 				},
@@ -3355,6 +6257,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "The [[Periodicity]] of the query used to generate the report."
+							},
 							"type": {
 								"type": "reference",
 								"name": "Periodicity",
@@ -3365,8 +6270,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 45,
-							"character": 25
+							"line": 60,
+							"character": 23
 						}
 					]
 				},
@@ -3398,8 +6303,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 65,
-							"character": 36
+							"line": 83,
+							"character": 34
 						}
 					]
 				},
@@ -3418,6 +6323,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Check if the report has only one Group specified on query."
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "boolean"
@@ -3427,8 +6335,8 @@
 					"sources": [
 						{
 							"fileName": "BalancesReport.ts",
-							"line": 49,
-							"character": 26
+							"line": 67,
+							"character": 24
 						}
 					]
 				}
@@ -3471,8 +6379,8 @@
 			"sources": [
 				{
 					"fileName": "BalancesReport.ts",
-					"line": 3,
-					"character": 22
+					"line": 7,
+					"character": 20
 				}
 			]
 		},
@@ -3481,16 +6389,68 @@
 			"name": "Book",
 			"kind": 128,
 			"kindString": "Class",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
 			"comment": {
-				"tags": [
-					{
-						"tag": "external",
-						"text": "\n"
-					}
-				]
+				"shortText": "A Book represents [General Ledger](https://en.wikipedia.org/wiki/General_ledger) for a company or business, but can also represent a [Ledger](https://en.wikipedia.org/wiki/Ledger) for a project or department",
+				"text": "It contains all [[Accounts]] where [[Transactions]] are recorded/posted;\n"
 			},
 			"children": [
+				{
+					"id": 370,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 371,
+							"name": "new Book",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 372,
+									"name": "id",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 373,
+									"name": "wrapped",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reference",
+										"name": "bkper.BookV2Payload"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Book",
+								"id": 360
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Book.ts",
+							"line": 19,
+							"character": 52
+						}
+					]
+				},
 				{
 					"id": 363,
 					"name": "accounts",
@@ -3502,7 +6462,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 8,
+							"line": 13,
 							"character": 18
 						}
 					],
@@ -3526,7 +6486,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 9,
+							"line": 14,
 							"character": 16
 						}
 					],
@@ -3550,7 +6510,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 6,
+							"line": 11,
 							"character": 12
 						}
 					],
@@ -3570,7 +6530,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 10,
+							"line": 15,
 							"character": 22
 						}
 					],
@@ -3590,7 +6550,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 12,
+							"line": 17,
 							"character": 20
 						}
 					],
@@ -3610,7 +6570,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 11,
+							"line": 16,
 							"character": 24
 						}
 					],
@@ -3630,7 +6590,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 13,
+							"line": 18,
 							"character": 22
 						}
 					],
@@ -3650,7 +6610,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 14,
+							"line": 19,
 							"character": 22
 						}
 					],
@@ -3673,7 +6633,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 7,
+							"line": 12,
 							"character": 17
 						}
 					],
@@ -3706,7 +6666,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 55,
+							"line": 57,
 							"character": 26
 						}
 					]
@@ -3752,7 +6712,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 225,
+							"line": 254,
 							"character": 28
 						}
 					]
@@ -3798,7 +6758,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 268,
+							"line": 301,
 							"character": 26
 						}
 					]
@@ -3817,10 +6777,7 @@
 							"name": "configureTransaction_",
 							"kind": 4096,
 							"kindString": "Call signature",
-							"flags": {
-								"isPrivate": true
-							},
-							"comment": {},
+							"flags": {},
 							"parameters": [
 								{
 									"id": 418,
@@ -3845,7 +6802,57 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 166,
+							"line": 183,
+							"character": 31
+						}
+					]
+				},
+				{
+					"id": 413,
+					"name": "configureTransactions_",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 414,
+							"name": "configureTransactions_",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 415,
+									"name": "transactions",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "Transaction",
+											"id": 522
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "Transaction",
+									"id": 522
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Book.ts",
+							"line": 175,
 							"character": 31
 						}
 					]
@@ -3866,12 +6873,8 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Resumes a transaction iteration using a continuation token from a previous iterator.",
+								"returns": "a collection of transactions that remained in a previous iterator when the continuation token was generated\n"
 							},
 							"parameters": [
 								{
@@ -3891,6 +6894,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "continuation token from a previous transaction iterator\n"
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "string"
@@ -3907,7 +6913,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 147,
+							"line": 168,
 							"character": 36
 						}
 					]
@@ -3928,12 +6934,9 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Create an [[Account]] in this book.",
+								"text": "The type of account will be determined by the type of others Accounts in same group.\n\nIf not specified, the type ASSET (permanent=true/credit=false) will be set.\n\nIf all other accounts in same group is in another group, the account will also be added to the other group.\n",
+								"returns": "The created Account object\n"
 							},
 							"parameters": [
 								{
@@ -4002,7 +7005,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 218,
+							"line": 247,
 							"character": 22
 						}
 					]
@@ -4023,12 +7026,9 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Create a [[BalancesDataTableBuilder]] based on a query, to create two dimensional Array representation of balances of [[Account]], [[Group]] or #hashtag",
+								"text": "See [Query Guide](https://help.bkper.com/en/articles/2569178-search-query-guide) to learn more\n",
+								"returns": "The balances data table builder\n\nExample:\n\n```javascript\nvar book = BkperApp.getBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\n\nvar balancesDataTable = book.createBalancesDataTable(\"#rental #energy after:8/2013 before:9/2013\").build();\n```\n"
 							},
 							"parameters": [
 								{
@@ -4037,6 +7037,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The balances report query\n"
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "string"
@@ -4053,7 +7056,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 298,
+							"line": 351,
 							"character": 32
 						}
 					]
@@ -4074,12 +7077,9 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Create a [[TransactionsDataTableBuilder]] based on a query, to create two dimensional Array representations of [[Transactions]] dataset.",
+								"text": "See [Query Guide](https://help.bkper.com/en/articles/2569178-search-query-guide) to learn more\n",
+								"returns": "Transactions data table builder.\n\nExample:\n\n```javascript\nvar book = BkperApp.getBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\n\nvar transactionsDataTable = book.createTransactionsDataTable(\"acc:'Bank' after:8/2013 before:9/2013\").build();\n```\n"
 							},
 							"parameters": [
 								{
@@ -4089,6 +7089,9 @@
 									"kindString": "Parameter",
 									"flags": {
 										"isOptional": true
+									},
+									"comment": {
+										"text": "The flter query.\n"
 									},
 									"type": {
 										"type": "union",
@@ -4115,7 +7118,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 307,
+							"line": 374,
 							"character": 36
 						}
 					]
@@ -4136,12 +7139,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The date formated according to date pattern of book\n"
 							},
 							"parameters": [
 								{
@@ -4150,6 +7148,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The date to format as string."
+									},
 									"type": {
 										"type": "reference",
 										"name": "Date"
@@ -4162,6 +7163,9 @@
 									"kindString": "Parameter",
 									"flags": {
 										"isOptional": true
+									},
+									"comment": {
+										"text": "The output timezone of the result. Default to script's timeZone\n"
 									},
 									"type": {
 										"type": "union",
@@ -4187,7 +7191,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 122,
+							"line": 127,
 							"character": 19
 						}
 					]
@@ -4208,12 +7212,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The value formated according to [[DecimalSeparator]] and fraction digits of Book\n"
 							},
 							"parameters": [
 								{
@@ -4222,6 +7221,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The value to be formatted.\n"
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "number"
@@ -4237,7 +7239,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 129,
+							"line": 136,
 							"character": 20
 						}
 					]
@@ -4258,12 +7260,8 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Gets an [[Account]] object",
+								"returns": "The matching Account object\n"
 							},
 							"parameters": [
 								{
@@ -4272,6 +7270,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The id or name of the Account\n"
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "string"
@@ -4288,7 +7289,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 196,
+							"line": 217,
 							"character": 19
 						}
 					]
@@ -4309,12 +7310,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Gets all [[Accounts]] of this Book"
 							},
 							"type": {
 								"type": "array",
@@ -4329,7 +7325,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 185,
+							"line": 202,
 							"character": 20
 						}
 					]
@@ -4380,7 +7376,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 330,
+							"line": 416,
 							"character": 25
 						}
 					]
@@ -4401,12 +7397,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Create a [[BalancesReport]] based on query"
 							},
 							"parameters": [
 								{
@@ -4415,6 +7406,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The balances report query\n"
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "string"
@@ -4431,7 +7425,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 290,
+							"line": 329,
 							"character": 26
 						}
 					]
@@ -4452,12 +7446,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The date pattern of the Book. Example: dd/MM/yyyy\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -4468,7 +7457,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 81,
+							"line": 83,
 							"character": 23
 						}
 					]
@@ -4489,12 +7478,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The decimal separator of the Book\n"
 							},
 							"type": {
 								"type": "reference",
@@ -4506,7 +7490,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 89,
+							"line": 91,
 							"character": 28
 						}
 					]
@@ -4527,12 +7511,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The number of fraction digits (decimal places) supported by this Book\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -4543,7 +7522,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 42,
+							"line": 44,
 							"character": 26
 						}
 					]
@@ -4564,12 +7543,8 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Gets a [[Group]] object",
+								"returns": "The matching Group object\n"
 							},
 							"parameters": [
 								{
@@ -4578,6 +7553,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The id or name of the Group\n"
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "string"
@@ -4594,7 +7572,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 250,
+							"line": 283,
 							"character": 17
 						}
 					]
@@ -4615,12 +7593,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Gets all [[Groups]] of this Book"
 							},
 							"type": {
 								"type": "array",
@@ -4635,7 +7608,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 240,
+							"line": 269,
 							"character": 18
 						}
 					]
@@ -4656,12 +7629,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Same as bookId param"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -4672,7 +7640,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 27,
+							"line": 29,
 							"character": 14
 						}
 					]
@@ -4693,12 +7661,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The last update date of the book, in in milliseconds\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -4709,8 +7672,45 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 114,
+							"line": 116,
 							"character": 24
+						}
+					]
+				},
+				{
+					"id": 386,
+					"name": "getLocale",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 387,
+							"name": "getLocale",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"tags": [
+									{
+										"tag": "deprecated",
+										"text": "\n"
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Book.ts",
+							"line": 75,
+							"character": 18
 						}
 					]
 				},
@@ -4730,12 +7730,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The name of this Book\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -4746,7 +7741,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 34,
+							"line": 36,
 							"character": 16
 						}
 					]
@@ -4767,12 +7762,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The name of the owner of the Book\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -4783,7 +7773,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 50,
+							"line": 52,
 							"character": 21
 						}
 					]
@@ -4804,12 +7794,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The permission for the current user\n"
 							},
 							"type": {
 								"type": "reference",
@@ -4821,7 +7806,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 64,
+							"line": 66,
 							"character": 22
 						}
 					]
@@ -4841,6 +7826,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Gets all saved queries from this book"
+							},
 							"type": {
 								"type": "array",
 								"elementType": {
@@ -4861,7 +7849,7 @@
 												"sources": [
 													{
 														"fileName": "Book.ts",
-														"line": 280,
+														"line": 316,
 														"character": 32
 													}
 												],
@@ -4879,7 +7867,7 @@
 												"sources": [
 													{
 														"fileName": "Book.ts",
-														"line": 280,
+														"line": 316,
 														"character": 47
 													}
 												],
@@ -4897,7 +7885,7 @@
 												"sources": [
 													{
 														"fileName": "Book.ts",
-														"line": 280,
+														"line": 316,
 														"character": 62
 													}
 												],
@@ -4921,7 +7909,7 @@
 										"sources": [
 											{
 												"fileName": "Book.ts",
-												"line": 280,
+												"line": 316,
 												"character": 27
 											}
 										]
@@ -4933,7 +7921,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 280,
+							"line": 316,
 							"character": 24
 						}
 					]
@@ -4954,12 +7942,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The time zone of the book\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -4970,7 +7953,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 98,
+							"line": 100,
 							"character": 20
 						}
 					]
@@ -4991,12 +7974,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The time zone offset of the book, in minutes\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -5007,7 +7985,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 106,
+							"line": 108,
 							"character": 26
 						}
 					]
@@ -5028,12 +8006,9 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Get Book transactions based on a query.",
+								"text": "See [Query Guide](https://help.bkper.com/en/articles/2569178-search-query-guide) to learn more\n",
+								"returns": "The Transactions result as an iterator.\n\nExample:\n\n```javascript\nvar book = BkperApp.loadBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\n\nvar transactions = book.getTransactions(\"acc:CreditCard after:28/01/2013 before:29/01/2013\");\n\nwhile (transactions.hasNext()) {\n var transaction = transactions.next();\n Logger.log(transaction.getDescription());\n}\n```\n"
 							},
 							"parameters": [
 								{
@@ -5043,6 +8018,9 @@
 									"kindString": "Parameter",
 									"flags": {
 										"isOptional": true
+									},
+									"comment": {
+										"text": "The query string.\n"
 									},
 									"type": {
 										"type": "union",
@@ -5069,7 +8047,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 315,
+							"line": 401,
 							"character": 24
 						}
 					]
@@ -5090,12 +8068,8 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Record [[Transactions]] a on the Book.",
+								"text": "The text is usually amount and description, but it can also can contain an informed Date in full format (dd/mm/yyyy - mm/dd/yyyy).\n\nExample:\n```javascript\nbook.record(\"#gas 63.23\");\n```\n"
 							},
 							"parameters": [
 								{
@@ -5104,6 +8078,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The text/array/matrix containing transaction records, one per line/row. Each line/row records one transaction."
+									},
 									"type": {
 										"type": "union",
 										"types": [
@@ -5139,6 +8116,9 @@
 									"flags": {
 										"isOptional": true
 									},
+									"comment": {
+										"text": "The time zone to format dates.\n"
+									},
 									"type": {
 										"type": "union",
 										"types": [
@@ -5163,7 +8143,7 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 136,
+							"line": 153,
 							"character": 15
 						}
 					]
@@ -5225,13 +8205,20 @@
 					"sources": [
 						{
 							"fileName": "Book.ts",
-							"line": 337,
+							"line": 423,
 							"character": 15
 						}
 					]
 				}
 			],
 			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						370
+					]
+				},
 				{
 					"title": "Properties",
 					"kind": 1024,
@@ -5255,6 +8242,7 @@
 						429,
 						437,
 						416,
+						413,
 						409,
 						424,
 						449,
@@ -5272,6 +8260,7 @@
 						432,
 						374,
 						396,
+						386,
 						376,
 						380,
 						384,
@@ -5287,7 +8276,7 @@
 			"sources": [
 				{
 					"fileName": "Book.ts",
-					"line": 4,
+					"line": 9,
 					"character": 10
 				}
 			]
@@ -5297,14 +8286,59 @@
 			"name": "Group",
 			"kind": 128,
 			"kindString": "Class",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "This class defines a Group of [[Accounts]].",
+				"text": "Accounts can be grouped by different meaning, like Expenses, Revenue, Assets, Liabilities and so on\n\nIts useful to keep organized and for high level analysis.\n"
+			},
 			"children": [
+				{
+					"id": 490,
+					"name": "book",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Group.ts",
+							"line": 14,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Book",
+						"id": 360
+					}
+				},
+				{
+					"id": 489,
+					"name": "wrapped",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Group.ts",
+							"line": 12,
+							"character": 9
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "bkper.GroupV2Payload"
+					}
+				},
 				{
 					"id": 497,
 					"name": "getAccounts",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
 					"signatures": [
 						{
 							"id": 498,
@@ -5313,12 +8347,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "All Accounts of this group.\n"
 							},
 							"type": {
 								"type": "array",
@@ -5333,8 +8362,8 @@
 					"sources": [
 						{
 							"fileName": "Group.ts",
-							"line": 39,
-							"character": 13
+							"line": 41,
+							"character": 20
 						}
 					]
 				},
@@ -5343,7 +8372,9 @@
 					"name": "getId",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
 					"signatures": [
 						{
 							"id": 492,
@@ -5352,12 +8383,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The id of this Group\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -5368,8 +8394,8 @@
 					"sources": [
 						{
 							"fileName": "Group.ts",
-							"line": 17,
-							"character": 7
+							"line": 19,
+							"character": 14
 						}
 					]
 				},
@@ -5378,7 +8404,9 @@
 					"name": "getName",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
 					"signatures": [
 						{
 							"id": 494,
@@ -5387,12 +8415,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The name of this Group\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -5403,8 +8426,8 @@
 					"sources": [
 						{
 							"fileName": "Group.ts",
-							"line": 24,
-							"character": 9
+							"line": 26,
+							"character": 16
 						}
 					]
 				},
@@ -5413,7 +8436,9 @@
 					"name": "hasAccounts",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
 					"signatures": [
 						{
 							"id": 496,
@@ -5422,12 +8447,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "True if this group has any account in it\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -5438,13 +8458,21 @@
 					"sources": [
 						{
 							"fileName": "Group.ts",
-							"line": 31,
-							"character": 13
+							"line": 33,
+							"character": 20
 						}
 					]
 				}
 			],
 			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						490,
+						489
+					]
+				},
 				{
 					"title": "Methods",
 					"kind": 2048,
@@ -5459,7 +8487,7 @@
 			"sources": [
 				{
 					"fileName": "Group.ts",
-					"line": 2,
+					"line": 10,
 					"character": 11
 				}
 			]
@@ -5531,7 +8559,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 202,
+							"line": 208,
 							"character": 41
 						}
 					]
@@ -5547,7 +8575,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 199,
+							"line": 205,
 							"character": 25
 						}
 					],
@@ -5571,7 +8599,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 202,
+							"line": 208,
 							"character": 24
 						}
 					],
@@ -5592,7 +8620,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 200,
+							"line": 206,
 							"character": 21
 						}
 					],
@@ -5613,7 +8641,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 198,
+							"line": 204,
 							"character": 17
 						}
 					],
@@ -5652,7 +8680,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 244,
+							"line": 250,
 							"character": 24
 						}
 					],
@@ -5695,7 +8723,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 240,
+							"line": 246,
 							"character": 20
 						}
 					],
@@ -5748,7 +8776,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 261,
+							"line": 267,
 							"character": 29
 						}
 					],
@@ -5791,7 +8819,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 248,
+							"line": 254,
 							"character": 30
 						}
 					],
@@ -5831,7 +8859,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 210,
+							"line": 216,
 							"character": 26
 						}
 					],
@@ -5870,7 +8898,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 231,
+							"line": 237,
 							"character": 29
 						}
 					],
@@ -5909,7 +8937,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 236,
+							"line": 242,
 							"character": 33
 						}
 					],
@@ -5948,7 +8976,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 214,
+							"line": 220,
 							"character": 16
 						}
 					],
@@ -5987,7 +9015,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 222,
+							"line": 228,
 							"character": 25
 						}
 					],
@@ -6026,7 +9054,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 227,
+							"line": 233,
 							"character": 29
 						}
 					],
@@ -6065,7 +9093,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 218,
+							"line": 224,
 							"character": 17
 						}
 					],
@@ -6115,7 +9143,7 @@
 			"sources": [
 				{
 					"fileName": "BalancesContainer.ts",
-					"line": 196,
+					"line": 202,
 					"character": 28
 				}
 			],
@@ -6182,7 +9210,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 137,
+							"line": 143,
 							"character": 41
 						}
 					]
@@ -6198,7 +9226,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 137,
+							"line": 143,
 							"character": 24
 						}
 					],
@@ -6219,7 +9247,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 136,
+							"line": 142,
 							"character": 17
 						}
 					],
@@ -6258,7 +9286,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 183,
+							"line": 189,
 							"character": 24
 						}
 					],
@@ -6301,7 +9329,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 172,
+							"line": 178,
 							"character": 20
 						}
 					],
@@ -6354,7 +9382,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 180,
+							"line": 186,
 							"character": 29
 						}
 					],
@@ -6397,7 +9425,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 176,
+							"line": 182,
 							"character": 30
 						}
 					],
@@ -6437,7 +9465,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 144,
+							"line": 150,
 							"character": 26
 						}
 					],
@@ -6476,7 +9504,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 164,
+							"line": 170,
 							"character": 29
 						}
 					],
@@ -6515,7 +9543,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 168,
+							"line": 174,
 							"character": 33
 						}
 					],
@@ -6554,7 +9582,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 148,
+							"line": 154,
 							"character": 16
 						}
 					],
@@ -6593,7 +9621,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 156,
+							"line": 162,
 							"character": 25
 						}
 					],
@@ -6632,7 +9660,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 160,
+							"line": 166,
 							"character": 29
 						}
 					],
@@ -6671,7 +9699,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 152,
+							"line": 158,
 							"character": 17
 						}
 					],
@@ -6719,7 +9747,7 @@
 			"sources": [
 				{
 					"fileName": "BalancesContainer.ts",
-					"line": 134,
+					"line": 140,
 					"character": 26
 				}
 			],
@@ -6736,7 +9764,13 @@
 			"name": "Transaction",
 			"kind": 128,
 			"kindString": "Class",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "This class defines a Transaction between [credit and debit](http://en.wikipedia.org/wiki/Debits_and_credits) [[Accounts]].",
+				"text": "A Transaction is the main entity on the [Double Entry](http://en.wikipedia.org/wiki/Double-entry_bookkeeping_system) [Bookkeeping](http://en.wikipedia.org/wiki/Bookkeeping) system.\n"
+			},
 			"children": [
 				{
 					"id": 531,
@@ -6749,13 +9783,32 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 20,
+							"line": 21,
 							"character": 23
 						}
 					],
 					"type": {
 						"type": "intrinsic",
 						"name": "boolean"
+					}
+				},
+				{
+					"id": 524,
+					"name": "book",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Transaction.ts",
+							"line": 13,
+							"character": 6
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Book",
+						"id": 360
 					}
 				},
 				{
@@ -6769,7 +9822,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 14,
+							"line": 15,
 							"character": 23
 						}
 					],
@@ -6790,7 +9843,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 15,
+							"line": 16,
 							"character": 22
 						}
 					],
@@ -6811,7 +9864,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 16,
+							"line": 17,
 							"character": 22
 						}
 					],
@@ -6831,7 +9884,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 18,
+							"line": 19,
 							"character": 26
 						}
 					],
@@ -6851,7 +9904,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 17,
+							"line": 18,
 							"character": 27
 						}
 					],
@@ -6871,7 +9924,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 19,
+							"line": 20,
 							"character": 18
 						}
 					],
@@ -6879,6 +9932,53 @@
 						"type": "reference",
 						"name": "Date"
 					}
+				},
+				{
+					"id": 523,
+					"name": "wrapped",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Transaction.ts",
+							"line": 11,
+							"character": 9
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "bkper.TransactionV2Payload"
+					}
+				},
+				{
+					"id": 593,
+					"name": "configure_",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 594,
+							"name": "configure_",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Transaction.ts",
+							"line": 277,
+							"character": 19
+						}
+					]
 				},
 				{
 					"id": 590,
@@ -6896,12 +9996,8 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Gets the balance that the [[Account]] has at that day, when listing transactions of that Account.",
+								"text": "Evolved balances is returned when searching for transactions of a permanent [[Account]].\n\nOnly comes with the last posted transaction of the day.\n"
 							},
 							"parameters": [
 								{
@@ -6911,6 +10007,9 @@
 									"kindString": "Parameter",
 									"flags": {
 										"isOptional": true
+									},
+									"comment": {
+										"text": "True to get the raw balance, no matter the credit nature of the [[Account]].\n"
 									},
 									"type": {
 										"type": "union",
@@ -6940,7 +10039,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 249,
+							"line": 259,
 							"character": 26
 						}
 					]
@@ -6993,7 +10092,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 161,
+							"line": 171,
 							"character": 21
 						}
 					]
@@ -7014,12 +10113,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The amount of the transaction\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -7030,7 +10124,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 109,
+							"line": 110,
 							"character": 18
 						}
 					]
@@ -7049,10 +10143,7 @@
 							"name": "getCaEvolvedBalance_",
 							"kind": 4096,
 							"kindString": "Call signature",
-							"flags": {
-								"isPrivate": true
-							},
-							"comment": {},
+							"flags": {},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -7062,7 +10153,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 235,
+							"line": 242,
 							"character": 30
 						}
 					]
@@ -7083,12 +10174,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The credit account. The same as origin account.\n"
 							},
 							"type": {
 								"type": "reference",
@@ -7100,7 +10186,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 70,
+							"line": 71,
 							"character": 25
 						}
 					]
@@ -7121,12 +10207,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The credit account name.\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -7137,7 +10218,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 77,
+							"line": 78,
 							"character": 29
 						}
 					]
@@ -7158,12 +10239,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Get the absolute amount of this transaction if the given account is at the credit side, else null"
 							},
 							"parameters": [
 								{
@@ -7172,6 +10248,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The account object, id or name\n"
+									},
 									"type": {
 										"type": "union",
 										"types": [
@@ -7197,7 +10276,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 116,
+							"line": 119,
 							"character": 24
 						}
 					]
@@ -7216,10 +10295,7 @@
 							"name": "getDaEvolvedBalance_",
 							"kind": 4096,
 							"kindString": "Call signature",
-							"flags": {
-								"isPrivate": true
-							},
-							"comment": {},
+							"flags": {},
 							"type": {
 								"type": "intrinsic",
 								"name": "number"
@@ -7229,7 +10305,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 242,
+							"line": 246,
 							"character": 30
 						}
 					]
@@ -7250,12 +10326,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The debit account. The same as destination account.\n"
 							},
 							"type": {
 								"type": "reference",
@@ -7267,7 +10338,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 89,
+							"line": 90,
 							"character": 24
 						}
 					]
@@ -7288,12 +10359,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The debit account name.\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -7304,7 +10370,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 96,
+							"line": 97,
 							"character": 28
 						}
 					]
@@ -7325,12 +10391,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Gets the absolute amount of this transaction if the given account is at the debit side, else null"
 							},
 							"parameters": [
 								{
@@ -7339,6 +10400,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The account object, id or name\n"
+									},
 									"type": {
 										"type": "union",
 										"types": [
@@ -7364,7 +10428,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 127,
+							"line": 132,
 							"character": 23
 						}
 					]
@@ -7385,12 +10449,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The description of this transaction\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -7401,7 +10460,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 181,
+							"line": 191,
 							"character": 23
 						}
 					]
@@ -7422,12 +10481,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The id of the Transaction\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -7438,7 +10492,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 25,
+							"line": 26,
 							"character": 14
 						}
 					]
@@ -7459,12 +10513,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The date the user informed for this transaction, adjusted to book's time zone\n"
 							},
 							"type": {
 								"type": "reference",
@@ -7475,7 +10524,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 193,
+							"line": 203,
 							"character": 24
 						}
 					]
@@ -7496,12 +10545,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The date the user informed for this transaction, formatted according to the date pattern of [[Book]].\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -7512,7 +10556,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 211,
+							"line": 221,
 							"character": 28
 						}
 					]
@@ -7533,12 +10577,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The date the user informed for this transaction. The number format is YYYYMMDD\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -7549,7 +10588,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 204,
+							"line": 214,
 							"character": 29
 						}
 					]
@@ -7570,12 +10609,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Gets the [[Account]] at the other side of the transaction given the one in one side."
 							},
 							"parameters": [
 								{
@@ -7584,6 +10618,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The account object, id or name\n"
+									},
 									"type": {
 										"type": "union",
 										"types": [
@@ -7610,7 +10647,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 138,
+							"line": 145,
 							"character": 24
 						}
 					]
@@ -7631,12 +10668,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "The account name at the other side of the transaction given the one in one side."
 							},
 							"parameters": [
 								{
@@ -7645,6 +10677,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "The account object, id or name\n"
+									},
 									"type": {
 										"type": "union",
 										"types": [
@@ -7670,7 +10705,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 152,
+							"line": 162,
 							"character": 28
 						}
 					]
@@ -7691,12 +10726,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The date time user has recorded/posted this transaction\n"
 							},
 							"type": {
 								"type": "reference",
@@ -7707,7 +10737,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 219,
+							"line": 229,
 							"character": 20
 						}
 					]
@@ -7728,12 +10758,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "The date time user has recorded/posted this transaction, formatted according to the date pattern of [[Book]].\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -7744,7 +10769,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 226,
+							"line": 236,
 							"character": 24
 						}
 					]
@@ -7765,12 +10790,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "All #hashtags used on the transaction\n"
 							},
 							"type": {
 								"type": "array",
@@ -7784,7 +10804,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 39,
+							"line": 40,
 							"character": 16
 						}
 					]
@@ -7805,12 +10825,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "All urls of the transaction\n"
 							},
 							"type": {
 								"type": "array",
@@ -7824,7 +10839,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 46,
+							"line": 47,
 							"character": 16
 						}
 					]
@@ -7845,12 +10860,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Check if the transaction has the specified tag"
 							},
 							"parameters": [
 								{
@@ -7874,7 +10884,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 53,
+							"line": 54,
 							"character": 15
 						}
 					]
@@ -7917,7 +10927,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 168,
+							"line": 178,
 							"character": 32
 						}
 					]
@@ -7960,7 +10970,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 172,
+							"line": 182,
 							"character": 31
 						}
 					]
@@ -7981,12 +10991,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"returns": "True if transaction was already posted to the accounts. False if is still a Draft.\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -7997,7 +11002,7 @@
 					"sources": [
 						{
 							"fileName": "Transaction.ts",
-							"line": 32,
+							"line": 33,
 							"character": 17
 						}
 					]
@@ -8009,18 +11014,21 @@
 					"kind": 1024,
 					"children": [
 						531,
+						524,
 						525,
 						526,
 						527,
 						529,
 						528,
-						530
+						530,
+						523
 					]
 				},
 				{
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
+						593,
 						590,
 						565,
 						551,
@@ -8053,7 +11061,7 @@
 			"sources": [
 				{
 					"fileName": "Transaction.ts",
-					"line": 2,
+					"line": 9,
 					"character": 17
 				}
 			]
@@ -8063,8 +11071,77 @@
 			"name": "TransactionIterator",
 			"kind": 128,
 			"kindString": "Class",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "An iterator that allows scripts to iterate over a potentially large collection of transactions."
+			},
 			"children": [
+				{
+					"id": 603,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 604,
+							"name": "new TransactionIterator",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 605,
+									"name": "book",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Book",
+										"id": 360
+									}
+								},
+								{
+									"id": 606,
+									"name": "query",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "TransactionIterator",
+								"id": 595
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "TransactionIterator.ts",
+							"line": 15,
+							"character": 48
+						}
+					]
+				},
 				{
 					"id": 602,
 					"name": "alreadyProcessedAccountFilter",
@@ -8076,7 +11153,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 10,
+							"line": 15,
 							"character": 39
 						}
 					],
@@ -8096,7 +11173,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 4,
+							"line": 9,
 							"character": 14
 						}
 					],
@@ -8117,13 +11194,14 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 6,
+							"line": 11,
 							"character": 21
 						}
 					],
 					"type": {
 						"type": "reference",
-						"name": "TransactionPage_"
+						"name": "TransactionPage_",
+						"id": 625
 					}
 				},
 				{
@@ -8137,7 +11215,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 9,
+							"line": 14,
 							"character": 27
 						}
 					],
@@ -8158,7 +11236,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 8,
+							"line": 13,
 							"character": 20
 						}
 					],
@@ -8178,13 +11256,14 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 7,
+							"line": 12,
 							"character": 18
 						}
 					],
 					"type": {
 						"type": "reference",
-						"name": "TransactionPage_"
+						"name": "TransactionPage_",
+						"id": 625
 					}
 				},
 				{
@@ -8198,7 +11277,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 5,
+							"line": 10,
 							"character": 15
 						}
 					],
@@ -8223,12 +11302,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Gets the Book that originate the iterator"
 							},
 							"type": {
 								"type": "reference",
@@ -8240,7 +11314,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 31,
+							"line": 33,
 							"character": 16
 						}
 					]
@@ -8261,12 +11335,8 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Gets a token that can be used to resume this iteration at a later time.",
+								"text": "This method is useful if processing an iterator in one execution would exceed the maximum execution time.\n\nContinuation tokens are generally valid short period of time.\n"
 							},
 							"type": {
 								"type": "intrinsic",
@@ -8277,7 +11347,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 39,
+							"line": 45,
 							"character": 29
 						}
 					]
@@ -8298,12 +11368,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Return an account if query is filtering by a single account"
 							},
 							"type": {
 								"type": "reference",
@@ -8315,7 +11380,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 129,
+							"line": 135,
 							"character": 29
 						}
 					]
@@ -8347,7 +11412,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 82,
+							"line": 88,
 							"character": 16
 						}
 					]
@@ -8411,7 +11476,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 172,
+							"line": 178,
 							"character": 25
 						}
 					]
@@ -8432,12 +11497,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Gets the next transaction in the collection of transactions."
 							},
 							"type": {
 								"type": "reference",
@@ -8449,7 +11509,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 104,
+							"line": 110,
 							"character": 13
 						}
 					]
@@ -8470,12 +11530,7 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"tags": [
-									{
-										"tag": "inheritdoc",
-										"text": "\n"
-									}
-								]
+								"shortText": "Sets a continuation token from previous paused iteration"
 							},
 							"parameters": [
 								{
@@ -8499,13 +11554,20 @@
 					"sources": [
 						{
 							"fileName": "TransactionIterator.ts",
-							"line": 58,
+							"line": 64,
 							"character": 29
 						}
 					]
 				}
 			],
 			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						603
+					]
+				},
 				{
 					"title": "Properties",
 					"kind": 1024,
@@ -8536,8 +11598,391 @@
 			"sources": [
 				{
 					"fileName": "TransactionIterator.ts",
-					"line": 2,
+					"line": 7,
 					"character": 25
+				}
+			]
+		},
+		{
+			"id": 625,
+			"name": "TransactionPage_",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 630,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 631,
+							"name": "new TransactionPage_",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 632,
+									"name": "book",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Book",
+										"id": 360
+									}
+								},
+								{
+									"id": 633,
+									"name": "query",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 634,
+									"name": "lastCursor",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "TransactionPage_",
+								"id": 625
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "TransactionPage_.ts",
+							"line": 6,
+							"character": 27
+						}
+					]
+				},
+				{
+					"id": 627,
+					"name": "cursor",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "TransactionPage_.ts",
+							"line": 4,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 628,
+					"name": "index",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "TransactionPage_.ts",
+							"line": 5,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 629,
+					"name": "reachEnd",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "TransactionPage_.ts",
+							"line": 6,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 626,
+					"name": "transactions",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "TransactionPage_.ts",
+							"line": 3,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Transaction",
+							"id": 522
+						}
+					}
+				},
+				{
+					"id": 635,
+					"name": "getCursor",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 636,
+							"name": "getCursor",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "TransactionPage_.ts",
+							"line": 23,
+							"character": 18
+						}
+					]
+				},
+				{
+					"id": 641,
+					"name": "getIndex",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 642,
+							"name": "getIndex",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "TransactionPage_.ts",
+							"line": 35,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 637,
+					"name": "hasNext",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 638,
+							"name": "hasNext",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "TransactionPage_.ts",
+							"line": 27,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 639,
+					"name": "hasReachEnd",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 640,
+							"name": "hasReachEnd",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "TransactionPage_.ts",
+							"line": 31,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 646,
+					"name": "next",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 647,
+							"name": "next",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "Transaction",
+								"id": 522
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "TransactionPage_.ts",
+							"line": 48,
+							"character": 13
+						}
+					]
+				},
+				{
+					"id": 643,
+					"name": "setIndex",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true
+					},
+					"signatures": [
+						{
+							"id": 644,
+							"name": "setIndex",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 645,
+									"name": "index",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "TransactionPage_.ts",
+							"line": 44,
+							"character": 17
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						630
+					]
+				},
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						627,
+						628,
+						629,
+						626
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						635,
+						641,
+						637,
+						639,
+						646,
+						643
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "TransactionPage_.ts",
+					"line": 1,
+					"character": 22
 				}
 			]
 		},
@@ -8546,8 +11991,55 @@
 			"name": "TransactionsDataTableBuilder",
 			"kind": 128,
 			"kindString": "Class",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "A TransactionsDataTableBuilder is used to setup and build two-dimensional arrays containing transactions."
+			},
 			"children": [
+				{
+					"id": 673,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 674,
+							"name": "new TransactionsDataTableBuilder",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 675,
+									"name": "transactionIterator",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "TransactionIterator",
+										"id": 595
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "TransactionsDataTableBuilder",
+								"id": 668
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "TransactionsDataTableBuilder.ts",
+							"line": 11,
+							"character": 33
+						}
+					]
+				},
 				{
 					"id": 672,
 					"name": "shouldAddUrls",
@@ -8559,7 +12051,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 7,
+							"line": 11,
 							"character": 23
 						}
 					],
@@ -8579,7 +12071,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 5,
+							"line": 9,
 							"character": 26
 						}
 					],
@@ -8599,7 +12091,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 6,
+							"line": 10,
 							"character": 27
 						}
 					],
@@ -8619,7 +12111,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 4,
+							"line": 8,
 							"character": 29
 						}
 					],
@@ -8644,6 +12136,10 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Defines whether the value should add Attachments links",
+								"returns": "This builder with respective add attachment option.\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "TransactionsDataTableBuilder",
@@ -8654,7 +12150,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 29,
+							"line": 45,
 							"character": 16
 						}
 					]
@@ -8674,6 +12170,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"returns": "A two-dimensional array containing all [[Transactions]].\n"
+							},
 							"type": {
 								"type": "array",
 								"elementType": {
@@ -8689,7 +12188,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 38,
+							"line": 60,
 							"character": 14
 						}
 					]
@@ -8709,6 +12208,10 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Defines whether the dates should be formatted, based on date patter of the [[Book]]",
+								"returns": "This builder with respective formatting option.\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "TransactionsDataTableBuilder",
@@ -8719,7 +12222,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 19,
+							"line": 25,
 							"character": 19
 						}
 					]
@@ -8739,6 +12242,10 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Defines whether the value should be formatted based on [[DecimalSeparator]] of the [[Book]]",
+								"returns": "This builder with respective formatting option.\n"
+							},
 							"type": {
 								"type": "reference",
 								"name": "TransactionsDataTableBuilder",
@@ -8749,7 +12256,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 24,
+							"line": 35,
 							"character": 20
 						}
 					]
@@ -8795,7 +12302,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 87,
+							"line": 109,
 							"character": 21
 						}
 					]
@@ -8856,7 +12363,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 143,
+							"line": 165,
 							"character": 28
 						}
 					]
@@ -8876,6 +12383,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "Return an account if query is filtering by a single account"
+							},
 							"type": {
 								"type": "reference",
 								"name": "Account",
@@ -8886,7 +12396,7 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 34,
+							"line": 53,
 							"character": 29
 						}
 					]
@@ -8941,13 +12451,20 @@
 					"sources": [
 						{
 							"fileName": "TransactionsDataTableBuilder.ts",
-							"line": 226,
+							"line": 248,
 							"character": 32
 						}
 					]
 				}
 			],
 			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						673
+					]
+				},
 				{
 					"title": "Properties",
 					"kind": 1024,
@@ -8976,7 +12493,7 @@
 			"sources": [
 				{
 					"fileName": "TransactionsDataTableBuilder.ts",
-					"line": 2,
+					"line": 6,
 					"character": 34
 				}
 			]
@@ -8986,7 +12503,13 @@
 			"name": "BalancesContainer",
 			"kind": 256,
 			"kindString": "Interface",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
+			"comment": {
+				"shortText": "The container of balances of an [[Account]], [[Group]] or #hashtag",
+				"text": "The container is composed of a list of [[Balances]] for a window of time, as well as its period and cumulative totals."
+			},
 			"children": [
 				{
 					"id": 167,
@@ -9014,7 +12537,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 66,
+							"line": 72,
 							"character": 17
 						}
 					]
@@ -9048,7 +12571,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 16,
+							"line": 22,
 							"character": 13
 						}
 					]
@@ -9093,7 +12616,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 61,
+							"line": 67,
 							"character": 22
 						}
 					]
@@ -9128,7 +12651,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 54,
+							"line": 60,
 							"character": 23
 						}
 					]
@@ -9159,7 +12682,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 6,
+							"line": 12,
 							"character": 19
 						}
 					]
@@ -9189,7 +12712,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 32,
+							"line": 38,
 							"character": 22
 						}
 					]
@@ -9219,7 +12742,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 37,
+							"line": 43,
 							"character": 26
 						}
 					]
@@ -9249,7 +12772,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 11,
+							"line": 17,
 							"character": 9
 						}
 					]
@@ -9279,7 +12802,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 42,
+							"line": 48,
 							"character": 18
 						}
 					]
@@ -9309,7 +12832,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 47,
+							"line": 53,
 							"character": 22
 						}
 					]
@@ -9340,7 +12863,7 @@
 					"sources": [
 						{
 							"fileName": "BalancesContainer.ts",
-							"line": 27,
+							"line": 33,
 							"character": 10
 						}
 					]
@@ -9368,7 +12891,7 @@
 			"sources": [
 				{
 					"fileName": "BalancesContainer.ts",
-					"line": 1,
+					"line": 7,
 					"character": 27
 				}
 			],
@@ -9391,18 +12914,116 @@
 			]
 		},
 		{
+			"id": 328,
+			"name": "createAuthorizationURL",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"signatures": [
+				{
+					"id": 329,
+					"name": "createAuthorizationURL",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 330,
+							"name": "redirectUri",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 331,
+							"name": "state",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "BkperApp.ts",
+					"line": 9,
+					"character": 31
+				}
+			]
+		},
+		{
+			"id": 321,
+			"name": "doGet",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"signatures": [
+				{
+					"id": 322,
+					"name": "doGet",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 323,
+							"name": "e",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "BkperApp.ts",
+					"line": 1,
+					"character": 14
+				}
+			]
+		},
+		{
 			"id": 336,
 			"name": "getAuthorizationHtml",
 			"kind": 64,
 			"kindString": "Function",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
 			"signatures": [
 				{
 					"id": 337,
 					"name": "getAuthorizationHtml",
 					"kind": 4096,
 					"kindString": "Call signature",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Gets the authorization screen html template for the user to authorize the API"
+					},
 					"parameters": [
 						{
 							"id": 338,
@@ -9411,6 +13032,9 @@
 							"kindString": "Parameter",
 							"flags": {
 								"isOptional": true
+							},
+							"comment": {
+								"text": "The url to continue the action after authorization"
 							},
 							"type": {
 								"type": "union",
@@ -9433,6 +13057,9 @@
 							"kindString": "Parameter",
 							"flags": {
 								"isOptional": true
+							},
+							"comment": {
+								"text": "The link text to show the user the action after authorization\n"
 							},
 							"type": {
 								"type": "union",
@@ -9458,8 +13085,35 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 35,
+					"line": 34,
 					"character": 29
+				}
+			]
+		},
+		{
+			"id": 332,
+			"name": "getAuthorizedCloseWindow",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"signatures": [
+				{
+					"id": 333,
+					"name": "getAuthorizedCloseWindow",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"name": "GoogleAppsScript.HTML.HtmlOutput"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "BkperApp.ts",
+					"line": 13,
+					"character": 33
 				}
 			]
 		},
@@ -9468,15 +13122,22 @@
 			"name": "getBook",
 			"kind": 64,
 			"kindString": "Function",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
 			"signatures": [
 				{
 					"id": 341,
 					"name": "getBook",
 					"kind": 4096,
 					"kindString": "Call signature",
-					"flags": {},
-					"comment": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Gets the [[Book]] with the specified bookId from url param.",
+						"text": "This is the main Entry Point to start interacting with BkperApp\n\nExample:\n\n```javascript\nvar book = BkperApp.getBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\nbook.record(\"#fuel for my Land Rover 126.50 28/01/2013\");\n```\n"
+					},
 					"parameters": [
 						{
 							"id": 342,
@@ -9484,6 +13145,9 @@
 							"kind": 32768,
 							"kindString": "Parameter",
 							"flags": {},
+							"comment": {
+								"text": "The universal book id - The same bookId param of URL you access at app.bkper.com\n"
+							},
 							"type": {
 								"type": "intrinsic",
 								"name": "string"
@@ -9500,7 +13164,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 41,
+					"line": 54,
 					"character": 16
 				}
 			]
@@ -9510,14 +13174,21 @@
 			"name": "getBooks",
 			"kind": 64,
 			"kindString": "Function",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
 			"signatures": [
 				{
 					"id": 344,
 					"name": "getBooks",
 					"kind": 4096,
 					"kindString": "Call signature",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Gets all [[Books]] the user has access."
+					},
 					"type": {
 						"type": "array",
 						"elementType": {
@@ -9531,8 +13202,43 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 45,
+					"line": 63,
 					"character": 17
+				}
+			]
+		},
+		{
+			"id": 348,
+			"name": "getUserDetails",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"signatures": [
+				{
+					"id": 349,
+					"name": "getUserDetails",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"tags": [
+							{
+								"tag": "deprecated",
+								"text": "\n"
+							}
+						]
+					},
+					"type": {
+						"type": "reference",
+						"name": "bkper.UserDetailsV2Payload"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "BkperApp.ts",
+					"line": 79,
+					"character": 23
 				}
 			]
 		},
@@ -9541,14 +13247,21 @@
 			"name": "isUserAuthorized",
 			"kind": 64,
 			"kindString": "Function",
-			"flags": {},
+			"flags": {
+				"isPublic": true
+			},
 			"signatures": [
 				{
 					"id": 335,
 					"name": "isUserAuthorized",
 					"kind": 4096,
 					"kindString": "Call signature",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
+					"comment": {
+						"shortText": "Check if the user is already althorized with OAuth2 to the bkper API"
+					},
 					"type": {
 						"type": "intrinsic",
 						"name": "boolean"
@@ -9558,7 +13271,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 30,
+					"line": 22,
 					"character": 25
 				}
 			]
@@ -9579,7 +13292,7 @@
 					"comment": {
 						"tags": [
 							{
-								"tag": "external",
+								"tag": "deprecated",
 								"text": "\n"
 							}
 						]
@@ -9596,8 +13309,86 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 77,
+					"line": 93,
 					"character": 18
+				}
+			]
+		},
+		{
+			"id": 358,
+			"name": "listLedgers",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"signatures": [
+				{
+					"id": 359,
+					"name": "listLedgers",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"tags": [
+							{
+								"tag": "deprecated",
+								"text": "\n"
+							}
+						]
+					},
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "bkper.BookV2Payload"
+						}
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "BkperApp.ts",
+					"line": 107,
+					"character": 20
+				}
+			]
+		},
+		{
+			"id": 345,
+			"name": "normalizeName",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"signatures": [
+				{
+					"id": 346,
+					"name": "normalizeName",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 347,
+							"name": "name",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "BkperApp.ts",
+					"line": 69,
+					"character": 22
 				}
 			]
 		},
@@ -9617,7 +13408,7 @@
 					"comment": {
 						"tags": [
 							{
-								"tag": "external",
+								"tag": "deprecated",
 								"text": "\n"
 							}
 						]
@@ -9645,7 +13436,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 70,
+					"line": 86,
 					"character": 17
 				}
 			]
@@ -9666,7 +13457,7 @@
 					"comment": {
 						"tags": [
 							{
-								"tag": "external",
+								"tag": "deprecated",
 								"text": "\n"
 							}
 						]
@@ -9694,7 +13485,58 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 84,
+					"line": 100,
+					"character": 23
+				}
+			]
+		},
+		{
+			"id": 324,
+			"name": "storeTokenData",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"signatures": [
+				{
+					"id": 325,
+					"name": "storeTokenData",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 326,
+							"name": "code",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 327,
+							"name": "redirectUri",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			],
+			"sources": [
+				{
+					"fileName": "BkperApp.ts",
+					"line": 5,
 					"character": 23
 				}
 			]
@@ -9705,8 +13547,18 @@
 			"title": "Modules",
 			"kind": 2,
 			"children": [
+				1,
+				50,
+				60,
+				79,
+				316,
+				464,
+				499,
 				503,
-				648
+				518,
+				648,
+				697,
+				700
 			]
 		},
 		{
@@ -9734,6 +13586,7 @@
 				199,
 				522,
 				595,
+				625,
 				668
 			]
 		},
@@ -9748,13 +13601,20 @@
 			"title": "Functions",
 			"kind": 64,
 			"children": [
+				328,
+				321,
 				336,
+				332,
 				340,
 				343,
+				348,
 				334,
 				353,
+				358,
+				345,
 				350,
-				355
+				355,
+				324
 			]
 		}
 	]
