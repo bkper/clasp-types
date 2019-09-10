@@ -17,8 +17,9 @@ export class Namespace extends Definition {
     let interfaces = this.kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Class' || kind.kindString === 'Interface').map(kind => new Interface(kind, this.tab()));
     let enums = this.kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Enumeration').map( kind => new Enum(kind, this.tab()));
     builder.append(`${this.ident()}${this.depth === 0 ? "declare " : ""}namespace ${this.kind.name} {`).doubleLine()
-    interfaces.forEach(d => d.build(builder))
-    namespaces.forEach(d => d.build(builder))
+    namespaces.forEach(n => n.build(builder))
+    interfaces.forEach(i => i.build(builder))
+    enums.forEach(e => e.build(builder))
     builder.append(`${this.ident()}}`).doubleLine();
   }
 

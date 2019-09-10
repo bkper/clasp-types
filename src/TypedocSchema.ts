@@ -8,6 +8,7 @@ export interface TypedocKind {
   flags: {
     isPublic?: boolean
   }
+  defaultValue?: string
 }
 
 export interface Comment {

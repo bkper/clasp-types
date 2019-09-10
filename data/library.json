@@ -3295,16 +3295,14 @@
 					"name": "CUMULATIVE",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "Cumulative balance"
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 131,
+							"line": 103,
 							"character": 12
 						}
 					],
@@ -3315,16 +3313,14 @@
 					"name": "PERIOD",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "Period balance"
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 124,
+							"line": 98,
 							"character": 8
 						}
 					],
@@ -3335,16 +3331,14 @@
 					"name": "TOTAL",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "Total balance"
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 117,
+							"line": 93,
 							"character": 7
 						}
 					],
@@ -3365,7 +3359,7 @@
 			"sources": [
 				{
 					"fileName": "Enums.ts",
-					"line": 110,
+					"line": 88,
 					"character": 16
 				}
 			]
@@ -3387,16 +3381,14 @@
 					"name": "COMMA",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": ","
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 42,
+							"line": 34,
 							"character": 7
 						}
 					],
@@ -3407,16 +3399,14 @@
 					"name": "DOT",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "."
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 49,
+							"line": 39,
 							"character": 5
 						}
 					],
@@ -3436,7 +3426,7 @@
 			"sources": [
 				{
 					"fileName": "Enums.ts",
-					"line": 35,
+					"line": 29,
 					"character": 21
 				}
 			]
@@ -3458,16 +3448,14 @@
 					"name": "DAILY",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "Example: after:25/01/1983, before:04/03/2013, after:$d-30, before:$d, after:$d-15/$m"
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 13,
+							"line": 11,
 							"character": 7
 						}
 					],
@@ -3478,16 +3466,14 @@
 					"name": "MONTHLY",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "Example: after:jan/2013, before:mar/2013, after:$m-1, before:$m"
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 20,
+							"line": 16,
 							"character": 9
 						}
 					],
@@ -3498,16 +3484,14 @@
 					"name": "YEARLY",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "Example: on:2013, after:2013, $y"
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 27,
+							"line": 21,
 							"character": 8
 						}
 					],
@@ -3551,16 +3535,14 @@
 					"name": "EDITOR",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "Manage accounts, transactions, book configuration and sharing"
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 95,
+							"line": 75,
 							"character": 8
 						}
 					],
@@ -3571,16 +3553,14 @@
 					"name": "NONE",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "No permission"
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 67,
+							"line": 55,
 							"character": 6
 						}
 					],
@@ -3591,16 +3571,14 @@
 					"name": "OWNER",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "Manage everything, including book visibility and deletion. Only one owner per book."
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 102,
+							"line": 80,
 							"character": 7
 						}
 					],
@@ -3611,16 +3589,14 @@
 					"name": "POST",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "View transactions, accounts, record and delete drafts"
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 88,
+							"line": 70,
 							"character": 6
 						}
 					],
@@ -3631,16 +3607,14 @@
 					"name": "RECORD_ONLY",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "Record and delete drafts only. Useful to collect data only"
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 81,
+							"line": 65,
 							"character": 13
 						}
 					],
@@ -3651,16 +3625,14 @@
 					"name": "VIEWER",
 					"kind": 16,
 					"kindString": "Enumeration member",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"comment": {
 						"shortText": "View transactions, accounts and balances."
 					},
 					"sources": [
 						{
 							"fileName": "Enums.ts",
-							"line": 74,
+							"line": 60,
 							"character": 8
 						}
 					],
@@ -3684,7 +3656,7 @@
 			"sources": [
 				{
 					"fileName": "Enums.ts",
-					"line": 60,
+					"line": 50,
 					"character": 15
 				}
 			]
