@@ -54,6 +54,7 @@ export class Builder {
     let rootNamespace = new Namespace(this.rootKind, 0);
     this.append('/// <reference types="google-apps-script" />').doubleLine();
     rootNamespace.build(this);
+    this.append(`declare var ${this.libraryName}: GoogleAppsScript.${this.libraryNamespace}.${this.libraryName};`)
     return this.text;
   }
 
