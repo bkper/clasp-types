@@ -8,6 +8,6 @@ export class Method extends Definition {
     super(node, depth);
   }
 
-  build(builder: Builder, depth: number): void {
+  build(builder: Builder): void {
   }
 }

@@ -34,7 +34,7 @@ export class Builder {
   buildLibrary() {
     let rootNamespace = new Namespace(this.rootNode, 0);
     this.append('/// <reference types="google-apps-script" />').line();
-    rootNamespace.build(this, 0);
+    rootNamespace.build(this);
     return this.text;
   }
 
