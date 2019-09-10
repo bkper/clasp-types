@@ -1,28 +1,33 @@
 import { Namespace } from "./Namespace";
-import { TypedocJsonNode } from "./TypedocJsonNode";
+import { TypedocKind } from "./TypedocSchema";
 
 export class Builder {
   
   text: string;
-  rootNode: TypedocJsonNode;
+  rootKind: TypedocKind;
   libraryNamespace: string;
   libraryName: string;
 
-  constructor(node: TypedocJsonNode, libraryNamespace: string, libraryName: string) {
+  constructor(kind: TypedocKind, libraryNamespace: string, libraryName: string) {
     this.text = '';
-    this.rootNode = this.prepare(node);
+    this.rootKind = this.prepare(kind);
     this.libraryNamespace = libraryNamespace;
     this.libraryName = libraryName;
   }
 
-  private prepare(node: TypedocJsonNode): TypedocJsonNode {
-    node.kindString = 'Module'
-    node.flags.isPublic = true;
-    return {name: "GoogleAppsScript", kindString: "Module", children: [node], flags: {isPublic: true}}
+  private prepare(kind: TypedocKind): TypedocKind {
+    kind.kindString = 'Module'
+    kind.flags.isPublic = true;
+    return {name: "GoogleAppsScript", kindString: "Module", children: [kind], flags: {isPublic: true}, signatures:[]}
   }
 
   append(text: string): Builder {
-    this.text += text + '\n';
+    this.text += text;
+    return this;
+  }
+
+  doubleLine(): Builder {
+    this.text += '\n\n';
     return this;
   }
 
@@ -32,8 +37,8 @@ export class Builder {
   }
 
   buildLibrary() {
-    let rootNamespace = new Namespace(this.rootNode, 0);
-    this.append('/// <reference types="google-apps-script" />').line();
+    let rootNamespace = new Namespace(this.rootKind, 0);
+    this.append('/// <reference types="google-apps-script" />').doubleLine();
     rootNamespace.build(this);
     return this.text;
   }

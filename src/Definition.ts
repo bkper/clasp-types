@@ -1,13 +1,13 @@
 import { Builder } from "./Builder";
-import { TypedocJsonNode } from "./TypedocJsonNode";
+import { TypedocKind } from "./TypedocSchema";
 
 export abstract class Definition {
 
-  protected node: TypedocJsonNode;
+  protected kind: TypedocKind;
   protected depth: number;
 
-  constructor(node: TypedocJsonNode, depth: number) {
-    this.node = node;
+  constructor(kind: TypedocKind, depth: number) {
+    this.kind = kind;
     this.depth = depth;
   }
 

@@ -1,19 +1,21 @@
 import { Definition } from "./Definition";
 import { Builder } from "./Builder";
-import { TypedocJsonNode } from "./TypedocJsonNode";
+import { TypedocKind } from "./TypedocSchema";
 import { Method } from "./Method";
 
 export class Interface extends Definition {
 
-  constructor(node: TypedocJsonNode, depth: number) {
-    super(node, depth);
+  constructor(kind: TypedocKind, depth: number) {
+    super(kind, depth);
   }
   
   build(builder: Builder): void {
-    let methods = this.node.children.filter(node => node.flags.isPublic).filter(node => node.kindString === 'Function').map( node => new Method(node, this.tab()));
-    builder.append(`${this.ident()}export interface ${this.node.name} {`).line()
-    methods.forEach(d => d.build(builder))
-    builder.append(`${this.ident()}}`).line();
+    let methods = this.kind.children.filter(node => node.flags.isPublic).filter(node => node.kindString === 'Method').map(node => new Method(node, this.tab()));
+    if (methods.length > 0) {
+      builder.append(`${this.ident()}export interface ${this.kind.name} {`).doubleLine()
+      methods.forEach(d => d.build(builder))
+      builder.append(`${this.ident()}}`).doubleLine();
+    }
   }
 
 }

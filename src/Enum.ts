@@ -1,11 +1,11 @@
 import { Definition } from "./Definition";
 import { Builder } from "./Builder";
-import { TypedocJsonNode } from "./TypedocJsonNode";
+import { TypedocKind } from "./TypedocSchema";
 
 export class Enum extends Definition {
 
-  constructor(node: TypedocJsonNode, depth: number) {
-    super(node, depth);
+  constructor(kind: TypedocKind, depth: number) {
+    super(kind, depth);
   }
 
   build(builder: Builder): void {
