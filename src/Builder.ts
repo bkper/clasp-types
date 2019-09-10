@@ -10,14 +10,28 @@ export class Builder {
 
   constructor(kind: TypedocKind, libraryNamespace: string, libraryName: string) {
     this.text = '';
-    this.rootKind = this.prepare(kind);
     this.libraryNamespace = libraryNamespace;
     this.libraryName = libraryName;
+    this.rootKind = this.prepare(kind);
   }
 
   private prepare(kind: TypedocKind): TypedocKind {
     kind.kindString = 'Module'
     kind.flags.isPublic = true;
+    kind.name = this.libraryNamespace;
+
+    let functions = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Function');
+    let library: TypedocKind = {
+      name: this.libraryName,
+      kindString: 'Class',
+      children: functions,
+      flags: {
+        isPublic: true
+      },
+      signatures:[]
+    }
+    console.log(this.libraryNamespace)
+    kind.children.unshift(library);
     return {name: "GoogleAppsScript", kindString: "Module", children: [kind], flags: {isPublic: true}, signatures:[]}
   }
 

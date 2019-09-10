@@ -10,7 +10,7 @@ export class Interface extends Definition {
   }
   
   build(builder: Builder): void {
-    let methods = this.kind.children.filter(k => this.kind.kindString === 'Interface' ? true : k.flags.isPublic).filter(k => k.kindString === 'Method').map(k => new Method(k, this.tab()));
+    let methods = this.kind.children.filter(k => this.kind.kindString === 'Interface' ? true : k.flags.isPublic).filter(k => k.kindString === 'Method' || k.kindString === 'Function').map(k => new Method(k, this.tab()));
     if (methods.length > 0) {
       builder.append(`${this.ident()}export interface ${this.kind.name} {`).doubleLine()
       methods.forEach(d => d.build(builder))

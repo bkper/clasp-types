@@ -6784,9 +6784,7 @@
 					"name": "configureTransactions_",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"signatures": [
 						{
 							"id": 414,
@@ -6825,7 +6823,7 @@
 						{
 							"fileName": "Book.ts",
 							"line": 175,
-							"character": 31
+							"character": 24
 						}
 					]
 				},
@@ -9928,9 +9926,7 @@
 					"name": "configure_",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"signatures": [
 						{
 							"id": 594,
@@ -9948,7 +9944,7 @@
 						{
 							"fileName": "Transaction.ts",
 							"line": 277,
-							"character": 19
+							"character": 12
 						}
 					]
 				},
