@@ -35,8 +35,9 @@ export class Method extends Definition {
     this.buildType(builder, param.type);
   }
 
-  private buildType(builder: Builder, type: TypedocType): void {
-    if (type.type === 'union') {
+  private buildType(builder: Builder, type?: TypedocType): void {
+    if (type) {
+    if (type.type === 'union' && type.types) {
       type.types.filter(t => t.name !== 'undefined' && t.name !== 'false').forEach((t, key, arr) => {
         this.buildType(builder, t)
         if (!Object.is(arr.length - 1, key)) {
@@ -51,6 +52,8 @@ export class Method extends Definition {
       return
     }
     builder.append(type.name === 'true' ? 'boolean' : type.name);
+  }
+
   }
 
 }

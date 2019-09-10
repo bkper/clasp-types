@@ -3,6 +3,7 @@ import { TypedocKind } from "./TypedocSchema";
 
 export class Builder {
   
+  googleAppsScriptScope = "GoogleAppsScript";
   text: string;
   rootKind: TypedocKind;
   libraryNamespace: string;
@@ -30,9 +31,29 @@ export class Builder {
       },
       signatures:[]
     }
-    console.log(this.libraryNamespace)
+    
+    let enums = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Enumeration');
+    
+    enums.forEach(e => {
+      let property = {
+        name: e.name,
+        kindString: "Property",
+        flags: {
+          isPublic: true,
+          isTypeof: true
+        },
+        type: {
+          type: "reference",
+          name: e.name,
+        },
+        children: [],
+        signatures: [],
+      }
+      library.children.unshift(property)
+    });
+
     kind.children.unshift(library);
-    return {name: "GoogleAppsScript", kindString: "Module", children: [kind], flags: {isPublic: true}, signatures:[]}
+    return {name: this.googleAppsScriptScope, kindString: "Module", children: [kind], flags: {isPublic: true}, signatures:[]}
   }
 
   append(text: string): Builder {
@@ -54,7 +75,7 @@ export class Builder {
     let rootNamespace = new Namespace(this.rootKind, 0);
     this.append('/// <reference types="google-apps-script" />').doubleLine();
     rootNamespace.build(this);
-    this.append(`declare var ${this.libraryName}: GoogleAppsScript.${this.libraryNamespace}.${this.libraryName};`)
+    this.append(`declare var ${this.libraryName}: ${this.googleAppsScriptScope}.${this.libraryNamespace}.${this.libraryName};`)
     return this.text;
   }
 

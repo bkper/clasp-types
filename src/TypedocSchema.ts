@@ -1,7 +1,7 @@
 export interface TypedocKind {
 
   name: string
-  comment?: Comment
+  comment?: TypedocComment
   kindString: string
   children: TypedocKind[]
   signatures: TypedocSignature[]
@@ -9,9 +9,11 @@ export interface TypedocKind {
     isPublic?: boolean
   }
   defaultValue?: string
+  type?: TypedocType
 }
 
-export interface Comment {
+
+export interface TypedocComment {
   tags?: {
     tag: string
   }[]
@@ -25,8 +27,8 @@ export interface TypedocSignature {
 export interface TypedocType {
   type: string
   name: string
-  types: TypedocType[]
-  elementType: TypedocType
+  types?: TypedocType[]
+  elementType?: TypedocType
 }
 
 export interface TypedocParameter {
