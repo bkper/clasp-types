@@ -74,6 +74,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/google-apps-script@^0.0.59":
+  version "0.0.59"
+  resolved "https://registry.yarnpkg.com/@types/google-apps-script/-/google-apps-script-0.0.59.tgz#d248ea06895e12136891ff7f2103431f79ca6689"
+  integrity sha512-P3vuBBvpaEtpkRuMIuxXh1vZ6UiKMETnXBfPvyn8egWHxNHgISfUC+pDs6uni/MrgFd9KySA6h9ckKQ/mRPWKw==
+
 "@types/jju@~1.4.0":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@types/jju/-/jju-1.4.1.tgz#0a39f5f8e84fec46150a7b9ca985c3f89ad98e9f"

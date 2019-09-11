@@ -333,7 +333,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "GoogleAppsScript.URL_Fetch.HTTPResponse"
+								"name": "HTTPResponse"
 							}
 						}
 					],
@@ -1142,7 +1142,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "GoogleAppsScript.HTML.HtmlOutput"
+								"name": "HtmlOutput"
 							}
 						}
 					],
@@ -1195,7 +1195,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "GoogleAppsScript.HTML.HtmlOutput"
+								"name": "HtmlOutput"
 							}
 						}
 					],
@@ -1235,7 +1235,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "GoogleAppsScript.URL_Fetch.HTTPResponse"
+								"name": "HTTPResponse"
 							}
 						}
 					],
@@ -1293,7 +1293,7 @@
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"name": "GoogleAppsScript.HTML.HtmlOutput"
+								"name": "HtmlOutput"
 							}
 						}
 					],
@@ -1364,7 +1364,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "GoogleAppsScript.HTML.HtmlOutput"
+								"name": "HtmlOutput"
 							}
 						}
 					],
@@ -7305,7 +7305,9 @@
 					"name": "getBalanceReport",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
 					"signatures": [
 						{
 							"id": 459,
@@ -7345,7 +7347,7 @@
 						{
 							"fileName": "Book.ts",
 							"line": 416,
-							"character": 18
+							"character": 25
 						}
 					]
 				},
@@ -8121,7 +8123,9 @@
 					"name": "search",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {},
+					"flags": {
+						"isPublic": true
+					},
 					"signatures": [
 						{
 							"id": 462,
@@ -8172,7 +8176,7 @@
 						{
 							"fileName": "Book.ts",
 							"line": 423,
-							"character": 8
+							"character": 15
 						}
 					]
 				}
@@ -12955,8 +12959,8 @@
 						}
 					],
 					"type": {
-						"type": "intrinsic",
-						"name": "any"
+						"type": "reference",
+						"name": "HtmlOutput"
 					}
 				}
 			],
@@ -13041,8 +13045,8 @@
 						}
 					],
 					"type": {
-						"type": "intrinsic",
-						"name": "any"
+						"type": "reference",
+						"name": "HtmlOutput"
 					}
 				}
 			],
@@ -13069,7 +13073,7 @@
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "GoogleAppsScript.HTML.HtmlOutput"
+						"name": "HtmlOutput"
 					}
 				}
 			],
