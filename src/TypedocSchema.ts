@@ -14,13 +14,14 @@ export interface TypedocKind {
 
 
 export interface TypedocComment {
-  tags?: {
-    tag: string
-  }[]
+    shortText: string,
+    text: string,
+    returns: string
 }
 
 export interface TypedocSignature {
   type: TypedocType;
+  comment: TypedocComment;
   parameters: TypedocParameter[]
 }
 

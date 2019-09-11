@@ -1,5 +1,5 @@
 import { Builder } from "./Builder";
-import { TypedocKind } from "./TypedocSchema";
+import { TypedocKind, TypedocComment } from "./TypedocSchema";
 
 export abstract class Definition {
 
@@ -20,4 +20,25 @@ export abstract class Definition {
   }
 
   abstract build(builder: Builder): void;
+
+  protected addComment(builder: Builder, comment: TypedocComment | undefined): void {
+    if (comment) {
+      builder.append(`${this.ident()}/**`).line()
+      if (comment.shortText) {
+        builder.append(`${this.ident()} * ${this.identBreaks(comment.shortText)}`).line()
+        builder.append(`${this.ident()} *`).line()
+      }
+      if (comment.text) {
+        builder.append(`${this.ident()} * ${this.identBreaks(comment.text)}`).line()
+      }
+      if (comment.returns) {
+        builder.append(`${this.ident()} * @returns ${this.identBreaks(comment.returns)}`).line()
+      }
+      builder.append(`${this.ident()} */`).line()
+    }
+  }
+
+  private identBreaks(text: string): string {
+    return text.replace(new RegExp("\n", 'g'), `\n${this.ident()} * `)
+  }
 }

@@ -10,6 +10,7 @@ export class Property extends Definition {
   }
 
   build(builder: Builder): void {
+    this.addComment(builder, this.kind.comment);
     builder.append(`${this.ident()}${this.kind.name}: `)
     if (this.kind.type) {
       if (this.kind.type.type === 'reference') {

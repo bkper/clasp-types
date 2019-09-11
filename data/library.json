@@ -6998,7 +6998,7 @@
 							"comment": {
 								"shortText": "Create a [[BalancesDataTableBuilder]] based on a query, to create two dimensional Array representation of balances of [[Account]], [[Group]] or #hashtag",
 								"text": "See [Query Guide](https://help.bkper.com/en/articles/2569178-search-query-guide) to learn more\n",
-								"returns": "The balances data table builder\n\nExample:\n\n```javascript\nvar book = BkperApp.getBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\n\nvar balancesDataTable = book.createBalancesDataTable(\"#rental #energy after:8/2013 before:9/2013\").build();\n```\n"
+								"returns": "The balances data table builder\n\nExample:\n\n```js\nvar book = BkperApp.getBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\n\nvar balancesDataTable = book.createBalancesDataTable(\"#rental #energy after:8/2013 before:9/2013\").build();\n```\n"
 							},
 							"parameters": [
 								{
@@ -7049,7 +7049,7 @@
 							"comment": {
 								"shortText": "Create a [[TransactionsDataTableBuilder]] based on a query, to create two dimensional Array representations of [[Transactions]] dataset.",
 								"text": "See [Query Guide](https://help.bkper.com/en/articles/2569178-search-query-guide) to learn more\n",
-								"returns": "Transactions data table builder.\n\nExample:\n\n```javascript\nvar book = BkperApp.getBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\n\nvar transactionsDataTable = book.createTransactionsDataTable(\"acc:'Bank' after:8/2013 before:9/2013\").build();\n```\n"
+								"returns": "Transactions data table builder.\n\nExample:\n\n```js\nvar book = BkperApp.getBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\n\nvar transactionsDataTable = book.createTransactionsDataTable(\"acc:'Bank' after:8/2013 before:9/2013\").build();\n```\n"
 							},
 							"parameters": [
 								{
@@ -7305,9 +7305,7 @@
 					"name": "getBalanceReport",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"signatures": [
 						{
 							"id": 459,
@@ -7347,7 +7345,7 @@
 						{
 							"fileName": "Book.ts",
 							"line": 416,
-							"character": 25
+							"character": 18
 						}
 					]
 				},
@@ -7978,7 +7976,7 @@
 							"comment": {
 								"shortText": "Get Book transactions based on a query.",
 								"text": "See [Query Guide](https://help.bkper.com/en/articles/2569178-search-query-guide) to learn more\n",
-								"returns": "The Transactions result as an iterator.\n\nExample:\n\n```javascript\nvar book = BkperApp.loadBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\n\nvar transactions = book.getTransactions(\"acc:CreditCard after:28/01/2013 before:29/01/2013\");\n\nwhile (transactions.hasNext()) {\n var transaction = transactions.next();\n Logger.log(transaction.getDescription());\n}\n```\n"
+								"returns": "The Transactions result as an iterator.\n\nExample:\n\n```js\nvar book = BkperApp.loadBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\n\nvar transactions = book.getTransactions(\"acc:CreditCard after:28/01/2013 before:29/01/2013\");\n\nwhile (transactions.hasNext()) {\n var transaction = transactions.next();\n Logger.log(transaction.getDescription());\n}\n```\n"
 							},
 							"parameters": [
 								{
@@ -8039,7 +8037,7 @@
 							"flags": {},
 							"comment": {
 								"shortText": "Record [[Transactions]] a on the Book.",
-								"text": "The text is usually amount and description, but it can also can contain an informed Date in full format (dd/mm/yyyy - mm/dd/yyyy).\n\nExample:\n```javascript\nbook.record(\"#gas 63.23\");\n```\n"
+								"text": "The text is usually amount and description, but it can also can contain an informed Date in full format (dd/mm/yyyy - mm/dd/yyyy).\n\nExample:\n```js\nbook.record(\"#gas 63.23\");\n```\n"
 							},
 							"parameters": [
 								{
@@ -8123,9 +8121,7 @@
 					"name": "search",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {
-						"isPublic": true
-					},
+					"flags": {},
 					"signatures": [
 						{
 							"id": 462,
@@ -8176,7 +8172,7 @@
 						{
 							"fileName": "Book.ts",
 							"line": 423,
-							"character": 15
+							"character": 8
 						}
 					]
 				}
@@ -13104,7 +13100,7 @@
 					},
 					"comment": {
 						"shortText": "Gets the [[Book]] with the specified bookId from url param.",
-						"text": "This is the main Entry Point to start interacting with BkperApp\n\nExample:\n\n```javascript\nvar book = BkperApp.getBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\nbook.record(\"#fuel for my Land Rover 126.50 28/01/2013\");\n```\n"
+						"text": "This is the main Entry Point to start interacting with BkperApp\n\nExample:\n\n```js\nvar book = BkperApp.getBook(\"agtzfmJrcGVyLWhyZHITCxIGTGVkZ2VyGICAgIDggqALDA\");\nbook.record(\"#fuel for my Land Rover 126.50 28/01/2013\");\n```\n"
 					},
 					"parameters": [
 						{

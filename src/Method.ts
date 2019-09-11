@@ -10,6 +10,7 @@ export class Method extends Definition {
 
   build(builder: Builder): void {
     let signature = this.kind.signatures[0];
+    this.addComment(builder, signature.comment);
     builder.append(`${this.ident()}${this.kind.name}(`);
     this.buildParams(builder, signature);
     builder.append('): ');
@@ -37,22 +38,22 @@ export class Method extends Definition {
 
   private buildType(builder: Builder, type?: TypedocType): void {
     if (type) {
-    if (type.type === 'union' && type.types) {
-      type.types.filter(t => t.name !== 'undefined' && t.name !== 'false').forEach((t, key, arr) => {
-        this.buildType(builder, t)
-        if (!Object.is(arr.length - 1, key)) {
-          //Last item
-          builder.append(' | ')
-        }
-      });
-      return
-    } else if (type.type === 'array') {
-      this.buildType(builder, type.elementType);
-      builder.append('[]')
-      return
+      if (type.type === 'union' && type.types) {
+        type.types.filter(t => t.name !== 'undefined' && t.name !== 'false').forEach((t, key, arr) => {
+          this.buildType(builder, t)
+          if (!Object.is(arr.length - 1, key)) {
+            //Last item
+            builder.append(' | ')
+          }
+        });
+        return
+      } else if (type.type === 'array') {
+        this.buildType(builder, type.elementType);
+        builder.append('[]')
+        return
+      }
+      builder.append(type.name === 'true' ? 'boolean' : type.name);
     }
-    builder.append(type.name === 'true' ? 'boolean' : type.name);
-  }
 
   }
 

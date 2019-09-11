@@ -10,6 +10,7 @@ export class Enum extends Definition {
   }
 
   build(builder: Builder): void {
+    this.addComment(builder, this.kind.comment);
     let props = this.kind.children.map(k => new EnumProperty(k, this.tab()));
     builder.append(`${this.ident()}export enum ${this.kind.name} {`).doubleLine()
     props.forEach(p => p.build(builder))
