@@ -2,13 +2,18 @@
   "compileOnSave": true,
   "compilerOptions": {
     "target": "es5",
+    "module": "commonjs",
     "lib": [
       "es2015",
       "es5",
       "es6",
       "es2017"
     ],
+    "rootDir": "src",
     "strict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,    
     "outDir": "./dist"    
   },
   "moduleResolution": "node",

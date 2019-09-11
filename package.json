@@ -2,9 +2,10 @@
   "name": "clasp-dts",
   "version": "1.0.0",
   "description": "d.ts files generator for Google Apps Script third party libraries",
-  "main": "dist/index.js",
-  "cli": "dist/cli.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "bin": {
+    "clasp-dts": "./dist/index.js"
+  },
   "author": "Mael Caldas (https://github.com/maelcaldas)",
   "repository": {
     "type": "git",
@@ -13,17 +14,25 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist",
+    "clasp-dts": "ts-node src/index.ts",
+    "refresh": "rimraf ./node_modules ./package-lock.json && yarn",
     "prepublish": "yarn build",
-    "build": "tsc",
+    "build": "tsc -p .",
+    "watch": "yarn build -w",
     "predeploy": "yarn build",
     "deploy": "npm publish --dry-run"
   },
   "devDependencies": {
     "@types/fs-extra": "^8.0.0",
-    "@types/node": "^12.7.4",
-    "rimraf": "^3.0.0"
+    "@types/node": "^12.7.5",
+    "nodemon": "^1.19.2",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.3"
   },
   "dependencies": {
-    "fs-extra": "^8.1.0"
+    "commander": "^3.0.1",
+    "fs-extra": "^8.1.0",
+    "typedoc": "^0.15.0"
   }
 }
