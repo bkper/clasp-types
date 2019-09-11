@@ -1,0 +1,9 @@
+{
+  "scriptId": "1fSZnepYcDUjxCsrWYD3452UJ5nJiB4js0cD45WWOAjMcKJR_PKfLU60X",
+  "projectId": "nimbustecnologia.com.br:bookkeeper",
+  "rootDir": "./src",
+  "library": {
+    "namespace": "Bkper",
+    "name": "BkperApp"
+  }
+}
