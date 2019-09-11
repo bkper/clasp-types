@@ -10,12 +10,13 @@
   },
   "license": "MIT",
   "scripts": {
-    "read": "typedoc ../../bkper/bkper-app/src --ignoreCompilerErrors --excludeExternals --includeDeclarations --mode file --name 'Bkper' --json ./data/library.json ",
+    "preread": "yarn remove @types/google-apps-script",
+    "read": "typedoc ../../bkper/bkper-app/src",
+    "postread": "yarn add --dev @types/google-apps-script",
     "write": "ts-node src/index.ts",
     "build": "yarn read && yarn write"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.3.11",
     "@types/fs-extra": "^8.0.0",
     "@types/google-apps-script": "^0.0.59",
     "@types/node": "^12.7.4",

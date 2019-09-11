@@ -1,6 +1,6 @@
 {
 	"id": 0,
-	"name": "Bkper",
+	"name": "bkper-app",
 	"kind": 0,
 	"flags": {},
 	"children": [
@@ -333,7 +333,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "HTTPResponse"
+								"name": "GoogleAppsScript.URL_Fetch.HTTPResponse"
 							}
 						}
 					],
@@ -1142,7 +1142,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "HtmlOutput"
+								"name": "GoogleAppsScript.HTML.HtmlOutput"
 							}
 						}
 					],
@@ -1195,7 +1195,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "HtmlOutput"
+								"name": "GoogleAppsScript.HTML.HtmlOutput"
 							}
 						}
 					],
@@ -1235,7 +1235,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "HTTPResponse"
+								"name": "GoogleAppsScript.URL_Fetch.HTTPResponse"
 							}
 						}
 					],
@@ -1293,7 +1293,7 @@
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"name": "HtmlOutput"
+								"name": "GoogleAppsScript.HTML.HtmlOutput"
 							}
 						}
 					],
@@ -1364,7 +1364,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "HtmlOutput"
+								"name": "GoogleAppsScript.HTML.HtmlOutput"
 							}
 						}
 					],
@@ -12882,21 +12882,21 @@
 			]
 		},
 		{
-			"id": 328,
+			"id": 339,
 			"name": "createAuthorizationURL",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 329,
+					"id": 340,
 					"name": "createAuthorizationURL",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 330,
+							"id": 341,
 							"name": "redirectUri",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12907,7 +12907,7 @@
 							}
 						},
 						{
-							"id": 331,
+							"id": 342,
 							"name": "state",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -12927,7 +12927,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 9,
+					"line": 61,
 					"character": 31
 				}
 			]
@@ -12959,8 +12959,8 @@
 						}
 					],
 					"type": {
-						"type": "reference",
-						"name": "HtmlOutput"
+						"type": "intrinsic",
+						"name": "any"
 					}
 				}
 			],
@@ -12973,7 +12973,7 @@
 			]
 		},
 		{
-			"id": 336,
+			"id": 326,
 			"name": "getAuthorizationHtml",
 			"kind": 64,
 			"kindString": "Function",
@@ -12982,7 +12982,7 @@
 			},
 			"signatures": [
 				{
-					"id": 337,
+					"id": 327,
 					"name": "getAuthorizationHtml",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -12994,7 +12994,7 @@
 					},
 					"parameters": [
 						{
-							"id": 338,
+							"id": 328,
 							"name": "continueUrl",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13019,7 +13019,7 @@
 							}
 						},
 						{
-							"id": 339,
+							"id": 329,
 							"name": "continueText",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13046,47 +13046,47 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "HtmlOutput"
+						"name": "GoogleAppsScript.HTML.HtmlOutput"
 					}
 				}
 			],
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 34,
+					"line": 22,
 					"character": 29
 				}
 			]
 		},
 		{
-			"id": 332,
+			"id": 343,
 			"name": "getAuthorizedCloseWindow",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 333,
+					"id": 344,
 					"name": "getAuthorizedCloseWindow",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"type": {
 						"type": "reference",
-						"name": "HtmlOutput"
+						"name": "GoogleAppsScript.HTML.HtmlOutput"
 					}
 				}
 			],
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 13,
+					"line": 65,
 					"character": 33
 				}
 			]
 		},
 		{
-			"id": 340,
+			"id": 330,
 			"name": "getBook",
 			"kind": 64,
 			"kindString": "Function",
@@ -13095,7 +13095,7 @@
 			},
 			"signatures": [
 				{
-					"id": 341,
+					"id": 331,
 					"name": "getBook",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -13108,7 +13108,7 @@
 					},
 					"parameters": [
 						{
-							"id": 342,
+							"id": 332,
 							"name": "id",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13132,13 +13132,13 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 54,
+					"line": 42,
 					"character": 16
 				}
 			]
 		},
 		{
-			"id": 343,
+			"id": 333,
 			"name": "getBooks",
 			"kind": 64,
 			"kindString": "Function",
@@ -13147,7 +13147,7 @@
 			},
 			"signatures": [
 				{
-					"id": 344,
+					"id": 334,
 					"name": "getBooks",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -13170,7 +13170,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 63,
+					"line": 51,
 					"character": 17
 				}
 			]
@@ -13205,13 +13205,13 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 79,
+					"line": 80,
 					"character": 23
 				}
 			]
 		},
 		{
-			"id": 334,
+			"id": 324,
 			"name": "isUserAuthorized",
 			"kind": 64,
 			"kindString": "Function",
@@ -13220,7 +13220,7 @@
 			},
 			"signatures": [
 				{
-					"id": 335,
+					"id": 325,
 					"name": "isUserAuthorized",
 					"kind": 4096,
 					"kindString": "Call signature",
@@ -13239,7 +13239,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 22,
+					"line": 10,
 					"character": 25
 				}
 			]
@@ -13277,7 +13277,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 93,
+					"line": 94,
 					"character": 18
 				}
 			]
@@ -13315,7 +13315,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 107,
+					"line": 108,
 					"character": 20
 				}
 			]
@@ -13355,7 +13355,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 69,
+					"line": 70,
 					"character": 22
 				}
 			]
@@ -13404,7 +13404,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 86,
+					"line": 87,
 					"character": 17
 				}
 			]
@@ -13453,27 +13453,27 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 100,
+					"line": 101,
 					"character": 23
 				}
 			]
 		},
 		{
-			"id": 324,
+			"id": 335,
 			"name": "storeTokenData",
 			"kind": 64,
 			"kindString": "Function",
 			"flags": {},
 			"signatures": [
 				{
-					"id": 325,
+					"id": 336,
 					"name": "storeTokenData",
 					"kind": 4096,
 					"kindString": "Call signature",
 					"flags": {},
 					"parameters": [
 						{
-							"id": 326,
+							"id": 337,
 							"name": "code",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13484,7 +13484,7 @@
 							}
 						},
 						{
-							"id": 327,
+							"id": 338,
 							"name": "redirectUri",
 							"kind": 32768,
 							"kindString": "Parameter",
@@ -13504,7 +13504,7 @@
 			"sources": [
 				{
 					"fileName": "BkperApp.ts",
-					"line": 5,
+					"line": 57,
 					"character": 23
 				}
 			]
@@ -13569,20 +13569,20 @@
 			"title": "Functions",
 			"kind": 64,
 			"children": [
-				328,
+				339,
 				321,
-				336,
-				332,
-				340,
+				326,
 				343,
+				330,
+				333,
 				348,
-				334,
+				324,
 				353,
 				358,
 				345,
 				350,
 				355,
-				324
+				335
 			]
 		}
 	]
