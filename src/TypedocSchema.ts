@@ -14,9 +14,9 @@ export interface TypedocKind {
 
 
 export interface TypedocComment {
-    shortText: string,
-    text: string,
-    returns: string
+    shortText?: string,
+    text?: string,
+    returns?: string
 }
 
 export interface TypedocSignature {

@@ -7,9 +7,10 @@ let claspdata = fs.readFileSync('.clasp.json');
 let rootNode = JSON.parse(rawdata.toString());
 let clasp = JSON.parse(claspdata.toString());
 
-let libraryNamespace: string = clasp.library.namespace;
-let libraryName: string = clasp.library.name;
+let libraryNamespace = clasp.library.namespace;
+let libraryName = clasp.library.name;
+let scriptId = clasp.scriptId;
 
-let builder = new Builder(rootNode, libraryNamespace, libraryName);
+let builder = new Builder(rootNode, libraryNamespace, libraryName, scriptId);
 
 fs.outputFileSync(`build/google-apps-script.${libraryNamespace.toLowerCase()}/index.d.ts`, builder.buildLibrary());

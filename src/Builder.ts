@@ -8,11 +8,13 @@ export class Builder {
   rootKind: TypedocKind;
   libraryNamespace: string;
   libraryName: string;
+  scriptId: string;
 
-  constructor(kind: TypedocKind, libraryNamespace: string, libraryName: string) {
+  constructor(kind: TypedocKind, libraryNamespace: string, libraryName: string, scriptId: string) {
     this.text = '';
     this.libraryNamespace = libraryNamespace;
     this.libraryName = libraryName;
+    this.scriptId = scriptId;
     this.rootKind = this.prepare(kind);
   }
 
@@ -24,6 +26,10 @@ export class Builder {
     let functions = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Function');
     let library: TypedocKind = {
       name: this.libraryName,
+      comment: {
+        shortText: `The main entry point to interact with ${this.libraryNamespace}`,
+        text: `Script ID: **${this.scriptId}**`
+      },
       kindString: 'Class',
       children: functions,
       flags: {
