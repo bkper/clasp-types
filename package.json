@@ -1,13 +1,14 @@
 {
-  "name": "gas-dts-gen",
+  "name": "clasp-dts",
   "version": "1.0.0",
   "description": "d.ts files generator for Google Apps Script third party libraries",
   "main": "dist/index.js",
+  "cli": "dist/cli.js",
   "types": "dist/index.d.ts",
   "author": "Mael Caldas (https://github.com/maelcaldas)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maelcaldas/gas-dts-gen.git"
+    "url": "https://github.com/maelcaldas/clasp-dts.git"
   },
   "license": "MIT",
   "scripts": {
