@@ -1,5 +1,5 @@
 import * as fs from "fs-extra";
-import { Builder } from "./Builder";
+import { Builder } from "./lib/Builder";
 
 let rawdata = fs.readFileSync('data/library.json');
 let claspdata = fs.readFileSync('.clasp.json');

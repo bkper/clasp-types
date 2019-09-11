@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "d.ts files generator for Google Apps Script third party libraries",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Mael Caldas (https://github.com/maelcaldas)",
   "repository": {
     "type": "git",
@@ -10,11 +11,16 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "clean": "rimraf dist",
+    "prepublish": "yarn build",
+    "build": "tsc",
+    "predeploy": "yarn build",
+    "deploy": "npm publish --dry-run"
   },
   "devDependencies": {
     "@types/fs-extra": "^8.0.0",
-    "@types/node": "^12.7.4"
+    "@types/node": "^12.7.4",
+    "rimraf": "^3.0.0"
   },
   "dependencies": {
     "fs-extra": "^8.1.0"

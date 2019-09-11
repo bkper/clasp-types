@@ -1,0 +1,4 @@
+# ignore the .ts files
+src/*
+.history/*
+.DS_Store
