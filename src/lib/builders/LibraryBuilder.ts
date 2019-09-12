@@ -110,7 +110,17 @@ export class LibraryBuilder extends Builder {
     });
 
     kind.children.unshift(library);
-    return {name: this.googleAppsScriptScope, kindString: "Module", children: [kind], flags: {isPublic: true}, signatures:[]}
+
+    return {
+      name: this.googleAppsScriptScope,
+      kindString: "Module",
+      children: [kind],
+      flags:
+      {
+        isPublic: true
+      },
+      signatures:[]
+    }
   }
   
   

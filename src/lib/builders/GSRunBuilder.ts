@@ -18,7 +18,7 @@ export class GSRunBuilder extends Builder {
   }
 
   /**
-   * Create TypedocKind with functions
+   * Prepare TypedocKind with functions
    */
   private prepare(kind: TypedocKind): TypedocKind {
 
@@ -26,7 +26,21 @@ export class GSRunBuilder extends Builder {
     kind.flags.isPublic = true;
     kind.name = 'script';
 
-    let functions = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Function');
+    let functions = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Function').map(f => {
+      return {
+        ...f,
+        signatures: [
+          {
+            ...f.signatures[0],
+            comment: undefined,
+            type: {
+              type: "intrinsic",
+              name: `void${f.signatures[0].type.name ? ` //${f.signatures[0].type.name}` : ''}`
+            }
+          }
+        ],
+      }
+    });
 
     let runner: TypedocKind = {
       name: 'Runner',
@@ -37,11 +51,17 @@ export class GSRunBuilder extends Builder {
       },
       signatures:[]
     }
+
     kind.children.unshift(runner);
 
-    console.log(JSON.stringify(functions))
-
-    return {name: 'google', kindString: "Module", children: [kind], flags: {isPublic: true}, signatures:[]}
+    return {
+      name: 'google',
+      kindString: "Module",
+      children: [kind],
+      flags: {
+        isPublic: true
+      },
+      signatures:[]}
   }  
 
 }

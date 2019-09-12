@@ -20,7 +20,7 @@ export interface TypedocComment {
 
 export interface TypedocSignature {
   type: TypedocType;
-  comment: TypedocComment;
+  comment?: TypedocComment;
   parameters: TypedocParameter[]
 }
 
