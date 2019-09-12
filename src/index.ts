@@ -22,8 +22,8 @@ const typedocApp = new TypeDoc.Application({
 
 program
   .description("Generate d.ts file for Google Apps Script ts files")
-  .option('-s, --src <folder>', 'Source folder', './', 'src')
-  .option('-o, --out <folder>', 'Output folder', './', 'dist')
+  .option('-s, --src <folder>', 'Source folder', 'src')
+  .option('-o, --out <folder>', 'Output folder', 'dist')
   .option('-g, --gsrun', 'Generate google.script.run d.ts', false)
   .parse(process.argv);
 
