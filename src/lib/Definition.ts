@@ -1,5 +1,5 @@
 import { Builder } from "./builders/Builder";
-import { TypedocKind, TypedocComment } from "./schemas/TypedocJson";
+import { TypedocKind, TypedocComment, TypedocType, TypedocSignature, TypedocParameter } from "./schemas/TypedocJson";
 
 export abstract class Definition {
 
@@ -41,4 +41,51 @@ export abstract class Definition {
   private identBreaks(text: string): string {
     return text.replace(new RegExp("\n", 'g'), `\n${this.ident()} * `)
   }
+
+  protected buildType(builder: Builder, type?: TypedocType): void {
+    if (type) {
+      if (type.type === 'union' && type.types) {
+        type.types.filter(t => t.name !== 'undefined' && t.name !== 'false').forEach((t, key, arr) => {
+          this.buildType(builder, t)
+          if (!Object.is(arr.length - 1, key)) {
+            //Last item
+            builder.append(' | ')
+          }
+        });
+        return
+      } else if (type.type === 'array') {
+        this.buildType(builder, type.elementType);
+        builder.append('[]')
+        return
+      } else if (type.type === 'reflection' && type.declaration && type.declaration.signatures && type.declaration.signatures.length > 0) {
+        let signature = type.declaration.signatures[0];
+        builder.append('(')
+        this.buildParams(builder, signature)
+        builder.append(')')
+        builder.append(' => ')
+        this.buildType(builder, signature.type)
+        return;
+      }
+      builder.append(type.name === 'true' ? 'boolean' : type.name);
+    }
+  }  
+
+  protected buildParams(builder: Builder, signature: TypedocSignature) {
+    if (signature.parameters) {
+      signature.parameters.forEach((param, key, arr) => {
+        this.buildParam(builder, param)
+        if (!Object.is(arr.length - 1, key)) {
+          //Last item
+          builder.append(', ')
+        }
+      });
+    }
+  }
+
+  protected buildParam(builder: Builder, param: TypedocParameter): void {
+    let sep = param.flags.isOptional ? '?:' : ':';
+    builder.append(param.name).append(sep).append(' ');
+    this.buildType(builder, param.type);
+  }
+    
 }

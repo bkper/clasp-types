@@ -28,7 +28,7 @@ export class GSRunBuilder extends Builder {
     kind.flags.isPublic = true;
     kind.name = 'script';
 
-    let functions = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Function').map(f => {
+    let children = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Function').map(f => {
       return {
         ...f,
         signatures: [
@@ -44,15 +44,31 @@ export class GSRunBuilder extends Builder {
       }
     });
 
-    functions.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withUserObject.json')).toString()));
-    functions.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withFailureHandler.json')).toString()));
-    functions.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withSuccessHandler.json')).toString()));
+    children.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withUserObject.json')).toString()));
+    children.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withFailureHandler.json')).toString()));
+    children.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withSuccessHandler.json')).toString()));
 
+    //Run function
+    children.push(
+      {
+        "name": "run",
+        "kindString": "Variable",
+        "flags": {
+          "isExported": true
+        },
+        "type": {
+          "type": "reference",
+          "name": "Runner"
+        },
+        children: [],
+        signatures:[]
+      }
+    )
 
     let runner: TypedocKind = {
       name: 'Runner',
       kindString: 'Class',
-      children: functions,
+      children: children,
       flags: {
         isPublic: true
       },
