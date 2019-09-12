@@ -1,16 +1,6 @@
-import { Namespace } from "../Namespace";
-import { TypedocKind } from "../schemas/TypedocJson";
-import { PackageJson } from "../schemas/PackageJson";
-import { ClaspJson } from "../schemas/ClaspJson";
-
 export abstract class Builder {
   
   private text = '';
-  rootKind: TypedocKind;
-
-  constructor(kind: TypedocKind) {
-    this.rootKind = kind;
-  }
 
   append(text: string): Builder {
     this.text += text;
