@@ -1,4 +1,4 @@
-import { Builder } from "./Builder";
+import { Builder } from "./builders/Builder";
 import { Interface } from "./Interface";
 import { Method } from "./Method";
 import { Enum } from "./Enum";

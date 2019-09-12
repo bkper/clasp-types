@@ -1,5 +1,5 @@
 import { Definition } from "./Definition";
-import { Builder } from "./Builder";
+import { Builder } from "./builders/Builder";
 import { TypedocKind } from "./schemas/TypedocJson";
 
 export class Property extends Definition {

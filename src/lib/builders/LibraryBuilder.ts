@@ -1,27 +1,28 @@
-import { Namespace } from "./Namespace";
-import { TypedocKind } from "./schemas/TypedocJson";
-import { PackageJson } from "./schemas/PackageJson";
-import { ClaspJson } from "./schemas/ClaspJson";
+import { Namespace } from "../Namespace";
+import { TypedocKind } from "../schemas/TypedocJson";
+import { PackageJson } from "../schemas/PackageJson";
+import { ClaspJson } from "../schemas/ClaspJson";
+import { Builder } from "./Builder";
 
-export class Builder {
+export class LibraryBuilder extends Builder {
   
   googleAppsScriptScope = "GoogleAppsScript";
   packageJson: PackageJson;
   claspJson: ClaspJson;
-  text: string;
-  rootKind: TypedocKind;
   author: string | null;
   homepage: string;
 
   constructor(kind: TypedocKind, packageJson: PackageJson, claspJson: ClaspJson) {
-    this.text = '';
+    super(kind);
     this.packageJson = packageJson;
     this.claspJson = claspJson;
     this.author = this.extractAuthor(packageJson);
     this.homepage = this.extractHomepage(packageJson);
-    this.rootKind = this.prepare(kind);
   }
 
+  /**
+   * Prepare kind with library class from functions and enum
+   */
   private prepare(kind: TypedocKind): TypedocKind {
     kind.kindString = 'Module'
     kind.flags.isPublic = true;
@@ -81,9 +82,8 @@ export class Builder {
     return this;
   }
 
-  buildLibrary() {
-    let rootNamespace = new Namespace(this.rootKind, 0);
-
+  build(): string {
+    let rootNamespace = new Namespace(this.prepare(this.rootKind), 0);
     this.append(`// Type definitions for ${this.claspJson.library.name} ${new Date().toLocaleDateString('en-US')}`).line();
     this.append(`// Project: ${this.homepage}`).line();
     this.append(`// Generator: https://github.com/maelcaldas/clasp-dts`).line();
@@ -95,6 +95,7 @@ export class Builder {
     this.append(`declare var ${this.claspJson.library.name}: ${this.googleAppsScriptScope}.${this.claspJson.library.namespace}.${this.claspJson.library.name};`)
     return this.text;
   }
+
 
   private extractHomepage(packageJson: PackageJson): string {
     if (packageJson.homepage) {

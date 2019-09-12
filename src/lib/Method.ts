@@ -1,5 +1,5 @@
 import { Definition } from "./Definition";
-import { Builder } from "./Builder";
+import { Builder } from "./builders/Builder";
 import { TypedocKind, TypedocParameter, TypedocType, TypedocSignature } from "./schemas/TypedocJson";
 
 export class Method extends Definition {

@@ -3,7 +3,7 @@
 const program = require('commander');
 import * as TypeDoc from 'typedoc';
 import * as fs from "fs-extra";
-import { Builder } from "./lib/Builder";
+import { LibraryBuilder } from "./lib/builders/LibraryBuilder";
 import { PackageJson } from './lib/schemas/PackageJson';
 import { ClaspJson } from './lib/schemas/ClaspJson';
 import { TypedocKind } from './lib/schemas/TypedocJson';
@@ -51,9 +51,9 @@ if (!process.argv.slice(2).length) {
     //Generate dts
     let rawdata = fs.readFileSync(apiModelFilePath);
     let rootTypedoKind: TypedocKind = JSON.parse(rawdata.toString());
-    let builder = new Builder(rootTypedoKind, packageJson, claspJson);
+    let builder = new LibraryBuilder(rootTypedoKind, packageJson, claspJson);
 
-    fs.outputFileSync(`build/${libraryFolder}/index.d.ts`, builder.buildLibrary());
+    fs.outputFileSync(`build/${libraryFolder}/index.d.ts`, builder.build());
     fs.remove(apiModelFilePath);
 
     console.log(`Generated ${program.gsrun ? 'google.script.run ' : ''}d.ts file to ${libraryFolder} folder`);

@@ -1,4 +1,4 @@
-import { Builder } from "./Builder";
+import { Builder } from "./builders/Builder";
 import { Definition } from "./Definition";
 import { Method } from "./Method";
 import { Property } from "./Property";
