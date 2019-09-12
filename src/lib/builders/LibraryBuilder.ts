@@ -7,64 +7,19 @@ import { Builder } from "./Builder";
 export class LibraryBuilder extends Builder {
   
   googleAppsScriptScope = "GoogleAppsScript";
+  rootKind: TypedocKind;
   packageJson: PackageJson;
   claspJson: ClaspJson;
   author: string | null;
   homepage: string;
 
   constructor(kind: TypedocKind, packageJson: PackageJson, claspJson: ClaspJson) {
-    super(kind);
+    super();
+    this.rootKind = kind;
     this.packageJson = packageJson;
     this.claspJson = claspJson;
     this.author = this.extractAuthor(packageJson);
     this.homepage = this.extractHomepage(packageJson);
-  }
-
-  /**
-   * Prepare kind with library class from functions and enum
-   */
-  private prepare(kind: TypedocKind): TypedocKind {
-    kind.kindString = 'Module'
-    kind.flags.isPublic = true;
-    kind.name = this.claspJson.library.namespace;
-
-    let functions = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Function');
-    let library: TypedocKind = {
-      name: this.claspJson.library.name,
-      comment: {
-        shortText: `The main entry point to interact with [${this.claspJson.library.namespace}](${this.homepage})`,
-        text: `Script ID: **${this.claspJson.scriptId}**`
-      },
-      kindString: 'Class',
-      children: functions,
-      flags: {
-        isPublic: true
-      },
-      signatures:[]
-    }
-    
-    let enums = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Enumeration');
-    
-    enums.forEach(e => {
-      let property = {
-        name: e.name,
-        kindString: "Property",
-        flags: {
-          isPublic: true,
-          isTypeof: true
-        },
-        type: {
-          type: "reference",
-          name: e.name,
-        },
-        children: [],
-        signatures: [],
-      }
-      library.children.unshift(property)
-    });
-
-    kind.children.unshift(library);
-    return {name: this.googleAppsScriptScope, kindString: "Module", children: [kind], flags: {isPublic: true}, signatures:[]}
   }
 
   build(): Builder {
@@ -109,6 +64,53 @@ export class LibraryBuilder extends Builder {
       return packageJson.contributors.map(author => `${author.name ? author.name : ''} ${author.url ? author.url : ''}`).join(', ')
     }
     return null;
+  }
+
+    /**
+   * Prepare kind with library class from functions and enum
+   */
+  private prepare(kind: TypedocKind): TypedocKind {
+    kind.kindString = 'Module'
+    kind.flags.isPublic = true;
+    kind.name = this.claspJson.library.namespace;
+
+    let functions = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Function');
+    let library: TypedocKind = {
+      name: this.claspJson.library.name,
+      comment: {
+        shortText: `The main entry point to interact with [${this.claspJson.library.namespace}](${this.homepage})`,
+        text: `Script ID: **${this.claspJson.scriptId}**`
+      },
+      kindString: 'Class',
+      children: functions,
+      flags: {
+        isPublic: true
+      },
+      signatures:[]
+    }
+    
+    let enums = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Enumeration');
+    
+    enums.forEach(e => {
+      let property = {
+        name: e.name,
+        kindString: "Property",
+        flags: {
+          isPublic: true,
+          isTypeof: true
+        },
+        type: {
+          type: "reference",
+          name: e.name,
+        },
+        children: [],
+        signatures: [],
+      }
+      library.children.unshift(property)
+    });
+
+    kind.children.unshift(library);
+    return {name: this.googleAppsScriptScope, kindString: "Module", children: [kind], flags: {isPublic: true}, signatures:[]}
   }
   
   
