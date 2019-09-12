@@ -1,0 +1,46 @@
+{
+  "id": 4,
+  "name": "withSuccessHandler",
+  "kind": 2048,
+  "kindString": "Method",
+  "flags": {
+    
+  },
+  "signatures": [
+    {
+      "id": 5,
+      "name": "withSuccessHandler",
+      "kind": 4096,
+      "kindString": "Call signature",
+      "flags": {
+        
+      },
+      "parameters": [
+        {
+          "id": 6,
+          "name": "handler",
+          "kind": 32768,
+          "kindString": "Parameter",
+          "flags": {
+            
+          },
+          "type": {
+            "type": "reference",
+            "name": "Function"
+          }
+        }
+      ],
+      "type": {
+        "type": "reference",
+        "name": "Runner"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "fileName": "index.d.ts",
+      "line": 4,
+      "character": 24
+    }
+  ]
+}

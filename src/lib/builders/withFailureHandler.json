@@ -1,0 +1,91 @@
+{
+  "id": 7,
+  "name": "withFailureHandler",
+  "kind": 2048,
+  "kindString": "Method",
+  "flags": {
+    
+  },
+  "signatures": [
+    {
+      "id": 8,
+      "name": "withFailureHandler",
+      "kind": 4096,
+      "kindString": "Call signature",
+      "flags": {
+        
+      },
+      "parameters": [
+        {
+          "id": 9,
+          "name": "handler",
+          "kind": 32768,
+          "kindString": "Parameter",
+          "flags": {
+            
+          },
+          "type": {
+            "type": "reflection",
+            "declaration": {
+              "id": 10,
+              "name": "__type",
+              "kind": 65536,
+              "kindString": "Type literal",
+              "flags": {
+                
+              },
+              "signatures": [
+                {
+                  "id": 11,
+                  "name": "__call",
+                  "kind": 4096,
+                  "kindString": "Call signature",
+                  "flags": {
+                    
+                  },
+                  "parameters": [
+                    {
+                      "id": 12,
+                      "name": "error",
+                      "kind": 32768,
+                      "kindString": "Parameter",
+                      "flags": {
+                        
+                      },
+                      "type": {
+                        "type": "reference",
+                        "name": "Error"
+                      }
+                    }
+                  ],
+                  "type": {
+                    "type": "intrinsic",
+                    "name": "void"
+                  }
+                }
+              ],
+              "sources": [
+                {
+                  "fileName": "index.d.ts",
+                  "line": 5,
+                  "character": 33
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "type": {
+        "type": "reference",
+        "name": "Runner"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "fileName": "index.d.ts",
+      "line": 5,
+      "character": 24
+    }
+  ]
+}

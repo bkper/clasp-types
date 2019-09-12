@@ -1,0 +1,46 @@
+{
+  "id": 13,
+  "name": "withUserObject",
+  "kind": 2048,
+  "kindString": "Method",
+  "flags": {
+    
+  },
+  "signatures": [
+    {
+      "id": 14,
+      "name": "withUserObject",
+      "kind": 4096,
+      "kindString": "Call signature",
+      "flags": {
+        
+      },
+      "parameters": [
+        {
+          "id": 15,
+          "name": "object",
+          "kind": 32768,
+          "kindString": "Parameter",
+          "flags": {
+            
+          },
+          "type": {
+            "type": "intrinsic",
+            "name": "any"
+          }
+        }
+      ],
+      "type": {
+        "type": "reference",
+        "name": "Runner"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "fileName": "index.d.ts",
+      "line": 6,
+      "character": 20
+    }
+  ]
+}

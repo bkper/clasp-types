@@ -1,6 +1,8 @@
 import { Builder } from "./Builder";
 import { TypedocKind } from "../schemas/TypedocJson";
 import { Namespace } from "../Namespace";
+import * as fs from "fs-extra";
+import * as path from "path";
 
 export class GSRunBuilder extends Builder {
 
@@ -41,6 +43,10 @@ export class GSRunBuilder extends Builder {
         ],
       }
     });
+
+    functions.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withUserObject.json')).toString()));
+    functions.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withFailureHandler.json')).toString()));
+    functions.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withSuccessHandler.json')).toString()));
 
     let runner: TypedocKind = {
       name: 'Runner',

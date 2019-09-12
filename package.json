@@ -18,7 +18,7 @@
     "clasp-dts": "ts-node src/index.ts",
     "refresh": "rimraf ./node_modules ./package-lock.json && yarn",
     "prepublish": "yarn build",
-    "build": "tsc -p .",
+    "build": "tsc -p . && copyfiles src/**/*.json dist/",
     "watch": "yarn build -w",
     "predeploy": "yarn build",
     "deploy": "npm publish --dry-run"
@@ -26,6 +26,7 @@
   "devDependencies": {
     "@types/fs-extra": "^8.0.0",
     "@types/node": "^12.7.5",
+    "copyfiles": "^2.1.1",
     "nodemon": "^1.19.2",
     "rimraf": "^3.0.0",
     "ts-node": "^8.3.0",
