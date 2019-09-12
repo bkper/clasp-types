@@ -4,7 +4,7 @@
   "kind": 2048,
   "kindString": "Method",
   "flags": {
-    
+    "isPublic": true
   },
   "signatures": [
     {
@@ -13,7 +13,6 @@
       "kind": 4096,
       "kindString": "Call signature",
       "flags": {
-        
       },
       "parameters": [
         {

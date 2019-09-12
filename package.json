@@ -18,7 +18,8 @@
     "clasp-dts": "ts-node src/index.ts",
     "refresh": "rimraf ./node_modules ./package-lock.json && yarn",
     "prepublish": "yarn build",
-    "build": "tsc -p . && copyfiles src/**/*.json dist/",
+    "prebuild": "copyfiles ./src/lib/builders/*.json -f dist/lib/builders/",
+    "build": "tsc -p .",
     "watch": "yarn build -w",
     "predeploy": "yarn build",
     "deploy": "npm publish --dry-run"

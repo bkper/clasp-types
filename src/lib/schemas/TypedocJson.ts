@@ -29,6 +29,7 @@ export interface TypedocSignature {
 export interface TypedocType {
   type: string
   name: string
+  declaration?: TypedocDeclaration
   types?: TypedocType[]
   elementType?: TypedocType
 }
@@ -39,4 +40,8 @@ export interface TypedocParameter {
   flags: {
     isOptional?: boolean
   }
+}
+
+export interface TypedocDeclaration {
+  signatures: TypedocSignature[]
 }

@@ -48,6 +48,7 @@ export class GSRunBuilder extends Builder {
     functions.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withFailureHandler.json')).toString()));
     functions.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withSuccessHandler.json')).toString()));
 
+
     let runner: TypedocKind = {
       name: 'Runner',
       kindString: 'Class',

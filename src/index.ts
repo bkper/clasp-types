@@ -57,7 +57,7 @@ if (!process.argv.slice(2).length) {
 
     if (gsRun) {
       let builder = new GSRunBuilder(rootTypedoKind);
-      const filename = `${outDir}/google.script.run/index2.d.ts`;
+      const filename = `${outDir}/google.script.run/index.d.ts`;
       fs.outputFileSync(filename, builder.build().getText());
       console.log(`Generated ${filename}`);
     } else {

@@ -12,6 +12,7 @@ export class Method extends Definition {
     let signature = this.kind.signatures[0];
     this.addComment(builder, signature.comment);
     builder.append(`${this.ident()}${this.kind.name}(`);
+
     this.buildParams(builder, signature);
     builder.append('): ');
     this.buildType(builder, signature.type);
@@ -51,6 +52,14 @@ export class Method extends Definition {
         this.buildType(builder, type.elementType);
         builder.append('[]')
         return
+      } else if (type.type === 'reflection' && type.declaration) {
+        let signature = type.declaration.signatures[0];
+        builder.append('(')
+        this.buildParams(builder, signature)
+        builder.append(')')
+        builder.append(' => ')
+        this.buildType(builder, signature.type)
+        return;
       }
       builder.append(type.name === 'true' ? 'boolean' : type.name);
     }

@@ -4,7 +4,7 @@
   "kind": 2048,
   "kindString": "Method",
   "flags": {
-    
+    "isPublic": true
   },
   "signatures": [
     {
