@@ -1,34 +1,38 @@
 import { Namespace } from "./Namespace";
-import { TypedocKind } from "./TypedocSchema";
+import { TypedocKind } from "./schemas/TypedocJson";
+import { PackageJson } from "./schemas/PackageJson";
+import { ClaspJson } from "./schemas/ClaspJson";
 
 export class Builder {
   
   googleAppsScriptScope = "GoogleAppsScript";
+  packageJson: PackageJson;
+  claspJson: ClaspJson;
   text: string;
   rootKind: TypedocKind;
-  libraryNamespace: string;
-  libraryName: string;
-  scriptId: string;
+  author: string | null;
+  homepage: string;
 
-  constructor(kind: TypedocKind, libraryNamespace: string, libraryName: string, scriptId: string) {
+  constructor(kind: TypedocKind, packageJson: PackageJson, claspJson: ClaspJson) {
     this.text = '';
-    this.libraryNamespace = libraryNamespace;
-    this.libraryName = libraryName;
-    this.scriptId = scriptId;
+    this.packageJson = packageJson;
+    this.claspJson = claspJson;
+    this.author = this.extractAuthor(packageJson);
+    this.homepage = this.extractHomepage(packageJson);
     this.rootKind = this.prepare(kind);
   }
 
   private prepare(kind: TypedocKind): TypedocKind {
     kind.kindString = 'Module'
     kind.flags.isPublic = true;
-    kind.name = this.libraryNamespace;
+    kind.name = this.claspJson.library.namespace;
 
     let functions = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Function');
     let library: TypedocKind = {
-      name: this.libraryName,
+      name: this.claspJson.library.name,
       comment: {
-        shortText: `The main entry point to interact with ${this.libraryNamespace}`,
-        text: `Script ID: **${this.scriptId}**`
+        shortText: `The main entry point to interact with [${this.claspJson.library.namespace}](${this.homepage})`,
+        text: `Script ID: **${this.claspJson.scriptId}**`
       },
       kindString: 'Class',
       children: functions,
@@ -79,11 +83,49 @@ export class Builder {
 
   buildLibrary() {
     let rootNamespace = new Namespace(this.rootKind, 0);
+
+    this.append(`// Type definitions for ${this.claspJson.library.name} ${new Date().toLocaleDateString('en-US')}`).line();
+    this.append(`// Project: ${this.homepage}`).line();
+    this.append(`// Generator: https://github.com/maelcaldas/clasp-dts`).line();
+    this.append(`// Definitions by: ${this.author ? this.author : 'unknown developer'}`).line();
+    this.append(`// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped`).doubleLine();
+
     this.append('/// <reference types="google-apps-script" />').doubleLine();
     rootNamespace.build(this);
-    this.append(`declare var ${this.libraryName}: ${this.googleAppsScriptScope}.${this.libraryNamespace}.${this.libraryName};`)
+    this.append(`declare var ${this.claspJson.library.name}: ${this.googleAppsScriptScope}.${this.claspJson.library.namespace}.${this.claspJson.library.name};`)
     return this.text;
   }
 
+  private extractHomepage(packageJson: PackageJson): string {
+    if (packageJson.homepage) {
+      return packageJson.homepage
+    }
+  
+    if (packageJson.repository) {
+      if (typeof packageJson.repository === 'string') {
+        return packageJson.repository;
+      } else {
+        return packageJson.repository.url.replace('\\.git', '');
+      }
+    }
+    return 'https://developers.google.com/apps-script/guides/libraries';
+  }
+  
+  private extractAuthor(packageJson: PackageJson): string | null {
+    if (packageJson.author) {
+      if (typeof packageJson.author === 'string') {
+        return packageJson.author;
+      } else {
+        return `${packageJson.author.name ? packageJson.author.name : ''} ${packageJson.author.url ? packageJson.author.url : ''}`
+      }
+    }
+    if (packageJson.contributors) {
+      return packageJson.contributors.map(author => `${author.name ? author.name : ''} ${author.url ? author.url : ''}`).join(', ')
+    }
+    return null;
+  }
+  
+  
+  
 
 }

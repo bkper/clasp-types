@@ -1,7 +1,7 @@
 import { Definition } from "./Definition";
 import { EnumProperty } from "./EnumProperty";
 import { Builder } from "./Builder";
-import { TypedocKind } from "./TypedocSchema";
+import { TypedocKind } from "./schemas/TypedocJson";
 
 export class Enum extends Definition {
 

@@ -1,5 +1,4 @@
 export interface TypedocKind {
-
   name: string
   comment?: TypedocComment
   kindString: string

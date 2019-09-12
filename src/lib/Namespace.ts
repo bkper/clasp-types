@@ -3,7 +3,7 @@ import { Interface } from "./Interface";
 import { Method } from "./Method";
 import { Enum } from "./Enum";
 import { Definition } from "./Definition";
-import { TypedocKind } from "./TypedocSchema";
+import { TypedocKind } from "./schemas/TypedocJson";
 
 export class Namespace extends Definition {
 

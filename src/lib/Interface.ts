@@ -2,7 +2,7 @@ import { Builder } from "./Builder";
 import { Definition } from "./Definition";
 import { Method } from "./Method";
 import { Property } from "./Property";
-import { TypedocKind } from "./TypedocSchema";
+import { TypedocKind } from "./schemas/TypedocJson";
 
 export class Interface extends Definition {
 

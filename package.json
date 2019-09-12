@@ -2,6 +2,7 @@
   "name": "clasp-dts",
   "version": "1.0.0",
   "description": "d.ts files generator for Google Apps Script third party libraries",
+  "homepage": "https://github.com/maelcaldas/clasp-dts#readme",
   "main": "./dist/index.js",
   "bin": {
     "clasp-dts": "./dist/index.js"

@@ -1,6 +1,6 @@
 import { Definition } from "./Definition";
 import { Builder } from "./Builder";
-import { TypedocKind, TypedocParameter, TypedocType, TypedocSignature } from "./TypedocSchema";
+import { TypedocKind, TypedocParameter, TypedocType, TypedocSignature } from "./schemas/TypedocJson";
 
 export class Method extends Definition {
 

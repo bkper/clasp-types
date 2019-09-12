@@ -1,5 +1,5 @@
 import { Builder } from "./Builder";
-import { TypedocKind, TypedocComment } from "./TypedocSchema";
+import { TypedocKind, TypedocComment } from "./schemas/TypedocJson";
 
 export abstract class Definition {
 

@@ -4,17 +4,20 @@ const program = require('commander');
 import * as TypeDoc from 'typedoc';
 import * as fs from "fs-extra";
 import { Builder } from "./lib/Builder";
+import { PackageJson } from './lib/schemas/PackageJson';
+import { ClaspJson } from './lib/schemas/ClaspJson';
+import { TypedocKind } from './lib/schemas/TypedocJson';
 
 const typedocApp = new TypeDoc.Application({
   mode: 'file',
   logger: 'none',
   target: 'ES5',
   module: 'CommonJS',
+  exclude: 'node_modules',
   experimentalDecorators: true,
   ignoreCompilerErrors: true,
   excludeExternals: true
 });
-
 
 program
   .description("Generate d.ts file for Google Apps Script ts files")
@@ -25,13 +28,19 @@ program
 if (!process.argv.slice(2).length) {
   program.outputHelp();
 } else {
+
+  //package.json
+  let packageJsonData = fs.readFileSync('package.json');
+  let packageJson: PackageJson = JSON.parse(packageJsonData.toString());
+
+  //clasp
   let claspdata = fs.readFileSync('.clasp.json');
-  let clasp = JSON.parse(claspdata.toString());
-  let rootDir = clasp.rootDir ? clasp.rootDir : '.';
-  let libraryNamespace = clasp.library.namespace;
-  let libraryName = clasp.library.name;
-  let scriptId = clasp.scriptId;
-  let libraryFolder = `google-apps-script.${libraryNamespace.toLowerCase()}`
+  let claspJson: ClaspJson = JSON.parse(claspdata.toString());
+
+  let rootDir = claspJson.rootDir ? claspJson.rootDir : '.';
+
+  let libraryFolder = `google-apps-script.${claspJson.library.namespace.toLowerCase()}`
+
   const files = typedocApp.expandInputFiles([rootDir]);
   const project = typedocApp.convert(files);
   if (project) {
@@ -41,8 +50,8 @@ if (!process.argv.slice(2).length) {
     console.log(`Generated api model at ${apiModelFilePath}`)
     //Generate dts
     let rawdata = fs.readFileSync(apiModelFilePath);
-    let rootNode = JSON.parse(rawdata.toString());
-    let builder = new Builder(rootNode, libraryNamespace, libraryName, scriptId);
+    let rootTypedoKind: TypedocKind = JSON.parse(rawdata.toString());
+    let builder = new Builder(rootTypedoKind, packageJson, claspJson);
 
     fs.outputFileSync(`build/${libraryFolder}/index.d.ts`, builder.buildLibrary());
     fs.remove(apiModelFilePath);
@@ -51,6 +60,4 @@ if (!process.argv.slice(2).length) {
   } else {
     console.log('Error reading .ts source files')
   }
-
 }
-
