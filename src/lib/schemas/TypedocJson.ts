@@ -6,6 +6,8 @@ export interface TypedocKind {
   signatures: TypedocSignature[]
   flags: {
     isPublic?: boolean
+    //custom ;-)
+    isTypeof?: boolean
   }
   defaultValue?: string
   type?: TypedocType

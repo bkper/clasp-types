@@ -13,7 +13,7 @@ export class Property extends Definition {
     this.addComment(builder, this.kind.comment);
     builder.append(`${this.ident()}${this.kind.name}: `)
     if (this.kind.type) {
-      if (this.kind.type.type === 'reference') {
+      if (this.kind.flags.isTypeof) {
         builder.append('typeof ')
       }
       builder.append(this.kind.type.name).append(';').doubleLine();
