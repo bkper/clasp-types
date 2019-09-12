@@ -8,7 +8,7 @@ export class Method extends Definition {
     super(kind, depth);
   }
 
-  build(builder: Builder): void {
+  render(builder: Builder): void {
     let signature = this.kind.signatures[0];
     this.addComment(builder, signature.comment);
     builder.append(`${this.ident()}${this.kind.name}(`);

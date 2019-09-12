@@ -8,7 +8,7 @@ export class EnumProperty extends Definition {
     super(kind, depth);
   }
 
-  build(builder: Builder): void {
+  render(builder: Builder): void {
     this.addComment(builder, this.kind.comment);
     builder.append(`${this.ident()}${this.kind.name} = ${this.kind.defaultValue},`).doubleLine()
   }

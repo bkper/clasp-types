@@ -5,7 +5,7 @@ import { ClaspJson } from "../schemas/ClaspJson";
 
 export abstract class Builder {
   
-  text = '';
+  private text = '';
   rootKind: TypedocKind;
 
   constructor(kind: TypedocKind) {
@@ -27,6 +27,10 @@ export abstract class Builder {
     return this;
   }
 
-  abstract build(): string;
+  getText(): string {
+    return this.text;
+  }
+
+  protected abstract build(): Builder;
 
 }

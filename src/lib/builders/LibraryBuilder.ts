@@ -67,22 +67,7 @@ export class LibraryBuilder extends Builder {
     return {name: this.googleAppsScriptScope, kindString: "Module", children: [kind], flags: {isPublic: true}, signatures:[]}
   }
 
-  append(text: string): Builder {
-    this.text += text;
-    return this;
-  }
-
-  doubleLine(): Builder {
-    this.text += '\n\n';
-    return this;
-  }
-
-  line(): Builder {
-    this.text += '\n';
-    return this;
-  }
-
-  build(): string {
+  build(): Builder {
     let rootNamespace = new Namespace(this.prepare(this.rootKind), 0);
     this.append(`// Type definitions for ${this.claspJson.library.name} ${new Date().toLocaleDateString('en-US')}`).line();
     this.append(`// Project: ${this.homepage}`).line();
@@ -91,9 +76,9 @@ export class LibraryBuilder extends Builder {
     this.append(`// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped`).doubleLine();
 
     this.append('/// <reference types="google-apps-script" />').doubleLine();
-    rootNamespace.build(this);
+    rootNamespace.render(this);
     this.append(`declare var ${this.claspJson.library.name}: ${this.googleAppsScriptScope}.${this.claspJson.library.namespace}.${this.claspJson.library.name};`)
-    return this.text;
+    return this;
   }
 
 

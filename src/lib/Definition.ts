@@ -19,7 +19,7 @@ export abstract class Definition {
     return this.depth+1;
   }
 
-  abstract build(builder: Builder): void;
+  abstract render(builder: Builder): void;
 
   protected addComment(builder: Builder, comment: TypedocComment | undefined): void {
     if (comment) {

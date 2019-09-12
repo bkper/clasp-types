@@ -48,12 +48,13 @@ if (!process.argv.slice(2).length) {
     const apiModelFilePath = `${program.out}/${libraryFolder}.api.json`;
     typedocApp.generateJson(project, apiModelFilePath);
     console.log(`Generated api model at ${apiModelFilePath}`)
+
     //Generate dts
     let rawdata = fs.readFileSync(apiModelFilePath);
     let rootTypedoKind: TypedocKind = JSON.parse(rawdata.toString());
     let builder = new LibraryBuilder(rootTypedoKind, packageJson, claspJson);
 
-    fs.outputFileSync(`build/${libraryFolder}/index.d.ts`, builder.build());
+    fs.outputFileSync(`build/${libraryFolder}/index.d.ts`, builder.build().getText());
     fs.remove(apiModelFilePath);
 
     console.log(`Generated ${program.gsrun ? 'google.script.run ' : ''}d.ts file to ${libraryFolder} folder`);
