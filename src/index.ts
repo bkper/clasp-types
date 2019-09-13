@@ -22,7 +22,7 @@ const typedocApp = new TypeDoc.Application({
 });
 
 program
-  .description("Generate d.ts file for Google Apps Script ts files")
+  .description("Generate d.ts for clasp projects. File [.clasp.json] required")
   .option('-s, --src <folder>', 'Source folder', 'src')
   .option('-o, --out <folder>', 'Output folder', 'dts')
   .option('-g, --gsrun', 'Generate google.script.run d.ts', false)
@@ -30,9 +30,8 @@ program
 
 let filename = 'index.d.ts';
 
+
 let claspJson: ClaspJson = JSON.parse(fs.readFileSync('.clasp.json').toString());
-
-
 let srcDir: string = program.src;
 let outDir: string = program.out;
 let gsRun: boolean = program.gsrun;
@@ -43,8 +42,8 @@ const project = typedocApp.convert(files);
 if (project) {
 
   const apiModelFilePath = `${outDir}/.clasp-dts-temp-api-model__.json`;
-
   try {
+
 
     //Generate api model
     typedocApp.generateJson(project, apiModelFilePath);
@@ -54,44 +53,9 @@ if (project) {
     let rootTypedoKind: TypedocKind = JSON.parse(rawdata.toString());
 
     if (gsRun) {
-      let builder = new GSRunBuilder(rootTypedoKind);
-      const filepath = `${outDir}/google.script.run/${filename}`;
-      fs.outputFileSync(filepath, builder.build().getText());
-      console.log(`Generated google.script.run d.ts at ${filepath}`);
+      getGSRunDTS(rootTypedoKind);
     } else {
-      //TODO validate library added to claspJson 
-
-      if (!claspJson.library || !claspJson.library.name || !claspJson.library.namespace) {
-        console.log('ERROR - Add library info to .clasp.json. Example:')
-        console.log(JSON.stringify({
-          "scriptId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF",
-          "rootDir": "./src",
-          "library": {
-            "namespace": "google",
-            "name": "OAuth2"
-          }
-        }))
-        console.log('or run with --gsrun option to generate google.script.run d.ts files')
-      }
-
-      //package.json
-      let packageJson: PackageJson = JSON.parse(fs.readFileSync('package.json').toString());
-      packageJson.name = `${packageJson.name}-dts`
-      packageJson.description = `Typescript definitions for ${claspJson.library.name}`
-      packageJson.scripts = {};
-      packageJson.devDependencies = {};
-      packageJson.types = `./${filename}`;
-      fs.outputFileSync(`${outDir}/package.json`, JSON.stringify(packageJson, null, 2));
-
-      //README.md
-      let readmeBuilder = new ReadmeBuilder(packageJson, claspJson)
-      fs.outputFileSync(`${program.out}/README.md`, readmeBuilder.build().getText());
-
-
-      let builder = new LibraryBuilder(rootTypedoKind, claspJson);
-      const filepath = `${program.out}/${filename}`;
-      fs.outputFileSync(filepath, builder.build().getText());
-      console.log(`Generated ${claspJson.library.name} d.ts at ${program.out}`);
+      generateLibraryDTS(rootTypedoKind);
     }
 
   } finally {
@@ -102,3 +66,47 @@ if (project) {
 } else {
   console.log('Error reading .ts source files')
 }
+
+
+
+function generateLibraryDTS(rootTypedoKind: TypedocKind) {
+  if (!claspJson.library || !claspJson.library.name || !claspJson.library.namespace) {
+    console.log('ERROR - Add library info to .clasp.json. Example:');
+    console.log();
+    console.log(JSON.stringify({
+      "scriptId": "xxxx",
+      "rootDir": "./src",
+      "library": {
+        "namespace": "bkper",
+        "name": "BkperApp"
+      }
+    }, null, 2));
+    console.log();
+    console.log('...or run with --gsrun option to generate google.script.run d.ts files');
+    console.log();
+    return;
+  }
+  //package.json
+  let packageJson: PackageJson = JSON.parse(fs.readFileSync('package.json').toString());
+  packageJson.name = `${packageJson.name}-dts`;
+  packageJson.description = `Typescript definitions for ${claspJson.library.name}`;
+  packageJson.scripts = {};
+  packageJson.devDependencies = {};
+  packageJson.types = `./${filename}`;
+  fs.outputFileSync(`${outDir}/package.json`, JSON.stringify(packageJson, null, 2));
+  //README.md
+  let readmeBuilder = new ReadmeBuilder(packageJson, claspJson);
+  fs.outputFileSync(`${program.out}/README.md`, readmeBuilder.build().getText());
+  let builder = new LibraryBuilder(rootTypedoKind, claspJson);
+  const filepath = `${program.out}/${filename}`;
+  fs.outputFileSync(filepath, builder.build().getText());
+  console.log(`Generated ${claspJson.library.name} d.ts at ${program.out}`);
+}
+
+function getGSRunDTS(rootTypedoKind: TypedocKind) {
+  let builder = new GSRunBuilder(rootTypedoKind);
+  const filepath = `${outDir}/google.script.run/${filename}`;
+  fs.outputFileSync(filepath, builder.build().getText());
+  console.log(`Generated google.script.run d.ts at ${filepath}`);
+}
+
