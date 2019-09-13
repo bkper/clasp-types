@@ -14,9 +14,12 @@ export class Variable extends Definition {
     if (this.kind.flags.isExported) {
       builder.append('export ')
     }
-    builder.append(`var ${this.kind.type.name}: `);
-    this.buildType(builder, this.kind.type)
-    builder.append(`;`).doubleLine();
+    if (this.kind.type) {
+      builder.append(`var ${this.kind.name}: `);
+      this.buildType(builder, this.kind.type)
+      builder.append(`;`).doubleLine();
+    }
+
   }
   
 }

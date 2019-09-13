@@ -71,7 +71,7 @@ if (!process.argv.slice(2).length) {
     }
 
     //Tear down
-    //fs.remove(apiModelFilePath);
+    // fs.remove(apiModelFilePath);
 
   } else {
     console.log('Error reading .ts source files')

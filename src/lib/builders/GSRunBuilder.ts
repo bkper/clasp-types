@@ -48,22 +48,7 @@ export class GSRunBuilder extends Builder {
     children.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withFailureHandler.json')).toString()));
     children.unshift(JSON.parse(fs.readFileSync(path.join(__dirname, 'withSuccessHandler.json')).toString()));
 
-    //Run function
-    children.push(
-      {
-        "name": "run",
-        "kindString": "Variable",
-        "flags": {
-          "isExported": true
-        },
-        "type": {
-          "type": "reference",
-          "name": "Runner"
-        },
-        children: [],
-        signatures:[]
-      }
-    )
+
 
     let runner: TypedocKind = {
       name: 'Runner',
@@ -72,11 +57,26 @@ export class GSRunBuilder extends Builder {
       flags: {
         isPublic: true
       },
-      signatures:[]
+      signatures: []
+    }
+
+    let run = {
+      "name": "run",
+      "kindString": "Variable",
+      "flags": {
+        "isExported": true
+      },
+      "type": {
+        "type": "reference",
+        "name": "Runner"
+      },
+      children: [],
+      signatures: []
     }
 
     kind.children.unshift(runner);
-
+    kind.children.push(run);
+    
     return {
       name: 'google',
       kindString: "Module",
@@ -84,7 +84,8 @@ export class GSRunBuilder extends Builder {
       flags: {
         isPublic: true
       },
-      signatures:[]}
-  }  
+      signatures: []
+    }
+  }
 
 }

@@ -66,7 +66,13 @@ export abstract class Definition {
         this.buildType(builder, signature.type)
         return;
       }
-      builder.append(type.name === 'true' ? 'boolean' : type.name);
+      if (type.name === 'true' || type.name === 'false') {
+        builder.append('boolean');
+      } else if (type.name) {
+        builder.append(type.name);
+      } else if (type.value) {
+        builder.append(`"${type.value}"`);
+      }
     }
   }  
 

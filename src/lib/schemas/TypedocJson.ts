@@ -29,6 +29,7 @@ export interface TypedocSignature {
 
 export interface TypedocType {
   type: string
+  value?: string
   name: string
   declaration?: TypedocDeclaration
   types?: TypedocType[]
