@@ -6,6 +6,7 @@ import * as fs from "fs-extra";
 import { LibraryBuilder } from "./lib/builders/LibraryBuilder";
 import { GSRunBuilder } from "./lib/builders/GSRunBuilder";
 import { ReadmeBuilder } from "./lib/builders/ReadmeBuilder";
+import { LicenseBuilder } from "./lib/builders/LicenseBuilder";
 import { PackageJson } from './lib/schemas/PackageJson';
 import { ClaspJson } from './lib/schemas/ClaspJson';
 import { TypedocKind } from './lib/schemas/TypedocJson';
@@ -94,19 +95,30 @@ function generateLibraryDTS(rootTypedoKind: TypedocKind) {
   packageJson.devDependencies = {};
   packageJson.types = `./${filename}`;
   fs.outputFileSync(`${outDir}/package.json`, JSON.stringify(packageJson, null, 2));
+
   //README.md
   let readmeBuilder = new ReadmeBuilder(packageJson, claspJson);
-  fs.outputFileSync(`${program.out}/README.md`, readmeBuilder.build().getText());
+  fs.outputFileSync(`${outDir}/README.md`, readmeBuilder.build().getText());
+  
+  //LICENSE
+  let licenseBuilder = new LicenseBuilder(packageJson);
+  fs.outputFileSync(`${outDir}/LICENSE`, licenseBuilder.build().getText());
+
+  //Library
   let builder = new LibraryBuilder(rootTypedoKind, claspJson);
-  const filepath = `${program.out}/${filename}`;
+  const filepath = `${outDir}/${filename}`;
   fs.outputFileSync(filepath, builder.build().getText());
-  console.log(`Generated ${claspJson.library.name} d.ts at ${program.out}`);
+
+  console.log(`Generated ${claspJson.library.name} Typescript definitions at ${outDir}/`);
 }
 
+/**
+ * Generate google.script.run d.ts file
+ */
 function getGSRunDTS(rootTypedoKind: TypedocKind) {
   let builder = new GSRunBuilder(rootTypedoKind);
   const filepath = `${outDir}/google.script.run/${filename}`;
   fs.outputFileSync(filepath, builder.build().getText());
-  console.log(`Generated google.script.run d.ts at ${filepath}`);
+  console.log(`Generated google.script.run Typescript definitions at ${outDir}/`);
 }
 
