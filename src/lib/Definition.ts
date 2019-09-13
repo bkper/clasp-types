@@ -12,7 +12,7 @@ export abstract class Definition {
   }
 
   protected ident() {
-    return " ".repeat(this.depth * 2);
+    return " ".repeat(this.depth * 4);
   }
 
   protected tab() {
