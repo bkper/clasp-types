@@ -24,14 +24,10 @@ const typedocApp = new TypeDoc.Application({
 program
   .description("Generate d.ts file for Google Apps Script ts files")
   .option('-s, --src <folder>', 'Source folder', 'src')
-  .option('-o, --out <folder>', 'Output folder', 'dist')
+  .option('-o, --out <folder>', 'Output folder', 'dts')
   .option('-g, --gsrun', 'Generate google.script.run d.ts', false)
   .parse(process.argv);
 
-if (!process.argv.slice(2).length) {
-  program.outputHelp();
-} else {
-  
   let filename = 'index.d.ts';
   
   let claspJson: ClaspJson = JSON.parse(fs.readFileSync('.clasp.json').toString());
@@ -90,4 +86,3 @@ if (!process.argv.slice(2).length) {
   } else {
     console.log('Error reading .ts source files')
   }
-}
