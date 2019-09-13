@@ -1,6 +1,0 @@
-{
-  "mode": "file",
-  "json": "data/library.json",
-  "ignoreCompilerErrors": true,
-  "excludeExternals": true
-}
