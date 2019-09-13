@@ -17,7 +17,7 @@ export class LibraryBuilder extends Builder {
 
   build(): Builder {
     let rootNamespace = new Namespace(this.prepare(this.rootKind), 0);
-    this.append(`// Type definitions for ${this.claspJson.library.name} ${new Date().toLocaleDateString('en-US')}`).line();
+    this.append(`// Type definitions for ${this.claspJson.library.name}`).line();
     this.append(`// Generator: https://github.com/maelcaldas/clasp-dtsgen`).doubleLine();
 
     this.append('/// <reference types="google-apps-script" />').doubleLine();
