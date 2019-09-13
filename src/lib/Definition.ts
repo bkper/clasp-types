@@ -57,13 +57,19 @@ export abstract class Definition {
         this.buildType(builder, type.elementType);
         builder.append('[]')
         return
-      } else if (type.type === 'reflection' && type.declaration && type.declaration.signatures && type.declaration.signatures.length > 0) {
-        let signature = type.declaration.signatures[0];
-        builder.append('(')
-        this.buildParams(builder, signature)
-        builder.append(')')
-        builder.append(' => ')
-        this.buildType(builder, signature.type)
+      } else if (type.type === 'reflection' && type.declaration) {
+        if (type.declaration.signatures && type.declaration.signatures.length > 0) {
+          let signature = type.declaration.signatures[0];
+          builder.append('(')
+          this.buildParams(builder, signature.parameters)
+          builder.append(')')
+          builder.append(' => ')
+          this.buildType(builder, signature.type)
+        } else if (type.declaration.children && type.declaration.children.length > 0) {
+          builder.append('{')
+          this.buildParams(builder, type.declaration.children)
+          builder.append('}')          
+        }
         return;
       }
       if (type.name === 'true' || type.name === 'false') {
@@ -76,9 +82,9 @@ export abstract class Definition {
     }
   }  
 
-  protected buildParams(builder: Builder, signature: TypedocSignature) {
-    if (signature.parameters) {
-      signature.parameters.forEach((param, key, arr) => {
+  protected buildParams(builder: Builder, parameters: TypedocParameter[]) {
+    if (parameters) {
+      parameters.forEach((param, key, arr) => {
         this.buildParam(builder, param)
         if (!Object.is(arr.length - 1, key)) {
           //Last item
