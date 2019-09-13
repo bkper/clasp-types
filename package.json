@@ -1,16 +1,16 @@
 {
-  "name": "clasp-dts-gen",
+  "name": "clasp-dts",
   "version": "1.0.0",
   "description": "A d.ts generator for clasp projects",
-  "homepage": "https://github.com/maelcaldas/clasp-dts-gen#readme",
+  "homepage": "https://github.com/maelcaldas/clasp-dts#readme",
   "main": "./dist/index.js",
   "bin": {
-    "clasp-dts-gen": "./dist/index.js"
+    "clasp-dts": "./dist/index.js"
   },
   "author": "Mael Caldas (https://github.com/maelcaldas)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maelcaldas/clasp-dts-gen.git"
+    "url": "https://github.com/maelcaldas/clasp-dts.git"
   },
   "license": "MIT",
   "scripts": {

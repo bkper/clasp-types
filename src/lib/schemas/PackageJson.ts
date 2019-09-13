@@ -6,7 +6,8 @@ export interface PackageJson {
   contributors: PackageJsonAuthor[]
   scripts: any
   devDependencies: any
-  types: string
+  types: string,
+  keywords: string[]
 }
 
 interface PackageJsonAuthor {

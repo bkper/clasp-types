@@ -5,6 +5,7 @@ import * as TypeDoc from 'typedoc';
 import * as fs from "fs-extra";
 import { LibraryBuilder } from "./lib/builders/LibraryBuilder";
 import { GSRunBuilder } from "./lib/builders/GSRunBuilder";
+import { ReadmeBuilder } from "./lib/builders/ReadmeBuilder";
 import { PackageJson } from './lib/schemas/PackageJson';
 import { ClaspJson } from './lib/schemas/ClaspJson';
 import { TypedocKind } from './lib/schemas/TypedocJson';
@@ -40,12 +41,17 @@ if (!process.argv.slice(2).length) {
   let outDir: string = program.out;
   let gsRun: boolean = program.gsrun;
 
-  //Cleanup package.json for ditribution
+  //package.json
   let packageJson: PackageJson = JSON.parse(fs.readFileSync('package.json').toString());
+  packageJson.name = `${packageJson.name}-dts`
   packageJson.scripts = {};
   packageJson.devDependencies = {};
   packageJson.types = `./${filename}`;
   fs.outputFileSync(`${outDir}/package.json`, JSON.stringify(packageJson, null, 2));  
+
+  //README.md
+  let readmeBuilder = new ReadmeBuilder(packageJson, claspJson)
+  fs.outputFileSync(`${program.out}/README.md`, readmeBuilder.build().getText());
 
   const files = typedocApp.expandInputFiles([srcDir]);
   const project = typedocApp.convert(files);
