@@ -31,47 +31,55 @@ if (!process.argv.slice(2).length) {
   program.outputHelp();
 } else {
 
-  //package.json
-  let packageJsonData = fs.readFileSync('package.json');
-  let packageJson: PackageJson = JSON.parse(packageJsonData.toString());
+  
+  let filename = 'index.d.ts';
+  
+  let claspJson: ClaspJson = JSON.parse(fs.readFileSync('.clasp.json').toString());
 
-  //clasp
-  let claspdata = fs.readFileSync('.clasp.json');
-  let claspJson: ClaspJson = JSON.parse(claspdata.toString());
-
-  let srcDir:string = program.src;
-  let outDir:string = program.out;
+  let srcDir: string = program.src;
+  let outDir: string = program.out;
   let gsRun: boolean = program.gsrun;
+
+  //Cleanup package.json for ditribution
+  let packageJson: PackageJson = JSON.parse(fs.readFileSync('package.json').toString());
+  packageJson.scripts = {};
+  packageJson.devDependencies = {};
+  packageJson.types = `./${filename}`;
+  fs.outputFileSync(`${outDir}/package.json`, JSON.stringify(packageJson, null, 2));  
 
   const files = typedocApp.expandInputFiles([srcDir]);
   const project = typedocApp.convert(files);
   if (project) {
-    //Generate api model
+
     const apiModelFilePath = `${outDir}/.clasp-dts-temp-api-model__.json`;
-    typedocApp.generateJson(project, apiModelFilePath);
-    console.log(`Generated api model at ${apiModelFilePath}`)
+    
+    try {
 
-    //Generate dts
-    let rawdata = fs.readFileSync(apiModelFilePath);
-    let rootTypedoKind: TypedocKind = JSON.parse(rawdata.toString());
+      //Generate api model
+      typedocApp.generateJson(project, apiModelFilePath);
+      console.log(`Generated api model at ${apiModelFilePath}`)
 
-    if (gsRun) {
-      let builder = new GSRunBuilder(rootTypedoKind);
-      const filename = `${outDir}/google.script.run/index.d.ts`;
-      fs.outputFileSync(filename, builder.build().getText());
-      console.log(`Generated ${filename}`);
-    } else {
+      //Generate dts
+      let rawdata = fs.readFileSync(apiModelFilePath);
+      let rootTypedoKind: TypedocKind = JSON.parse(rawdata.toString());
 
-      //TODO validate library added to claspJson 
-      let libraryFolder = `google-apps-script.${claspJson.library.namespace.toLowerCase()}`
-      let builder = new LibraryBuilder(rootTypedoKind, packageJson, claspJson);
-      const filename = `${program.out}/${libraryFolder}/index.d.ts`;
-      fs.outputFileSync(filename, builder.build().getText());
-      console.log(`Generated ${filename}`);
+      if (gsRun) {
+        let builder = new GSRunBuilder(rootTypedoKind);
+        const filepath = `${outDir}/google.script.run/${filename}`;
+        fs.outputFileSync(filepath, builder.build().getText());
+        console.log(`Generated ${filepath}`);
+      } else {
+        //TODO validate library added to claspJson 
+        let builder = new LibraryBuilder(rootTypedoKind, claspJson);
+        const filepath = `${program.out}/${filename}`;
+        fs.outputFileSync(filepath, builder.build().getText());
+        console.log(`Generated ${filepath}`);
+      }
+
+    } finally {
+      //Tear down
+      fs.remove(apiModelFilePath);
     }
-
-    //Tear down
-    // fs.remove(apiModelFilePath);
 
   } else {
     console.log('Error reading .ts source files')
