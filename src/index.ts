@@ -26,25 +26,44 @@ program
   .description("Generate d.ts for clasp projects. File [.clasp.json] required")
   .option('-s, --src <folder>', 'Source folder', 'src')
   .option('-o, --out <folder>', 'Output folder', 'dts')
+  .option('-r, --root <folder>', 'Root folder of [.clasp.json] and [package.json] files', '.')
   .option('-g, --gsrun', 'Generate google.script.run d.ts', false)
   .parse(process.argv);
 
-let filename = 'index.d.ts';
 
-
-let claspJson: ClaspJson = JSON.parse(fs.readFileSync('.clasp.json').toString());
-let srcDir: string = program.src;
-let outDir: string = program.out;
+let rootDir: string = program.root;
+let srcDir: string = `${rootDir}/${program.src}`;
+let outDir: string = `${rootDir}/${program.out}`;
 let gsRun: boolean = program.gsrun;
 
+let filename = 'index.d.ts';
+
+//Load .clasp.json
+const claspJsonPath = `${rootDir}/.clasp.json`;
+let claspJson: ClaspJson;
+try {
+  claspJson = JSON.parse(fs.readFileSync(claspJsonPath).toString());
+} catch (error) {
+  console.log(`${claspJsonPath} NOT found!`)
+  process.exit(1);
+}
+
+//Load package.json
+const packageJsonPath = `${rootDir}/package.json`;
+let packageJson: PackageJson;
+try {
+  packageJson = JSON.parse(fs.readFileSync(packageJsonPath).toString());
+} catch (error) {
+  console.log(`${packageJsonPath} NOT found!`)
+  process.exit(1);
+}
 
 const files = typedocApp.expandInputFiles([srcDir]);
 const project = typedocApp.convert(files);
-if (project) {
 
+if (project) {
   const apiModelFilePath = `${outDir}/.clasp-dts-temp-api-model__.json`;
   try {
-
 
     //Generate api model
     typedocApp.generateJson(project, apiModelFilePath);
@@ -66,6 +85,7 @@ if (project) {
 
 } else {
   console.log('Error reading .ts source files')
+  process.exit(1);
 }
 
 
@@ -87,8 +107,7 @@ function generateLibraryDTS(rootTypedoKind: TypedocKind) {
     console.log();
     return;
   }
-  //package.json
-  let packageJson: PackageJson = JSON.parse(fs.readFileSync('package.json').toString());
+
   packageJson.name = `${packageJson.name}-dts`;
   packageJson.description = `Typescript definitions for ${claspJson.library.name}`;
   packageJson.scripts = {};
@@ -99,7 +118,7 @@ function generateLibraryDTS(rootTypedoKind: TypedocKind) {
   //README.md
   let readmeBuilder = new ReadmeBuilder(packageJson, claspJson);
   fs.outputFileSync(`${outDir}/README.md`, readmeBuilder.build().getText());
-  
+
   //LICENSE
   let licenseBuilder = new LicenseBuilder(packageJson);
   fs.outputFileSync(`${outDir}/LICENSE`, licenseBuilder.build().getText());
