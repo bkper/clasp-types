@@ -1,22 +1,20 @@
 {
-  "name": "clasp-dts",
+  "name": "clasp-dts-gen",
   "version": "1.0.0",
-  "description": "d.ts files generator for Google Apps Script third party libraries",
-  "homepage": "https://github.com/maelcaldas/clasp-dts#readme",
+  "description": "A d.ts generator for clasp projects",
+  "homepage": "https://github.com/maelcaldas/clasp-dts-gen#readme",
   "main": "./dist/index.js",
   "bin": {
-    "clasp-dts": "./dist/index.js"
+    "clasp-dts-gen": "./dist/index.js"
   },
   "author": "Mael Caldas (https://github.com/maelcaldas)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maelcaldas/clasp-dts.git"
+    "url": "https://github.com/maelcaldas/clasp-dts-gen.git"
   },
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist",
-    "clasp-dts": "ts-node src/index.ts",
-    "refresh": "rimraf ./node_modules ./package-lock.json && yarn",
     "prepublish": "yarn build",
     "prebuild": "copyfiles ./src/lib/builders/*.json -f dist/lib/builders/",
     "build": "tsc -p .",

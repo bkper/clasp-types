@@ -1,2 +1,2 @@
-# clasp-dts
-d.ts files generator for Google Apps Script third party libraries
+# clasp-dts-gen
+A d.ts generator for clasp projects
