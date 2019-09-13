@@ -31,19 +31,20 @@ program
 if (!process.argv.slice(2).length) {
   program.outputHelp();
 } else {
-
   
   let filename = 'index.d.ts';
   
   let claspJson: ClaspJson = JSON.parse(fs.readFileSync('.clasp.json').toString());
+  let packageJson: PackageJson = JSON.parse(fs.readFileSync('package.json').toString());
+  
 
   let srcDir: string = program.src;
   let outDir: string = program.out;
   let gsRun: boolean = program.gsrun;
 
   //package.json
-  let packageJson: PackageJson = JSON.parse(fs.readFileSync('package.json').toString());
   packageJson.name = `${packageJson.name}-dts`
+  packageJson.description = `Typescript definitions for ${claspJson.library.name}`
   packageJson.scripts = {};
   packageJson.devDependencies = {};
   packageJson.types = `./${filename}`;
@@ -63,7 +64,6 @@ if (!process.argv.slice(2).length) {
 
       //Generate api model
       typedocApp.generateJson(project, apiModelFilePath);
-      console.log(`Generated api model at ${apiModelFilePath}`)
 
       //Generate dts
       let rawdata = fs.readFileSync(apiModelFilePath);
@@ -73,13 +73,13 @@ if (!process.argv.slice(2).length) {
         let builder = new GSRunBuilder(rootTypedoKind);
         const filepath = `${outDir}/google.script.run/${filename}`;
         fs.outputFileSync(filepath, builder.build().getText());
-        console.log(`Generated ${filepath}`);
+        console.log(`Generated google.script.run d.ts at ${filepath}`);
       } else {
         //TODO validate library added to claspJson 
         let builder = new LibraryBuilder(rootTypedoKind, claspJson);
         const filepath = `${program.out}/${filename}`;
         fs.outputFileSync(filepath, builder.build().getText());
-        console.log(`Generated ${filepath}`);
+        console.log(`Generated ${claspJson.library.name} d.ts at ${program.out}`);
       }
 
     } finally {
