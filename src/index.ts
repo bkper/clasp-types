@@ -16,7 +16,7 @@ const typedocApp = new TypeDoc.Application({
   logger: 'none',
   target: 'ES5',
   module: 'CommonJS',
-  exclude: 'node_modules',
+  types : [],
   experimentalDecorators: true,
   ignoreCompilerErrors: true,
   excludeExternals: true
