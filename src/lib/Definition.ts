@@ -16,22 +16,25 @@ export abstract class Definition {
   }
 
   protected tab() {
-    return this.depth+1;
+    return this.depth + 1;
   }
 
   abstract render(builder: Builder): void;
 
   protected addComment(builder: Builder, comment: TypedocComment | undefined): void {
-    if (comment) {
+    if (comment && (comment.shortText || comment.text || comment.returns)) {
       builder.append(`${this.ident()}/**`).line()
       if (comment.shortText) {
         builder.append(`${this.ident()} * ${this.identBreaks(comment.shortText)}`).line()
-        builder.append(`${this.ident()} *`).line()
+        if (comment.text || comment.returns) {
+          builder.append(`${this.ident()} *`).line()
+        }
       }
       if (comment.text) {
         builder.append(`${this.ident()} * ${this.identBreaks(comment.text)}`).line()
       }
       if (comment.returns) {
+        // builder.append(`${this.ident()} *`).line()
         builder.append(`${this.ident()} * @returns ${this.identBreaks(comment.returns)}`).line()
       }
       builder.append(`${this.ident()} */`).line()
@@ -39,6 +42,10 @@ export abstract class Definition {
   }
 
   private identBreaks(text: string): string {
+    if (text.endsWith('\n')) {
+      var pos = text.lastIndexOf('\n');
+      text = text.substring(0, pos);
+    }
     return text.replace(new RegExp("\n", 'g'), `\n${this.ident()} * `)
   }
 
@@ -68,7 +75,7 @@ export abstract class Definition {
         } else if (type.declaration.children && type.declaration.children.length > 0) {
           builder.append('{')
           this.buildParams(builder, type.declaration.children)
-          builder.append('}')          
+          builder.append('}')
         }
         return;
       }
@@ -80,7 +87,7 @@ export abstract class Definition {
         builder.append(`"${type.value}"`);
       }
     }
-  }  
+  }
 
   protected buildParams(builder: Builder, parameters: TypedocParameter[]) {
     if (parameters) {
@@ -99,5 +106,5 @@ export abstract class Definition {
     builder.append(param.name).append(sep).append(' ');
     this.buildType(builder, param.type);
   }
-    
+
 }
