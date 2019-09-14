@@ -32,6 +32,9 @@ export abstract class Definition {
       }
       if (comment.text) {
         builder.append(`${this.ident()} * ${this.identBreaks(comment.text)}`).line()
+        if (comment.returns) {
+          builder.append(`${this.ident()} *`).line()
+        }        
       }
       if (comment.returns) {
         // builder.append(`${this.ident()} *`).line()
