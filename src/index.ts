@@ -4,7 +4,7 @@ const program = require('commander');
 import * as TypeDoc from 'typedoc';
 import * as fs from "fs-extra";
 import { LibraryBuilder } from "./lib/builders/LibraryBuilder";
-import { GSRunBuilder } from "./lib/builders/GSRunBuilder";
+import { ClientSideBuilder } from "./lib/builders/ClientSideBuilder";
 import { ReadmeBuilder } from "./lib/builders/ReadmeBuilder";
 import { LicenseBuilder } from "./lib/builders/LicenseBuilder";
 import { PackageJson } from './lib/schemas/PackageJson';
@@ -27,7 +27,7 @@ program
   .option('-s, --src <folder>', 'Source folder', 'src')
   .option('-o, --out <folder>', 'Output folder', 'types')
   .option('-r, --root <folder>', 'Root folder of [.clasp.json] and [package.json] files', '.')
-  .option('-g, --gsrun', 'Generate google.script.run d.ts', false)
+  .option('-g, --client', 'Generate client side d.ts', false)
   .parse(process.argv);
 
 
@@ -142,7 +142,7 @@ function generateLibraryTypes(rootTypedoKind: TypedocKind) {
  * Generate google.script.run d.ts file
  */
 function getGSRunTypes(rootTypedoKind: TypedocKind) {
-  let builder = new GSRunBuilder(rootTypedoKind);
+  let builder = new ClientSideBuilder(rootTypedoKind);
   const filepath = `${outDir}/google.script.run/${filename}`;
   fs.outputFileSync(filepath, builder.build().getText());
   console.log(`Generated google.script.run Typescript definitions at ${outDir}/`);

@@ -4,7 +4,7 @@ import { Namespace } from "../Namespace";
 import * as fs from "fs-extra";
 import * as path from "path";
 
-export class GSRunBuilder extends Builder {
+export class ClientSideBuilder extends Builder {
 
   rootKind: TypedocKind;
 
