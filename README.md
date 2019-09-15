@@ -6,15 +6,35 @@
 [Sheets]: https://chrome.google.com/webstore/detail/bkper-sheets/cgjnibofbefehaeeadeomaffglgfpkfl?hl=en
 [Forms]: https://chrome.google.com/webstore/detail/bkper-forms/hfhnjepoehncolldclpdddgccibbpeda
 [HTML Service]: https://developers.google.com/apps-script/reference/html/
-
+[Libraries]: https://developers.google.com/apps-script/guides/libraries
+[library]: https://developers.google.com/apps-script/guides/libraries
+[Client-side API]: https://developers.google.com/apps-script/guides/html/reference/run
 
 # clasp-types
 
-A [Typescript](https://www.typescriptlang.org/) definitions generator for [clasp](https://github.com/google/clasp) projects, so you can get **autocomplete** and **type checking** for your [Google Apps Script](https://developers.google.com/apps-script/) code.
+A [Typescript](https://www.typescriptlang.org/) definitions generator for [clasp](https://github.com/google/clasp) projects to get **autocomplete** and **type checking** for your [Google Apps Script](https://developers.google.com/apps-script/) [Libraries] and [Client-side API]
 
-It works by adding the ```@public``` comment annotation to any global function, class, interface or enum you want to expose, so
 
-### the source code:
+
+It works like [API Extractor], reading ```@public``` comment annotations on any global function, class, interface or enum you want to expose, and generating d.ts files consistently.
+
+## Install
+
+## Server libraries
+
+### 1) Add your [library] **namespace** and **name** to the ```.clasp.json```:
+```
+{
+  "scriptId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF",
+  "rootDir": "./src",
+  "library": {
+    "namespace": "GoogleAppsScript",
+    "name": "OAuth2"
+  }
+}
+```
+
+### 2) Add ```@public``` comment annotation to the code you want to expose
 
 ```ts
 /**
@@ -45,18 +65,15 @@ class Service {
   }
 }
 
+
+
 ```
-### ...with the **libray**  definition added to ```.clasp.json``` file:
-```
-{
-  "scriptId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF",
-  "rootDir": "./src",
-  "library": {
-    "namespace": "GoogleAppsScript",
-    "name": "OAuth2"
-  }
-}
-```
+
+> Notes: 
+> - Even the classes annotaded with ```@public```, methods inside then should also be marked as ```public``` in order to be exposed. **Private** or **protected** methods will **not** be exposed. 
+> - Interfaces and Enumerations with ```@public``` annotation will have all members exposed by default.
+
+
 
 ### ...will generate the d.ts:
 
