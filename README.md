@@ -12,8 +12,13 @@
 
 # clasp-types
 
-A [Typescript](https://www.typescriptlang.org/) definitions generator for [clasp](https://github.com/google/clasp) projects to get **autocomplete** and **type checking** for your [Google Apps Script](https://developers.google.com/apps-script/) [Libraries] and [Client-side API]
+A [Typescript](https://www.typescriptlang.org/) definitions generator for [clasp](https://github.com/google/clasp) projects to get **autocomplete** and **type checking** for your [Google Apps Script](https://developers.google.com/apps-script/) [Libraries]:
 
+![library-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/library-autocomplete.png)
+
+And [Client-side API]:
+
+![client-side-api-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/client-side-api-autocomplete.png)
 
 
 It works like [API Extractor], reading ```@public``` comment annotations on any global function, class, interface or enum you want to expose, and generating d.ts files consistently.
