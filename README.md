@@ -5,14 +5,16 @@
 [mtgto]: https://github.com/mtgto/dts-google-apps-script-advanced
 [Sheets]: https://chrome.google.com/webstore/detail/bkper-sheets/cgjnibofbefehaeeadeomaffglgfpkfl?hl=en
 [Forms]: https://chrome.google.com/webstore/detail/bkper-forms/hfhnjepoehncolldclpdddgccibbpeda
+[HTML Service]: https://developers.google.com/apps-script/reference/html/
+
 
 # clasp-types
 
 A [Typescript](https://www.typescriptlang.org/) definitions generator for [clasp](https://github.com/google/clasp) projects, so you can get **autocomplete** and **type checking** for your [Google Apps Script](https://developers.google.com/apps-script/) code.
 
-It works by adding the ```@public``` comment annotation to any global function, class, interface or enum, so, 
+It works by adding the ```@public``` comment annotation to any global function, class, interface or enum you want to expose, so
 
-### the code:
+### the source code:
 
 ```ts
 /**
@@ -56,7 +58,7 @@ class Service {
 }
 ```
 
-### ...will transform to:
+### ...will generate the d.ts:
 
 ```ts
 declare namespace GoogleAppsScript {
@@ -92,7 +94,9 @@ declare namespace GoogleAppsScript {
 declare var OAuth2: GoogleAppsScript.OAuth2;
 ```
 
-### Or, when generating Client-side API with ```--client``` option:
+It also supports generation of **Client-side API** to be used with [HTML Service], giving autocomplete and type checking for params of your exposed server functions, on client, so
+
+## the same source code, ```--client``` option, will generate the d.ts:
 
 ```ts
 declare namespace google {
@@ -134,7 +138,6 @@ declare namespace google {
 
 The clasp-types was originally created as a foundation for the [BkperApp] library and it's [Sheets] and [Forms] Add-ons, with inspirations on the [API Extractor] and previous work from [grant], [motemen] and [mtgto] - thank you guys :-)
 
-> Note: The library must be written in Typescript.
 
 # Server Library
 
