@@ -9,10 +9,12 @@
 [Libraries]: https://developers.google.com/apps-script/guides/libraries
 [library]: https://developers.google.com/apps-script/guides/libraries
 [Client-side API]: https://developers.google.com/apps-script/guides/html/reference/run
+[clasp]: https://github.com/google/clasp
+[Typescript]: https://github.com/google/clasp/blob/master/docs/typescript.md
 
 # clasp-types
 
-A [Typescript](https://www.typescriptlang.org/) definitions generator for [clasp](https://github.com/google/clasp) projects to get **autocomplete** and **type checking** for your [Google Apps Script](https://developers.google.com/apps-script/) [Libraries]:
+A [Typescript] definitions generator for [clasp] projects to get **autocomplete** and **type checking** for your Google Apps Script [Libraries]:
 
 ![library-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/library-autocomplete.png)
 
@@ -25,9 +27,9 @@ It works like [API Extractor], reading ```@public``` comment annotations on any 
 
 ## Install
 
-## Server libraries
+## [Libraries]
 
-### 1) Add your [library] **namespace** and **name** to the ```.clasp.json```:
+### 1) Add your library **namespace** and **name** to the ```.clasp.json```:
 ```
 {
   "scriptId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF",
