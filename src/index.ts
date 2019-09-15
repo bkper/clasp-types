@@ -34,7 +34,7 @@ program
 let rootDir: string = program.root;
 let srcDir: string = `${rootDir}/${program.src}`;
 let outDir: string = `${rootDir}/${program.out}`;
-let gsRun: boolean = program.gsrun;
+let gsRun: boolean = program.client;
 
 let filename = 'index.d.ts';
 
@@ -103,7 +103,7 @@ function generateLibraryTypes(rootTypedoKind: TypedocKind) {
       }
     }, null, 2));
     console.log();
-    console.log('...or run with --gsrun option to generate google.script.run d.ts files');
+    console.log('...or run with --client option to generate google.script.run d.ts files');
     console.log();
     return;
   }
