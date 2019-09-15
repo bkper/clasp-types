@@ -4,7 +4,8 @@ export interface PackageJson {
   homepage: string,
   repository: string | { type: string, url: string }
   author: string | PackageJsonAuthor | null,
-  contributors: PackageJsonAuthor[]
+  contributors: PackageJsonAuthor[],
+  license: string,
   scripts: any
   devDependencies: any
   dependencies: any

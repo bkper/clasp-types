@@ -112,6 +112,7 @@ function generateLibraryTypes(rootTypedoKind: TypedocKind) {
   packageJson.description = `Typescript definitions for ${claspJson.library.name}`;
   packageJson.scripts = {};
   packageJson.devDependencies = {};
+  packageJson.license = 'MIT';
 
   if (packageJson.dependencies) {
     for (let key in packageJson.dependencies) {
