@@ -5,7 +5,7 @@
 [mtgto]: https://github.com/mtgto/dts-google-apps-script-advanced
 [Sheets]: https://chrome.google.com/webstore/detail/bkper-sheets/cgjnibofbefehaeeadeomaffglgfpkfl?hl=en
 [Forms]: https://chrome.google.com/webstore/detail/bkper-forms/hfhnjepoehncolldclpdddgccibbpeda
-[HTML Service]: https://developers.google.com/apps-script/reference/html/
+[HTML Service]: https://developers.google.com/apps-script/guides/html/communication
 [Libraries]: https://developers.google.com/apps-script/guides/libraries
 [library]: https://developers.google.com/apps-script/guides/libraries
 [Client-side API]: https://developers.google.com/apps-script/guides/html/reference/run
@@ -14,11 +14,11 @@
 
 # clasp-types
 
-A [Typescript] definitions generator for [clasp] projects to get **autocomplete** and **type checking** for your Google Apps Script [Libraries]:
+A [Typescript] definitions generator for [clasp] projects to get **autocomplete** and **type checking** for your Google Apps Script OO [Libraries]:
 
 ![library-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/library-autocomplete.png)
 
-And [Client-side API]:
+Also for generation of [Client-side API] to be used with [HTML Service], giving autocomplete and type checking for params of your exposed server functions, on client:
 
 ![client-side-api-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/client-side-api-autocomplete.png)
 
@@ -118,7 +118,6 @@ declare namespace GoogleAppsScript {
 declare var OAuth2: GoogleAppsScript.OAuth2;
 ```
 
-It also supports generation of **Client-side API** to be used with [HTML Service], giving autocomplete and type checking for params of your exposed server functions, on client, so
 
 ## the same source code, ```--client``` option, will generate the d.ts:
 

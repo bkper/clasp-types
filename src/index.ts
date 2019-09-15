@@ -144,7 +144,7 @@ function generateLibraryTypes(rootTypedoKind: TypedocKind) {
  */
 function getGSRunTypes(rootTypedoKind: TypedocKind) {
   let builder = new ClientSideBuilder(rootTypedoKind);
-  const filepath = `${outDir}/google.script.run/${filename}`;
+  const filepath = `${outDir}/google.script.types/${filename}`;
   fs.outputFileSync(filepath, builder.build().getText());
   console.log(`Generated google.script.run Typescript definitions at ${outDir}/`);
 }
