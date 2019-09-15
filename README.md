@@ -30,11 +30,33 @@ It works like the [API Extractor], reading the ```@public``` comment annotations
 
 > Note: clasp-types is intended for generating d.ts from Apps Script code already written in TypeScript. For generating built-in and advanced Apps Script services see https://github.com/grant/google-apps-script-dts
 
+Here is an [example](https://www.npmjs.com/package/@bkper/bkper-app-types) of library types built and published with clasp-types.
+
 ## Install
 
-## Command params
+```
+npm i -S clasp-types
+```
+or
+```
+yarn add --dev clasp-types
+```
 
+## Command
 
+The package comes with the following command:
+
+```
+clasp-types
+```
+
+With optional params:
+```sh
+clasp-types --src    <folder>    # default: ./src   - Source folder 
+clasp-types --out    <folder>    # default: ./types - Output folder              
+clasp-types --client             # default: false   - Generate client side d.ts  
+clasp-types --root   <folder>    # default: ./      - Project root folder  
+```
 
 ## Library setup
 
