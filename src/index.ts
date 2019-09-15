@@ -112,6 +112,13 @@ function generateLibraryDTS(rootTypedoKind: TypedocKind) {
   packageJson.description = `Typescript definitions for ${claspJson.library.name}`;
   packageJson.scripts = {};
   packageJson.devDependencies = {};
+
+  if (packageJson.dependencies) {
+    for (let key in packageJson.dependencies) {
+      packageJson.dependencies[key] = '*'
+    }
+  }  
+
   packageJson.types = `./${filename}`;
   fs.outputFileSync(`${outDir}/package.json`, JSON.stringify(packageJson, null, 2));
 
@@ -124,7 +131,7 @@ function generateLibraryDTS(rootTypedoKind: TypedocKind) {
   fs.outputFileSync(`${outDir}/LICENSE`, licenseBuilder.build().getText());
 
   //Library
-  let builder = new LibraryBuilder(rootTypedoKind, claspJson);
+  let builder = new LibraryBuilder(rootTypedoKind, claspJson, packageJson);
   const filepath = `${outDir}/${filename}`;
   fs.outputFileSync(filepath, builder.build().getText());
 

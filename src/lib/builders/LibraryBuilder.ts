@@ -2,16 +2,19 @@ import { Namespace } from "../Namespace";
 import { TypedocKind } from "../schemas/TypedocJson";
 import { ClaspJson } from "../schemas/ClaspJson";
 import { Builder } from "./Builder";
+import { PackageJson } from "../schemas/PackageJson";
 
 export class LibraryBuilder extends Builder {
-  
+
   rootKind: TypedocKind;
   claspJson: ClaspJson;
+  packageJson: PackageJson;
 
-  constructor(kind: TypedocKind, claspJson: ClaspJson) {
+  constructor(kind: TypedocKind, claspJson: ClaspJson, packageJson: PackageJson) {
     super();
     this.rootKind = kind;
     this.claspJson = claspJson;
+    this.packageJson = packageJson;
   }
 
   build(): Builder {
@@ -19,12 +22,19 @@ export class LibraryBuilder extends Builder {
     this.append(`// Type definitions for ${this.claspJson.library.name}`).line();
     this.append(`// Generator: https://github.com/maelcaldas/clasp-dts`).doubleLine();
 
-    this.append('/// <reference types="google-apps-script" />').doubleLine();
+    if (this.packageJson.dependencies) {
+      for (let key in this.packageJson.dependencies) {
+        key = key.replace('@types/', '')
+        console.log(key)
+        this.append(`/// <reference types="${key}" />`).doubleLine();
+      }
+    }
+
     rootNamespace.render(this);
     this.append(`declare var ${this.claspJson.library.name}: ${this.claspJson.library.namespace}.${this.claspJson.library.name};`)
     return this;
   }
-  
+
   /**
    * Prepare kind with library class from functions and enum
    */
@@ -45,11 +55,11 @@ export class LibraryBuilder extends Builder {
       flags: {
         isPublic: true
       },
-      signatures:[]
+      signatures: []
     }
-    
+
     let enums = kind.children.filter(kind => kind.flags.isPublic).filter(kind => kind.kindString === 'Enumeration');
-    
+
     enums.forEach(e => {
       let property = {
         name: e.name,
@@ -72,8 +82,8 @@ export class LibraryBuilder extends Builder {
 
     return kind;
   }
-  
-  
-  
+
+
+
 
 }
