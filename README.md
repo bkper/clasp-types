@@ -11,6 +11,9 @@
 [Client-side API]: https://developers.google.com/apps-script/guides/html/reference/run
 [clasp]: https://github.com/google/clasp
 [Typescript]: https://github.com/google/clasp/blob/master/docs/typescript.md
+[inline-source-cli]: https://www.npmjs.com/package/inline-source-cli
+[glob-exec]: https://www.npmjs.com/package/glob-exec
+
 
 # clasp-types
 
@@ -18,7 +21,7 @@ A [Typescript] definitions generator for [clasp] projects to get **autocomplete*
 
 ![library-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/library-autocomplete.png)
 
-Also for generation of [Client-side API] to be used with [HTML Service], giving autocomplete and type checking for params of your exposed server functions, on client:
+It also supports generation of [Client-side API] to be used with [HTML Service], giving autocomplete and type checking for params of your exposed server functions, on client:
 
 ![client-side-api-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/client-side-api-autocomplete.png)
 
@@ -127,7 +130,7 @@ declare var OAuth2: gsuitedevs.OAuth2;
 A **npm ready to publish package** is generated in the output folder, with data with some setup instructions on **README.md**, so you can easily share your library types.
 
 > Notes: 
-> - Even the classes annotaded with ```@public```, methods inside then should also be marked as ```public``` in order to be exposed. **Private** or **protected** methods will **not** be exposed. 
+> - Even on the classes annotaded with ```@public```, methods inside then should also be marked as ```public``` in order to be exposed. **Private** or **protected** methods will **not** be exposed. 
 > - Interfaces and Enumerations with ```@public``` annotation will have all members exposed by default.
 
 ### Dependencies
@@ -138,12 +141,12 @@ If your package expose a transitive dependency on function params or return, suc
     "@types/google-apps-script": "^0.0.59"
   }
 ```
-So, it will correctly setup reference on d.ts:
+So, clasp-types will correctly setup the reference on index.d.ts:
 
  ```ts
  /// <reference types="google-apps-script" />
  ```
-And on the resulted npm package.json:
+And on the resulted package.json:
 ```json
   "dependencies": {
     "@types/google-apps-script": "*"
@@ -195,6 +198,27 @@ declare namespace google {
 }
 ```
 
+### Typescript on Client-side
+
+To develop with [Typescript] on client, you should work with separated ts files and inline the ```js``` files resulted from TS compilation, as well as the ```css``` in the same page, in order to the resulting html template be processed by the [HTML Service].
+
+To perform the inlining a great tool is the [inline-source-cli], so you can add a ```inline``` tag to your ```js``` and ```css``` references:
+
+```html
+<head>
+  ...
+  <link inline href="page-style.css" rel="stylesheet">
+</head>
+<body>
+  ...
+  <script inline src="page-activity.js"></script>
+  <script inline src="page-view.js"></script>
+</body>
+```
+And then use a tool such as [glob-exec] to inline all your sources in one single script line:
+```sh
+glob-exec --foreach './build/**/*.html' --  'cat {{file}} | inline-source --root build > dist/{{file.name}}{{file.ext}}'
+```
 
 ## Background
 
