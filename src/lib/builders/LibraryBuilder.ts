@@ -20,7 +20,7 @@ export class LibraryBuilder extends Builder {
   build(): Builder {
     let rootNamespace = new Namespace(this.prepare(this.rootKind), 0);
     this.append(`// Type definitions for ${this.claspJson.library.name}`).line();
-    this.append(`// Generator: https://github.com/maelcaldas/clasp-dts`).doubleLine();
+    this.append(`// Generator: https://github.com/maelcaldas/clasp-types`).doubleLine();
 
     if (this.packageJson.dependencies) {
       for (let key in this.packageJson.dependencies) {

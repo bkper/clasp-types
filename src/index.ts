@@ -25,7 +25,7 @@ const typedocApp = new TypeDoc.Application({
 program
   .description("Generate d.ts for clasp projects. File [.clasp.json] required")
   .option('-s, --src <folder>', 'Source folder', 'src')
-  .option('-o, --out <folder>', 'Output folder', 'dts')
+  .option('-o, --out <folder>', 'Output folder', 'types')
   .option('-r, --root <folder>', 'Root folder of [.clasp.json] and [package.json] files', '.')
   .option('-g, --gsrun', 'Generate google.script.run d.ts', false)
   .parse(process.argv);
@@ -62,20 +62,20 @@ const files = typedocApp.expandInputFiles([srcDir]);
 const project = typedocApp.convert(files);
 
 if (project) {
-  const apiModelFilePath = `${outDir}/.clasp-dts-temp-api-model__.json`;
+  const apiModelFilePath = `${outDir}/.clasp-types-temp-api-model__.json`;
   try {
 
     //Generate api model
     typedocApp.generateJson(project, apiModelFilePath);
 
-    //Generate dts
+    //Generate types
     let rawdata = fs.readFileSync(apiModelFilePath);
     let rootTypedoKind: TypedocKind = JSON.parse(rawdata.toString());
 
     if (gsRun) {
-      getGSRunDTS(rootTypedoKind);
+      getGSRunTypes(rootTypedoKind);
     } else {
-      generateLibraryDTS(rootTypedoKind);
+      generateLibraryTypes(rootTypedoKind);
     }
 
   } finally {
@@ -90,7 +90,7 @@ if (project) {
 
 
 
-function generateLibraryDTS(rootTypedoKind: TypedocKind) {
+function generateLibraryTypes(rootTypedoKind: TypedocKind) {
   if (!claspJson.library || !claspJson.library.name || !claspJson.library.namespace) {
     console.log('ERROR - Add library info to .clasp.json. Example:');
     console.log();
@@ -108,7 +108,7 @@ function generateLibraryDTS(rootTypedoKind: TypedocKind) {
     return;
   }
 
-  packageJson.name = `${packageJson.name}-dts`;
+  packageJson.name = `${packageJson.name}-types`;
   packageJson.description = `Typescript definitions for ${claspJson.library.name}`;
   packageJson.scripts = {};
   packageJson.devDependencies = {};
@@ -141,7 +141,7 @@ function generateLibraryDTS(rootTypedoKind: TypedocKind) {
 /**
  * Generate google.script.run d.ts file
  */
-function getGSRunDTS(rootTypedoKind: TypedocKind) {
+function getGSRunTypes(rootTypedoKind: TypedocKind) {
   let builder = new GSRunBuilder(rootTypedoKind);
   const filepath = `${outDir}/google.script.run/${filename}`;
   fs.outputFileSync(filepath, builder.build().getText());
