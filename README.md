@@ -22,12 +22,16 @@ Also for generation of [Client-side API] to be used with [HTML Service], giving 
 
 ![client-side-api-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/client-side-api-autocomplete.png)
 
-
-It works like [API Extractor], reading ```@public``` comment annotations on any global function, class, interface or enum you want to expose, and generating d.ts files consistently.
+It works like the [API Extractor], reading ```@public``` comment annotations on any global function, class, interface or enum you want to expose, and generating d.ts files consistently.
 
 ## Install
 
-## [Libraries]
+## Command params
+
+
+
+## Library setup
+
 
 ### 1) Add your library **namespace** and **name** to the ```.clasp.json```:
 ```
@@ -53,6 +57,7 @@ function createService(serviceName: string) {
   return new Service(serviceName);
 }
 
+
 /**
  * The OAuth service
  * 
@@ -60,32 +65,31 @@ function createService(serviceName: string) {
  */
 class Service {
   name: string;
+  params_: any;
   constructor(name: string) {
     this.name = name;;
   }
 
-  /**
-   * Get service name
-   */
   public getName() {
     return this.name;
   }
+  
+
+  /**
+   * Sets an additional parameter to use when constructing the authorization URL.
+   */
+  public setParam(name: string, value: string): Service {
+    this.params_[name] = value;
+    return this;
+  };
+
 }
-
-
-
 ```
 
-> Notes: 
-> - Even the classes annotaded with ```@public```, methods inside then should also be marked as ```public``` in order to be exposed. **Private** or **protected** methods will **not** be exposed. 
-> - Interfaces and Enumerations with ```@public``` annotation will have all members exposed by default.
-
-
-
-### ...will generate the d.ts:
+### 3) Run ```clasp-types``` to generate a **npm package** with the index.d.ts:
 
 ```ts
-declare namespace GoogleAppsScript {
+declare namespace gsuitedevs {
 
     /**
      * The main entry point to interact with OAuth2
@@ -106,20 +110,62 @@ declare namespace GoogleAppsScript {
      */
     export interface Service {
 
-        /**
-         * Get service name
-         */
         getName(): string;
+
+        /**
+         * Sets an additional parameter to use when constructing the authorization URL.
+         */
+        setParam(name: string, value: string): Service;
 
     }
 
 }
 
-declare var OAuth2: GoogleAppsScript.OAuth2;
+declare var OAuth2: gsuitedevs.OAuth2;
+```
+
+A **npm ready to publish package** is generated in the output folder, with data with some setup instructions on **README.md**, so you can easily share your library types.
+
+> Notes: 
+> - Even the classes annotaded with ```@public```, methods inside then should also be marked as ```public``` in order to be exposed. **Private** or **protected** methods will **not** be exposed. 
+> - Interfaces and Enumerations with ```@public``` annotation will have all members exposed by default.
+
+### Dependencies
+
+If your package expose a transitive dependency on function params or return, such as GoogleAppsScript.HTML.HtmlOutput from @types/google-apps-script, add it to **"dependencies"** section of your package.json, instead of "devDependencies":
+```json
+  "dependencies": {
+    "@types/google-apps-script": "^0.0.59"
+  }
+```
+So, it will correctly setup reference on d.ts:
+
+ ```ts
+ /// <reference types="google-apps-script" />
+ ```
+And on the resulted npm package.json:
+```json
+  "dependencies": {
+    "@types/google-apps-script": "*"
+  },
 ```
 
 
-## the same source code, ```--client``` option, will generate the d.ts:
+
+
+## Client-side API setup
+
+### 1) Add ```@public``` comment annotation to the code you want to expose to client
+```ts
+/**
+ * Execute a sum on server side, from client side
+ */
+function sumOnServer(a: number, b: number): number {
+  return a + b;
+}
+```
+
+### 2) Run ```clasp-types --client``` to generate the index.d.ts:
 
 ```ts
 declare namespace google {
@@ -136,31 +182,25 @@ declare namespace google {
 
             createService(serviceName: string): void //Service;
 
-        }
-
-        /**
-         * The OAuth service
-         */
-        export interface Service {
-
-            /**
-             * Get service name
-             */
-            getName(): string;
+            sumOnServer(a: number, b: number): void //number;
+            ...
 
         }
 
         export var run: Runner;
 
     }
+    ...
 
 }
-
 ```
 
 
+## Background
+
 The clasp-types was originally created as a foundation for the [BkperApp] library and it's [Sheets] and [Forms] Add-ons, with inspirations on the [API Extractor] and previous work from [grant], [motemen] and [mtgto] - thank you guys :-)
 
+[Libraries] are a great way to share code between scripts, but, once published and others start using it, it requires some level of care like any public API. 
 
 # Server Library
 
