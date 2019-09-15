@@ -20,15 +20,15 @@
 
 A [TypeScript] definitions generator for [clasp] projects to get **autocomplete** and **type checking** for your Google Apps Script OO [Libraries] and [Client-side API].
 
-Library:
+*Library:*
 ![library-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/library-autocomplete.png)
 
-Client-side API:
+*Client-side API:*
 ![client-side-api-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/client-side-api-autocomplete.png)
 
-It works like the [API Extractor], reading ```@public``` comment annotations on any global function, class, interface or enum you want to expose, and generating d.ts files consistently.
+It works like the [API Extractor], reading the ```@public``` comment annotations on any global function, class, interface or enum you want to expose, and generating d.ts files consistently.
 
-> Note: clasp-types is intended for generating d.ts from Apps Script code already written in TypeScript. For generating Built-in and Advanced Apps Script service see https://github.com/grant/google-apps-script-dts
+> Note: clasp-types is intended for generating d.ts from Apps Script code already written in TypeScript. For generating built-in and advanced Apps Script services see https://github.com/grant/google-apps-script-dts
 
 ## Install
 
@@ -39,13 +39,13 @@ It works like the [API Extractor], reading ```@public``` comment annotations on 
 ## Library setup
 
 
-### 1) Add your library **namespace** and **name** to the ```.clasp.json```:
+### 1) Add your library *namespace* and *name* to the ```.clasp.json```:
 ```
 {
   "scriptId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF",
   "rootDir": "./src",
   "library": {
-    "namespace": "GoogleAppsScript",
+    "namespace": "gsuitedevs",
     "name": "OAuth2"
   }
 }
@@ -92,7 +92,7 @@ class Service {
 }
 ```
 
-### 3) Run ```clasp-types``` to generate a **npm package** with the index.d.ts:
+### 3) Run ```clasp-types``` to generate a **npm package** with index.d.ts like:
 
 ```ts
 declare namespace gsuitedevs {
@@ -130,17 +130,17 @@ declare namespace gsuitedevs {
 declare var OAuth2: gsuitedevs.OAuth2;
 ```
 
-> Notes: 
+> *Notes:* 
 > - Even on the classes annotaded with ```@public```, methods inside then should also be marked as ```public``` in order to be exposed. **Private** or **protected** methods will **not** be exposed. 
 > - Interfaces and Enumerations with ```@public``` annotation will have all members exposed by default.
 
-A **npm ready to publish package** is generated in the output folder, with data with some setup instructions on **README.md**, so you can easily share your library types.
+A **npm ready to publish package** is generated in the output folder, with some setup instructions on **README.md**, so you can easily share your library types.
 
-> Suggestion: You may add a [dist-tag](https://docs.npmjs.com/cli/dist-tag) to your types package distribution with the same [version](https://developers.google.com/apps-script/guides/versions) of the script, say, ```v23```, so users can link the types version with script version, and use batch that matches.
+> *Suggestion:* You may add a [dist-tag](https://docs.npmjs.com/cli/dist-tag) to your types package distribution with the same [version](https://developers.google.com/apps-script/guides/versions) of the script, say, ```v23```, so users can link the types version with script version, and use batch that matches.
 
 ### Dependencies
 
-If your package expose a transitive dependency on function params or return, such as GoogleAppsScript.HTML.HtmlOutput from @types/google-apps-script, add it to **"dependencies"** section of your package.json, instead of "devDependencies":
+If your package expose a transitive dependency on params or return type, such as GoogleAppsScript.HTML.HtmlOutput from @types/google-apps-script, add it to **"dependencies"** section of your package.json, instead of "devDependencies":
 ```json
   "dependencies": {
     "@types/google-apps-script": "^0.0.59"
@@ -166,13 +166,15 @@ And on the resulted package.json:
 ```ts
 /**
  * Execute a sum on server side, from client side
+ * 
+ * @public
  */
 function sumOnServer(a: number, b: number): number {
   return a + b;
 }
 ```
 
-### 2) Run ```clasp-types --client``` to generate the index.d.ts:
+### 2) Run ```clasp-types --client``` to generate a index.d.ts like:
 
 ```ts
 declare namespace google {
@@ -186,8 +188,6 @@ declare namespace google {
             withFailureHandler(handler: (error: Error) => void): Runner;
 
             withUserObject(object: any): Runner;
-
-            createService(serviceName: string): void //Service;
 
             sumOnServer(a: number, b: number): void //number;
             ...
@@ -204,7 +204,7 @@ declare namespace google {
 
 ### TypeScript on Client-side
 
-To develop with [TypeScript] on client, you should work with separated ts files and inline the ```js``` files resulted from TS compilation, as well as the ```css``` in the same page, in order to the resulting html template be processed by the [HTML Service].
+To develop with [TypeScript] on client side, you should work with separated ts files and inline the corresponding ```js```, as well as all ```css``` in the same page, in order to the resulting html template be processed by the [HTML Service].
 
 To perform the inlining a great tool is the [inline-source-cli], so you can add a ```inline``` tag to your ```js``` and ```css``` references:
 
@@ -228,14 +228,14 @@ glob-exec --foreach './build/**/*.html' --  'cat {{file}} | inline-source --root
 
 The clasp-types was originally created as a foundation for the [BkperApp] library and it's [Sheets] and [Forms] Add-ons, with inspirations on the [API Extractor] and previous work from [grant], [motemen] and [mtgto] - thank you guys :-)
 
-[Libraries] are a great way to share code between scripts, but, once published and others start using it, it requires some level of care like any public API, so, applying some [API Extractor] concepts and principles help to keep the quality of the Library and avoid accidental breaks.
+[Libraries] are a great way to share code between scripts, but, once published and others start using it, it requires some level of care like any other public API, so, applying some [API Extractor] concepts and principles help to keep the quality of the Library and avoid accidental breaks.
 
-[DefinitelyTyped] is an amazing initiative and works really well for thirdy-party libraries written in js, as well as for the Google Apps Script built-in and advanced services, although, as its recommended in the [official declaration publishing documentation](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html), for libraries written in TypeScript, build in its onw npm package is favored, and give some adtantages:
+[DefinitelyTyped] is an amazing initiative and works really well for publishing types for thirdy-party libraries written in js, as well as for the Google Apps Script built-in and advanced services, although, as its recommended in the [official declaration publishing documentation](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html), for libraries written in TypeScript, build its own npm package is favored, and give some advantages:
 
 - Speed on release
-- Dist-tag for mapping script versions
 - Deployment automation
+- Dist-tag for mapping script versions
 
-The down side is that it requires one aditional aditional types configuration step, so, we automatically added it on README for scoped packages to setup the ```typeRoots``` and non scoped packages to setup the ```types```, like the following example: 
+The down side is that it requires one aditional aditional types configuration step, so, clasp-types automatically add instructions on package README for scoped packages to setup the ```typeRoots``` and non scoped packages to setup the ```types```, like the following example: 
 
 https://www.npmjs.com/package/@bkper/bkper-app-types
