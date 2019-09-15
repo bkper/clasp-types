@@ -136,7 +136,7 @@ function generateLibraryTypes(rootTypedoKind: TypedocKind) {
   const filepath = `${outDir}/${packageJson.name}/${filename}`;
   fs.outputFileSync(filepath, builder.build().getText());
 
-  console.log(`Generated ${claspJson.library.name} Typescript definitions at ${outDir}/`);
+  console.log(`Generated ${claspJson.library.name} definitions at ${outDir}/`);
 }
 
 /**
@@ -146,6 +146,6 @@ function getGSRunTypes(rootTypedoKind: TypedocKind) {
   let builder = new ClientSideBuilder(rootTypedoKind);
   const filepath = `${outDir}/google.script.types/${filename}`;
   fs.outputFileSync(filepath, builder.build().getText());
-  console.log(`Generated google.script.run Typescript definitions at ${outDir}/`);
+  console.log(`Generated google.script.types definitions at ${outDir}/`);
 }
 
