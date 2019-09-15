@@ -1,6 +1,6 @@
 {
   "name": "clasp-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A d.ts generator for clasp projects",
   "homepage": "https://github.com/maelcaldas/clasp-types#readme",
   "main": "./dist/index.js",
@@ -15,12 +15,11 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist",
-    "prepublish": "yarn build",
     "prebuild": "copyfiles ./src/lib/builders/*.json -f dist/lib/builders/",
     "build": "tsc -p .",
     "watch": "yarn build -w",
-    "predeploy": "yarn build",
-    "deploy": "npm publish --dry-run"
+    "preversion": "yarn build",
+    "postversion": "git push && git push --tags && echo \"Successfully released version $npm_package_version!\""
   },
   "devDependencies": {
     "@types/fs-extra": "^8.0.0",
