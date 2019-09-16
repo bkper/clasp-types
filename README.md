@@ -156,11 +156,11 @@ declare var OAuth2: gsuitedevs.OAuth2;
 
 A **npm ready to publish package** is generated in the output folder, with some setup instructions on **README.md**, so you can easily share your library types.
 
-> *Suggestion:* You may add a [dist-tag](https://docs.npmjs.com/cli/dist-tag) to your types package distribution with the same [version](https://developers.google.com/apps-script/guides/versions) of the script, say, ```v23```, so users can link the types version with script version, and use batch that matches.
+> *Suggestion:* You may add a [dist-tag](https://docs.npmjs.com/cli/dist-tag) to your types package distribution with the same [version](https://developers.google.com/apps-script/guides/versions) of the script, say, ```v23```, so users can link the types version with script version, and use ones that matches.
 
 ### Dependencies
 
-If your package expose a transitive dependency on params or return type, such as GoogleAppsScript.HTML.HtmlOutput from @types/google-apps-script, add it to **"dependencies"** section of your package.json, instead of "devDependencies":
+If your package expose a transitive dependency on **params** or **return** types, such as GoogleAppsScript.HTML.HtmlOutput from @types/google-apps-script, add it to **"dependencies"** section of your package.json, instead of "devDependencies":
 ```json
   "dependencies": {
     "@types/google-apps-script": "^0.0.59"
@@ -246,7 +246,7 @@ glob-exec --foreach './build/**/*.html' --  'cat {{file}} | inline-source --root
 
 ## Background
 
-The clasp-types was originally created as a foundation for the [BkperApp] library and it's [Sheets] and [Forms] Add-ons, with inspirations on the [API Extractor] and previous work from [grant], [motemen] and [mtgto] - thank you guys :-)
+The clasp-types was originally created as a foundation for the [BkperApp] library and it's [Sheets] and [Forms] Add-ons, with inspirations on the [API Extractor], [DefinitelyTyped] and previous work from [grant], [motemen] and [mtgto] - thank you guys :-)
 
 [Libraries] are a great way to share code between scripts, but, once published and others start using it, it requires some level of care like any other public API, so, applying some [API Extractor] concepts and principles help to keep the quality of the Library and avoid accidental breaks.
 
@@ -256,6 +256,6 @@ The clasp-types was originally created as a foundation for the [BkperApp] librar
 - Deployment automation
 - Dist-tag for mapping script versions
 
-The down side is that it requires one aditional aditional types configuration step, so, clasp-types automatically add instructions on package README for scoped packages to setup the ```typeRoots``` and non scoped packages to setup the ```types```, like the following example: 
+The down side is that it requires one aditional aditional types configuration step, so, clasp-types automatically generate a package ready to publish, with instructions on README for scoped packages to setup the ```typeRoots``` and non scoped packages to setup the ```types```. Here is an example one with scoped package:
 
 https://www.npmjs.com/package/@bkper/bkper-app-types
