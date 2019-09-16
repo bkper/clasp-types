@@ -14,7 +14,7 @@
 [inline-source-cli]: https://www.npmjs.com/package/inline-source-cli
 [glob-exec]: https://www.npmjs.com/package/glob-exec
 [DefinitelyTyped]: http://definitelytyped.org/
-
+[example]: https://www.npmjs.com/package/@bkper/bkper-app-types
 
 # clasp-types
 
@@ -30,7 +30,7 @@ It works like the [API Extractor], reading the ```@public``` comment annotations
 
 > Note: clasp-types is intended for generating d.ts from Apps Script code already written in TypeScript. For generating built-in and advanced Apps Script services see https://github.com/grant/google-apps-script-dts
 
-Here is an [example](https://www.npmjs.com/package/@bkper/bkper-app-types) of library types built and published with clasp-types.
+Here is an [example] of library types built and published with clasp-types.
 
 ## Install
 
@@ -151,10 +151,10 @@ declare var OAuth2: gsuitedevs.OAuth2;
 ```
 
 > *Notes:* 
-> - Even on the classes annotaded with ```@public```, methods inside then should also be marked as ```public``` in order to be exposed. **Private** or **protected** methods will **not** be exposed. 
+> - On classes annotaded with ```@public```, methods inside then should also be marked as ```public``` in order to be exposed. **Private** or **protected** methods will **not** be exposed. 
 > - Interfaces and Enumerations with ```@public``` annotation will have all members exposed by default.
 
-A **npm ready to publish package** is generated in the output folder, with some setup instructions on **README.md**, so you can easily share your library types.
+A **npm ready to publish package** is generated in the output folder, with some setup instructions on **README.md**, so you can easily share your library types. Here is an [example].
 
 > *Suggestion:* You may add a [dist-tag](https://docs.npmjs.com/cli/dist-tag) to your types package distribution with the same [version](https://developers.google.com/apps-script/guides/versions) of the script, say, ```v23```, so users can link the types version with script version, and use ones that matches.
 
@@ -224,7 +224,7 @@ declare namespace google {
 
 ### TypeScript on Client-side
 
-To develop with [TypeScript] on client side, you should work with separated ts files and inline the corresponding ```js```, as well as all ```css``` in the same page, in order to the resulting html template be processed by the [HTML Service].
+To develop with [TypeScript] on client side, you should work with separated ```ts``` files and inline the corresponding ```js```, as well as all ```css``` in the same page, in order to the resulting html template be processed by the [HTML Service].
 
 To perform the inlining a great tool is the [inline-source-cli], so you can add a ```inline``` tag to your ```js``` and ```css``` references:
 
@@ -256,6 +256,4 @@ The clasp-types was originally created as a foundation for the [BkperApp] librar
 - Release automation
 - [Dist-tag](https://docs.npmjs.com/cli/dist-tag) for mapping script versions
 
-The down side is that it requires one aditional aditional types configuration step, so, clasp-types automatically generate a package ready to publish, with instructions on README for scoped packages to setup the ```typeRoots``` and non scoped packages to setup the ```types```. Here is an example one with scoped package:
-
-https://www.npmjs.com/package/@bkper/bkper-app-types
+The down side is that it requires one aditional aditional types configuration step, so, clasp-types automatically generate a package ready to publish, with instructions on README for scoped packages to setup the ```typeRoots``` and non scoped packages to setup the ```types```.
