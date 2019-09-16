@@ -121,19 +121,19 @@ function generateLibraryTypes(rootTypedoKind: TypedocKind) {
   }  
 
   packageJson.types = `./${filename}`;
-  fs.outputFileSync(`${outDir}/${packageJson.name}/package.json`, JSON.stringify(packageJson, null, 2));
+  fs.outputFileSync(`${outDir}/package.json`, JSON.stringify(packageJson, null, 2));
 
   //README.md
   let readmeBuilder = new ReadmeBuilder(packageJson, claspJson);
-  fs.outputFileSync(`${outDir}/${packageJson.name}/README.md`, readmeBuilder.build().getText());
+  fs.outputFileSync(`${outDir}/README.md`, readmeBuilder.build().getText());
 
   //LICENSE
   let licenseBuilder = new LicenseBuilder(packageJson);
-  fs.outputFileSync(`${outDir}/${packageJson.name}/LICENSE`, licenseBuilder.build().getText());
+  fs.outputFileSync(`${outDir}/LICENSE`, licenseBuilder.build().getText());
 
   //Library
   let builder = new LibraryBuilder(rootTypedoKind, claspJson, packageJson);
-  const filepath = `${outDir}/${packageJson.name}/${filename}`;
+  const filepath = `${outDir}/${filename}`;
   fs.outputFileSync(filepath, builder.build().getText());
 
   console.log(`Generated ${claspJson.library.name} definitions at ${outDir}/`);

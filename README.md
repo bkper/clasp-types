@@ -44,18 +44,16 @@ yarn add --dev clasp-types
 
 ## Command
 
-The package comes with the following command:
-
 ```
 clasp-types
 ```
 
-With optional params:
+Optional params:
 ```sh
-clasp-types --src    <folder>    # default: ./src   - Source folder 
-clasp-types --out    <folder>    # default: ./types - Output folder              
-clasp-types --client             # default: false   - Generate client side d.ts  
-clasp-types --root   <folder>    # default: ./      - Project root folder  
+--src    <folder>    # default: ./src   - Source folder 
+--out    <folder>    # default: ./types - Output folder              
+--client             # default: false   - Generate client side d.ts  
+--root   <folder>    # default: ./      - Project root folder  
 ```
 
 ## Library setup
