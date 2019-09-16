@@ -50,10 +50,10 @@ clasp-types
 
 Optional params:
 ```sh
---src    <folder>    # default: ./src   - Source folder 
---out    <folder>    # default: ./types - Output folder              
---client             # default: false   - Generate client side d.ts  
---root   <folder>    # default: ./      - Project root folder  
+--src          <folder>    # default: ./src     - Source folder 
+--out          <folder>    # default: ./dist    - Output folder              
+--client                   # default: false     - Generate client side API types  
+--root         <folder>    # default: ./        - Project root folder  
 ```
 
 ## Library setup

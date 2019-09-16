@@ -25,9 +25,9 @@ const typedocApp = new TypeDoc.Application({
 program
   .description("Generate d.ts for clasp projects. File [.clasp.json] required")
   .option('-s, --src <folder>', 'Source folder', 'src')
-  .option('-o, --out <folder>', 'Output folder', 'types')
+  .option('-o, --out <folder>', 'Output folder', 'dist')
+  .option('-g, --client', 'Generate client side API types', false)
   .option('-r, --root <folder>', 'Root folder of [.clasp.json] and [package.json] files', '.')
-  .option('-g, --client', 'Generate client side d.ts', false)
   .parse(process.argv);
 
 
@@ -121,19 +121,19 @@ function generateLibraryTypes(rootTypedoKind: TypedocKind) {
   }  
 
   packageJson.types = `./${filename}`;
-  fs.outputFileSync(`${outDir}/package.json`, JSON.stringify(packageJson, null, 2));
+  fs.outputFileSync(`${outDir}/${packageJson.name}/package.json`, JSON.stringify(packageJson, null, 2));
 
   //README.md
   let readmeBuilder = new ReadmeBuilder(packageJson, claspJson);
-  fs.outputFileSync(`${outDir}/README.md`, readmeBuilder.build().getText());
+  fs.outputFileSync(`${outDir}/${packageJson.name}/README.md`, readmeBuilder.build().getText());
 
   //LICENSE
   let licenseBuilder = new LicenseBuilder(packageJson);
-  fs.outputFileSync(`${outDir}/LICENSE`, licenseBuilder.build().getText());
+  fs.outputFileSync(`${outDir}/${packageJson.name}/LICENSE`, licenseBuilder.build().getText());
 
   //Library
   let builder = new LibraryBuilder(rootTypedoKind, claspJson, packageJson);
-  const filepath = `${outDir}/${filename}`;
+  const filepath = `${outDir}/${packageJson.name}/${filename}`;
   fs.outputFileSync(filepath, builder.build().getText());
 
   console.log(`Generated ${claspJson.library.name} definitions at ${outDir}/`);
@@ -144,8 +144,8 @@ function generateLibraryTypes(rootTypedoKind: TypedocKind) {
  */
 function getGSRunTypes(rootTypedoKind: TypedocKind) {
   let builder = new ClientSideBuilder(rootTypedoKind);
-  const filepath = `${outDir}/google.script.types/${filename}`;
+  const filepath = `${outDir}/@types/google.script.types/${filename}`;
   fs.outputFileSync(filepath, builder.build().getText());
-  console.log(`Generated google.script.types definitions at ${outDir}/`);
+  console.log(`Generated google.script.types definitions at ${outDir}/@types/`);
 }
 
