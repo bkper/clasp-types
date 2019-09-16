@@ -14,7 +14,6 @@ export class ReadmeBuilder extends Builder {
   }
 
   public build(): Builder {
-    let date = new Date().toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric' })
     let org = this.extractOrg();
     this
     .append("# Summary").doubleLine()
@@ -42,7 +41,7 @@ export class ReadmeBuilder extends Builder {
     .append('```').doubleLine()
     .append('[Learn more](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html#types-typeroots-and-types) about **@types**, **typeRoots** and **types**').doubleLine()
     this.append('# Details').doubleLine()
-    .append(`Generated using [clasp-types](https://github.com/maelcaldas/clasp-types) on ${date}`).doubleLine()
+    .append(`Generated using [clasp-types](https://github.com/maelcaldas/clasp-types)`).doubleLine()
     return this;
   }
 
