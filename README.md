@@ -252,9 +252,9 @@ The clasp-types was originally created as a foundation for the [BkperApp] librar
 
 [DefinitelyTyped] is an amazing initiative and works really well for publishing types for thirdy-party libraries written in js, as well as for the Google Apps Script built-in and advanced services, although, as its recommended in the [official declaration publishing documentation](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html), for libraries written in TypeScript, build its own npm package is favored, and give some advantages:
 
-- Speed on release
-- Deployment automation
-- Dist-tag for mapping script versions
+- Speed on publishing
+- Release automation
+- [Dist-tag](https://docs.npmjs.com/cli/dist-tag) for mapping script versions
 
 The down side is that it requires one aditional aditional types configuration step, so, clasp-types automatically generate a package ready to publish, with instructions on README for scoped packages to setup the ```typeRoots``` and non scoped packages to setup the ```types```. Here is an example one with scoped package:
 
