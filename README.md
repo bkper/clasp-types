@@ -18,7 +18,7 @@
 
 # clasp-types
 
-A [TypeScript] definitions generator for [clasp] projects to get **autocomplete** and **type checking** for your Google Apps Script OO [Libraries] and [Client-side API].
+A [TypeScript] definitions generator for [clasp] projects to get **autocomplete** and **type checking** for your Google Apps Script Object Oriented [Libraries] and [Client-side API].
 
 *Library:*
 ![library-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/library-autocomplete.png)
