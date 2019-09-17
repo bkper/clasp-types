@@ -263,6 +263,6 @@ The down side is that it requires one aditional aditional types configuration st
 
 - Identify edge cases for params and return types
 
-- Generate d.ts fom a well documented ```js``` library, so it can also work for libraries such as [OAuth2](https://github.com/gsuitedevs/apps-script-oauth2)
+- Generate ```d.ts``` fom a well documented ```js``` library, so it can also work for libraries such as [OAuth2](https://github.com/gsuitedevs/apps-script-oauth2)
 
-- Generate d.ts from [openapi](https://swagger.io/specification/) and/or [API Discovery](https://developers.google.com/discovery/) specs, for advanced like services
+- Generate client ```ts``` and ```d.ts``` from [openapi](https://swagger.io/specification/) and [API Discovery](https://developers.google.com/discovery/) specs, for [Advanced Services](https://developers.google.com/apps-script/guides/services/advanced) like libraries
