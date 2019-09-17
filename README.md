@@ -28,7 +28,7 @@ A [TypeScript] definitions generator for [clasp] projects to get **autocomplete*
 
 It works like the [API Extractor], reading the ```@public``` comment annotations on any global function, class, interface or enum you want to expose, and generating d.ts files consistently.
 
-#### Features
+## Features
 
 - **d.ts rollup:** Generate a single ```d.ts``` from all your ```.ts``` files, wrapping global functions into Library interface.
 
