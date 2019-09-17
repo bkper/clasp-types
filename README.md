@@ -36,7 +36,7 @@ It works like the [API Extractor], reading the ```@public``` comment annotations
 
 - **Publish ready:** Generate a npm package, with clear setups instructions, ready to be published.
 
-- **Client-side API** For Add-on and Web Apps, generate types for your global functions in a single ```d.ts``` file on *@types* folder, to get autocomplete from your exposed functions.
+- **Client-side API** For Add-ons and Web Apps, generate types for your global functions exposed with ```@public```, in a single ```d.ts``` file on *@types* folder, to get autocomplete for the server API on client.
 
 Here is an [example] of library types built and published with clasp-types.
 
