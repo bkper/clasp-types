@@ -28,9 +28,19 @@ A [TypeScript] definitions generator for [clasp] projects to get **autocomplete*
 
 It works like the [API Extractor], reading the ```@public``` comment annotations on any global function, class, interface or enum you want to expose, and generating d.ts files consistently.
 
-> Note: clasp-types is intended for generating d.ts from Apps Script code already written in TypeScript. For generating built-in and advanced Apps Script services see https://github.com/grant/google-apps-script-dts
+#### Features
+
+- **d.ts rollup:** Generate a single ```d.ts``` from all your ```.ts``` files, wrapping global functions into Library interface.
+
+- **Clean library API:** Expose only functions and methods through ```@public``` annotation, building a cleanner interface and avoiding usage of elements not intended to be exposed.
+
+- **Publish ready:** Generate a npm package, with clear setups instructions, ready to be published.
+
+- **Client-side API** For Add-on and Web Apps, generate types for your global functions in a single ```d.ts``` file on *@types* folder, to get autocomplete from your exposed functions.
 
 Here is an [example] of library types built and published with clasp-types.
+
+> Note: clasp-types is intended for generating d.ts from Apps Script code already written in TypeScript. For generating built-in and advanced Apps Script services see https://github.com/grant/google-apps-script-dts
 
 ## Install
 
