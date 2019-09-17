@@ -257,3 +257,12 @@ The clasp-types was originally created as a foundation for the [BkperApp] librar
 - [Dist-tag](https://docs.npmjs.com/cli/dist-tag) for mapping script versions
 
 The down side is that it requires one aditional aditional types configuration step, so, clasp-types automatically generate a package ready to publish, with instructions on README for scoped packages to setup the ```typeRoots``` and non scoped packages to setup the ```types```.
+
+
+## Help welcome
+
+- Identify edge cases for params and return types
+
+- Generate d.ts fom a well documented ```js``` library, so it can also work for libraries such as [OAuth2](https://github.com/gsuitedevs/apps-script-oauth2)
+
+- Generate d.ts from [openapi](https://swagger.io/specification/) and/or [API Discovery](https://developers.google.com/discovery/) specs, for advanced like services
