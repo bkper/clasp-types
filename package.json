@@ -1,6 +1,6 @@
 {
   "name": "clasp-types",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A d.ts generator for clasp projects",
   "homepage": "https://github.com/maelcaldas/clasp-types#readme",
   "main": "./dist/index.js",
