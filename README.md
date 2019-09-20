@@ -36,7 +36,7 @@ It works like the [API Extractor], reading the ```@public``` comment annotations
 
 - **Clean library API:** Expose only functions and methods through ```@public``` annotation, building a cleanner interface and avoiding usage of elements not intended to be exposed.
 
-- **Publish ready:** Generate a npm package, with clear setups instructions, ready to be published.
+- **Publish ready:** Generate a npm package, with clear setup instructions, ready to be published.
 
 - **Client-side API** For Add-ons and Web Apps, generate types for your global functions exposed with ```@public```, in a single ```d.ts``` file on *@types* folder, to get autocomplete for the server API on client.
 
