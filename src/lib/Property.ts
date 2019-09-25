@@ -11,7 +11,9 @@ export class Property extends Definition {
 
   render(builder: Builder): void {
     this.addComment(builder, this.kind.comment);
-    builder.append(`${this.ident()}${this.kind.name}: `)
+    let sep = this.kind.flags.isOptional ? '?:' : ':';
+
+    builder.append(`${this.ident()}${this.kind.name}${sep} `)
     if (this.kind.flags.isTypeof) {
       builder.append('typeof ')
     }

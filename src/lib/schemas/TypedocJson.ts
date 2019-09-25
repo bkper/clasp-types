@@ -7,6 +7,7 @@ export interface TypedocKind {
   flags: {
     isPublic?: boolean
     isExported?: boolean
+    isOptional?: boolean
     //custom ;-)
     isTypeof?: boolean
   }
