@@ -72,7 +72,7 @@ Optional params:
 
 
 ### 1) Add your library *namespace* and *name* to the ```.clasp.json```:
-```
+```json
 {
   "scriptId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF",
   "rootDir": "./src",
