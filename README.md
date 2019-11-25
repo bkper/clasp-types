@@ -3,7 +3,7 @@
 [grant]: https://github.com/grant/google-apps-script-dts
 [motemen]: https://github.com/motemen/dts-google-apps-script
 [mtgto]: https://github.com/mtgto/dts-google-apps-script-advanced
-[Sheets]: https://apps.google.com/marketplace/app/nigjlfhgcfljgfalepfbklfceelkggdd
+[Add-on for Google Sheets]: https://apps.google.com/marketplace/app/nigjlfhgcfljgfalepfbklfceelkggdd
 [HTML Service]: https://developers.google.com/apps-script/guides/html/communication
 [Libraries]: https://developers.google.com/apps-script/guides/libraries
 [library]: https://developers.google.com/apps-script/guides/libraries
@@ -257,7 +257,7 @@ glob-exec --foreach './build/**/*.html' --  'cat {{file}} | inline-source --root
 
 ## Background
 
-The clasp-types was originally created as a foundation for the [BkperApp] library and it's [Sheets] Add-on, with inspirations on the [API Extractor], [DefinitelyTyped] and previous work from [grant], [motemen] and [mtgto] - thank you guys :-)
+The clasp-types was originally created as a foundation for the [BkperApp] library and the Bkper [Add-on for Google Sheets], with inspirations on the [API Extractor], [DefinitelyTyped] and previous work from [grant], [motemen] and [mtgto] - thank you guys :-)
 
 [Libraries] are a great way to share code between scripts, but, once published and others start using it, it requires some level of care like any other public API, so, applying some [API Extractor] concepts and principles help to keep the quality of the Library and avoid accidental breaks.
 
