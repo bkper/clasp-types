@@ -3,7 +3,7 @@
 [grant]: https://github.com/grant/google-apps-script-dts
 [motemen]: https://github.com/motemen/dts-google-apps-script
 [mtgto]: https://github.com/mtgto/dts-google-apps-script-advanced
-[Add-on for Google Sheets]: https://apps.google.com/marketplace/app/nigjlfhgcfljgfalepfbklfceelkggdd
+[Add-on for Google Sheets]: https://gsuite.google.com/marketplace/app/bkper/360398463400
 [HTML Service]: https://developers.google.com/apps-script/guides/html/communication
 [Libraries]: https://developers.google.com/apps-script/guides/libraries
 [library]: https://developers.google.com/apps-script/guides/libraries
