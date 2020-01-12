@@ -2,6 +2,7 @@
 
 const program = require('commander');
 import * as TypeDoc from 'typedoc';
+import * as ts from 'typescript';
 import * as fs from "fs-extra";
 import { LibraryBuilder } from "./lib/builders/LibraryBuilder";
 import { ClientSideBuilder } from "./lib/builders/ClientSideBuilder";
@@ -11,11 +12,14 @@ import { PackageJson } from './lib/schemas/PackageJson';
 import { ClaspJson } from './lib/schemas/ClaspJson';
 import { TypedocKind } from './lib/schemas/TypedocJson';
 
-const typedocApp = new TypeDoc.Application({
-  mode: 'file',
+const typedocApp = new TypeDoc.Application();
+typedocApp.options.addReader(new TypeDoc.TSConfigReader());
+typedocApp.options.addReader(new TypeDoc.TypeDocReader());
+typedocApp.bootstrap({
+  mode: 'file' as any, // = TypeDoc.SourceFileMode.File - Blocked by TypeDoc#1163
   logger: 'none',
-  target: 'ES5',
-  module: 'CommonJS',
+  target: ts.ScriptTarget.ES5,
+  module: ts.ModuleKind.CommonJS,
   types : [],
   experimentalDecorators: true,
   ignoreCompilerErrors: true,
@@ -118,7 +122,7 @@ function generateLibraryTypes(rootTypedoKind: TypedocKind) {
     for (let key in packageJson.dependencies) {
       packageJson.dependencies[key] = '*'
     }
-  }  
+  }
 
   packageJson.types = `./${filename}`;
   fs.outputFileSync(`${outDir}/${packageJson.name}/package.json`, JSON.stringify(packageJson, null, 2));
