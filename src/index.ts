@@ -16,7 +16,7 @@ const typedocApp = new TypeDoc.Application();
 typedocApp.options.addReader(new TypeDoc.TSConfigReader());
 typedocApp.options.addReader(new TypeDoc.TypeDocReader());
 typedocApp.bootstrap({
-  mode: 'file' as any, // = TypeDoc.SourceFileMode.File - Blocked by TypeDoc#1163
+  mode: 'file',
   logger: 'none',
   target: ts.ScriptTarget.ES5,
   module: ts.ModuleKind.CommonJS,

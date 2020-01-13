@@ -1908,10 +1908,10 @@ typedoc-default-themes@^0.7.0:
     lunr "^2.3.8"
     underscore "^1.9.1"
 
-typedoc@^0.16.1:
-  version "0.16.1"
-  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.16.1.tgz#c2aa2c773daca305f5e7b5a5568196f0f978ee13"
-  integrity sha512-n2RdWDwUks7TvTND8bOWG8rC6cFxpo4o9fXlFNwRiGpc+N6Amb0c1v0Y5oqY2SX5rgIe7OftTkItPsbpJAuApg==
+typedoc@^0.16.2:
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.16.2.tgz#e32d0f99edffd0d3c3b08f8087f31133e0a55805"
+  integrity sha512-zaRJqcVzZorIP4oq7Y3AYAzf6C4ladwUXpvvedPOCOhdELVQbvLy6A8LlrE+svDtGrL7+K04ruHsN3KQESoYUw==
   dependencies:
     "@types/minimatch" "3.0.3"
     fs-extra "^8.1.0"
@@ -1925,15 +1925,10 @@ typedoc@^0.16.1:
     typedoc-default-themes "^0.7.0"
     typescript "3.7.x"
 
-typescript@3.7.x:
+typescript@3.7.x, typescript@^3.7.4:
   version "3.7.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.4.tgz#1743a5ec5fef6a1fa9f3e4708e33c81c73876c19"
   integrity sha512-A25xv5XCtarLwXpcDNZzCGvW2D1S3/bACratYBx2sax8PefsFhlYmkQicKHvpYflFS8if4zne5zT5kpJ7pzuvw==
-
-typescript@^3.6.3:
-  version "3.6.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.3.tgz#fea942fabb20f7e1ca7164ff626f1a9f3f70b4da"
-  integrity sha512-N7bceJL1CtRQ2RiG0AQME13ksR7DiuQh/QehubYcghzv20tnh+MQnQIuJddTmsbqYj+dztchykemz0zFzlvdQw==
 
 uglify-js@^3.1.4:
   version "3.6.0"
