@@ -94,7 +94,6 @@ function createService(serviceName: string) {
   return new Service(serviceName);
 }
 
-
 /**
  * The OAuth service
  * 
