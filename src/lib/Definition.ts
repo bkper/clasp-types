@@ -106,7 +106,8 @@ export abstract class Definition {
 
   protected buildParam(builder: Builder, param: TypedocParameter): void {
     let sep = param.flags.isOptional ? '?:' : ':';
-    builder.append(param.name).append(sep).append(' ');
+    let rest = param.flags.isRest ? '...' : '';
+    builder.append(rest).append(param.name).append(sep).append(' ');
     this.buildType(builder, param.type);
   }
 

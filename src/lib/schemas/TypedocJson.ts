@@ -42,6 +42,7 @@ export interface TypedocParameter {
   type: TypedocType
   flags: {
     isOptional?: boolean
+    isRest?: boolean
   }
 }
 
