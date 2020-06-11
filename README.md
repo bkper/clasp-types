@@ -22,10 +22,10 @@
 A [TypeScript] definitions generator for [clasp] projects to get **autocomplete** and **type checking** for your Google Apps Script Object Oriented [Libraries] and [Client-side API].
 
 *Library:*
-![library-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/library-autocomplete.png)
+![library-autocomplete](https://raw.githubusercontent.com/bkper/clasp-types/master/imgs/library-autocomplete.png)
 
 *Client-side API:*
-![client-side-api-autocomplete](https://raw.githubusercontent.com/maelcaldas/clasp-types/master/imgs/client-side-api-autocomplete.png)
+![client-side-api-autocomplete](https://raw.githubusercontent.com/bkper/clasp-types/master/imgs/client-side-api-autocomplete.png)
 
 It works like the [API Extractor], reading the ```@public``` comment annotations on any global function, class, interface or enum you want to expose, and generating d.ts files consistently.
 
