@@ -39,12 +39,28 @@ export abstract class Definition {
       if (comment.returns) {
         // builder.append(`${this.ident()} *`).line()
         builder.append(`${this.ident()} * @returns ${this.identBreaks(comment.returns)}`).line()
+        if (comment.tags) {
+          builder.append(`${this.ident()} *`).line()
+        }
+      }
+
+      if (comment.tags) {
+        for (let i = 0; i < comment.tags.length; i++) {
+          const tag = comment.tags[i];
+          builder.append(`${this.ident()} * @${tag.tag} ${this.identBreaks(tag.text)}`).line()
+          if (i+1 < comment.tags.length) {
+            builder.append(`${this.ident()} *`).line()
+          }
+        }
       }
       builder.append(`${this.ident()} */`).line()
     }
   }
 
-  private identBreaks(text: string): string {
+  private identBreaks(text: string|undefined): string {
+    if (text == null) {
+      return '';
+    }
     if (text.endsWith('\n')) {
       var pos = text.lastIndexOf('\n');
       text = text.substring(0, pos);

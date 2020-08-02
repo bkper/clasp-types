@@ -19,7 +19,13 @@ export interface TypedocKind {
 export interface TypedocComment {
     shortText?: string,
     text?: string,
-    returns?: string
+    returns?: string,
+    tags?: TypedocTag[]
+}
+
+export interface TypedocTag {
+  tag: string,
+  text?: string
 }
 
 export interface TypedocSignature {
