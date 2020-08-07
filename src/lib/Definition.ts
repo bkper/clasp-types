@@ -22,17 +22,17 @@ export abstract class Definition {
   abstract render(builder: Builder): void;
 
   protected addComment(builder: Builder, comment: TypedocComment | undefined): void {
-    if (comment && (comment.shortText || comment.text || comment.returns)) {
+    if (comment && (comment.shortText || comment.text || comment.returns || comment.tags)) {
       builder.append(`${this.ident()}/**`).line()
       if (comment.shortText) {
         builder.append(`${this.ident()} * ${this.identBreaks(comment.shortText)}`).line()
-        if (comment.text || comment.returns) {
+        if (comment.text || comment.returns || comment.tags) {
           builder.append(`${this.ident()} *`).line()
         }
       }
       if (comment.text) {
         builder.append(`${this.ident()} * ${this.identBreaks(comment.text)}`).line()
-        if (comment.returns) {
+        if (comment.returns || comment.tags) {
           builder.append(`${this.ident()} *`).line()
         }        
       }
