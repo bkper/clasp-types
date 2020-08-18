@@ -54,5 +54,6 @@ export interface TypedocParameter {
 
 export interface TypedocDeclaration {
   signatures: TypedocSignature[];
-  children: TypedocParameter[]
+  children: TypedocParameter[];
+  indexSignature: TypedocSignature[];
 }

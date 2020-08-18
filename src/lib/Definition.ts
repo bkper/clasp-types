@@ -95,6 +95,13 @@ export abstract class Definition {
           builder.append('{')
           this.buildParams(builder, type.declaration.children)
           builder.append('}')
+        } else if (type.declaration.indexSignature && type.declaration.indexSignature.length) {
+          let indexSignature = type.declaration.indexSignature[0];
+          builder.append('{[')
+          this.buildParams(builder, indexSignature.parameters)
+          builder.append(']: ')
+          this.buildType(builder, indexSignature.type)
+          builder.append('}')
         }
         return;
       }
